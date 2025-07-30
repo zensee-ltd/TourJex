@@ -65,225 +65,131 @@
         </div>
     </section>
 
-    <!-- Tour Packages Section -->
-    <section class="py-5">
+    <!-- Destination Categories with Images and Book Now -->
+    <section class="py-5 bg-light">
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="section-title" data-aos="fade-up">Featured Tour Packages</h2>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Handpicked experiences that capture the essence of Sri Lanka</p>
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title" data-aos="fade-up">Main Destination Regions</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                        Explore Sri Lanka by region – from golden coasts to cool highlands
+                    </p>
                 </div>
             </div>
 
-            <div class="destinations-grid">
-                <!-- Cultural Triangle Package -->
-                <div class="destination-package-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?auto=compress&cs=tinysrgb&w=600&h=280&fit=crop" alt="Cultural Triangle Tour" class="destination-package-image">
-                    <div class="destination-package-content">
-                        <div class="destination-package-features">
-                            <div class="destination-feature">
-                                <i class="fas fa-car"></i>
-                                <span>Short and Sweet</span>
+            <div class="row g-4">
+
+                <!-- Down South -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://images.pexels.com/photos/460376/pexels-photo-460376.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" class="card-img-top" alt="Down South">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Down South</h5>
+                            <p class="card-text">Galle, Mirissa, and Unawatuna offer sun-kissed beaches, surfing, whale watching, and historic Galle Fort.</p>
+                            <div class="mt-auto">
+                                <a href="destination-down-south.html" class="btn btn-outline-primary btn-sm">Read More</a>
+                                <button class="btn btn-book-now btn-sm ms-2" onclick="openBookingForm()">Book Now</button>
                             </div>
-                            <div class="destination-feature">
-                                <i class="fas fa-calendar"></i>
-                                <span>3 days</span>
-                            </div>
-                            <div class="destination-feature">
-                                <i class="fas fa-users"></i>
-                                <span>Customizable</span>
-                            </div>
-                        </div>
-                        <!--<div class="destination-price">$349.00</div>-->
-                        <div class="destination-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="destination-description">A quick getaway to explore Sri Lanka's iconic sights in just 3 days, featuring Sigiriya, Kandy, and Mirissa with related activities.</p>
-                        <p class="destination-note">Note that these prices are for transportation only</p>
-                        <div class="destination-actions">
-                            <a href="destination-hill-country.html" class="btn btn-read-more">Read More</a>
-                            <button class="btn btn-book-now" onclick="openBookingForm()">Book Now</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hill Country Adventure -->
-                <div class="destination-package-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.pexels.com/photos/6271020/pexels-photo-6271020.jpeg?auto=compress&cs=tinysrgb&w=600&h=280&fit=crop" alt="Hill Country Adventure" class="destination-package-image">
-                    <div class="destination-package-content">
-                        <div class="destination-package-features">
-                            <div class="destination-feature">
-                                <i class="fas fa-mountain"></i>
-                                <span>Hill Country</span>
+                <!-- Up Country -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://images.pexels.com/photos/1424979/pexels-photo-1424979.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" class="card-img-top" alt="Up Country">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Hill Country</h5>
+                            <p class="card-text">Ella, Nuwara Eliya, and Bandarawela feature cool climates, tea plantations, train rides, and hiking trails.</p>
+                            <div class="mt-auto">
+                                <a href="destination-hill-country.html" class="btn btn-outline-primary btn-sm">Read More</a>
+                                <button class="btn btn-book-now btn-sm ms-2" onclick="openBookingForm()">Book Now</button>
                             </div>
-                            <div class="destination-feature">
-                                <i class="fas fa-calendar"></i>
-                                <span>5 days</span>
-                            </div>
-                            <div class="destination-feature">
-                                <i class="fas fa-users"></i>
-                                <span>Small Groups</span>
-                            </div>
-                        </div>
-                        <!--<div class="destination-price">$599.00</div>-->
-                        <div class="destination-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="destination-description">Explore misty mountains, tea plantations, and scenic train journeys through Ella, Nuwara Eliya, and Kandy's highland paradise.</p>
-                        <p class="destination-note">Includes scenic train tickets and tea plantation tours</p>
-                        <div class="destination-actions">
-                            <a href="destination-hill-country.html" class="btn btn-read-more">Read More</a>
-                            <button class="btn btn-book-now" onclick="openBookingForm()">Book Now</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Wildlife Safari Package -->
-                <div class="destination-package-card" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://images.pexels.com/photos/631317/pexels-photo-631317.jpeg?auto=compress&cs=tinysrgb&w=600&h=280&fit=crop" alt="Wildlife Safari" class="destination-package-image">
-                    <div class="destination-package-content">
-                        <div class="destination-package-features">
-                            <div class="destination-feature">
-                                <i class="fas fa-paw"></i>
-                                <span>Wildlife Focus</span>
+                <!-- Cultural Triangle -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://images.pexels.com/photos/691583/pexels-photo-691583.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" class="card-img-top" alt="Cultural Triangle">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Cultural Triangle</h5>
+                            <p class="card-text">Explore Sigiriya, Dambulla, and ancient cities like Anuradhapura and Polonnaruwa filled with culture and history.</p>
+                            <div class="mt-auto">
+                                <a href="destination-cultural-triangle.html" class="btn btn-outline-primary btn-sm">Read More</a>
+                                <button class="btn btn-book-now btn-sm ms-2" onclick="openBookingForm()">Book Now</button>
                             </div>
-                            <div class="destination-feature">
-                                <i class="fas fa-calendar"></i>
-                                <span>4 days</span>
-                            </div>
-                            <div class="destination-feature">
-                                <i class="fas fa-users"></i>
-                                <span>Nature Lovers</span>
-                            </div>
-                        </div>
-                        <!--<div class="destination-price">$749.00</div>-->
-                        <div class="destination-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="destination-description">Experience Sri Lanka's incredible wildlife with leopard spotting in Yala, elephant encounters in Udawalawe, and bird watching in Sinharaja.</p>
-                        <p class="destination-note">Includes park entrance fees and expert naturalist guides</p>
-                        <div class="destination-actions">
-                            <a href="destination-wildlife-safari.html" class="btn btn-read-more">Read More</a>
-                            <button class="btn btn-book-now" onclick="openBookingForm()">Book Now</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Beach & Coast Package -->
-                <div class="destination-package-card" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://images.pexels.com/photos/1680140/pexels-photo-1680140.jpeg?auto=compress&cs=tinysrgb&w=600&h=280&fit=crop" alt="Beach Paradise" class="destination-package-image">
-                    <div class="destination-package-content">
-                        <div class="destination-package-features">
-                            <div class="destination-feature">
-                                <i class="fas fa-water"></i>
-                                <span>Beach Paradise</span>
+                <!-- East Coast -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://images.pexels.com/photos/220722/pexels-photo-220722.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" class="card-img-top" alt="East Coast">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">East Coast</h5>
+                            <p class="card-text">Trincomalee, Arugam Bay, and Pasikuda offer surfing, snorkeling, calm beaches, and vibrant local culture.</p>
+                            <div class="mt-auto">
+                                <a href="destination-east-coast.html" class="btn btn-outline-primary btn-sm">Read More</a>
+                                <button class="btn btn-book-now btn-sm ms-2" onclick="openBookingForm()">Book Now</button>
                             </div>
-                            <div class="destination-feature">
-                                <i class="fas fa-calendar"></i>
-                                <span>6 days</span>
-                            </div>
-                            <div class="destination-feature">
-                                <i class="fas fa-users"></i>
-                                <span>Relaxation</span>
-                            </div>
-                        </div>
-                        <!--<div class="destination-price">$529.00</div>-->
-                        <div class="destination-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="destination-description">Discover pristine beaches, whale watching in Mirissa, historic Galle Fort, and vibrant coral reefs along Sri Lanka's stunning coastline.</p>
-                        <p class="destination-note">Includes whale watching boat trips and snorkeling equipment</p>
-                        <div class="destination-actions">
-                            <a href="destination-beach-coast.html" class="btn btn-read-more">Read More</a>
-                            <button class="btn btn-book-now" onclick="openBookingForm()">Book Now</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Complete Sri Lanka Experience -->
-                <div class="destination-package-card" data-aos="fade-up" data-aos-delay="500">
-                    <img src="https://images.pexels.com/photos/10498070/pexels-photo-10498070.jpeg?auto=compress&cs=tinysrgb&w=600&h=280&fit=crop" alt="Complete Sri Lanka" class="destination-package-image">
-                    <div class="destination-package-content">
-                        <div class="destination-package-features">
-                            <div class="destination-feature">
-                                <i class="fas fa-globe"></i>
-                                <span>Complete Tour</span>
+                <!-- Colombo & Surroundings -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://images.pexels.com/photos/19872/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" class="card-img-top" alt="Colombo & Surroundings">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Colombo & Surroundings</h5>
+                            <p class="card-text">Perfect for short stays – enjoy shopping, temples, canals, and a taste of city life with beachside escapes.</p>
+                            <div class="mt-auto">
+                                <a href="destination-colombo.html" class="btn btn-outline-primary btn-sm">Read More</a>
+                                <button class="btn btn-book-now btn-sm ms-2" onclick="openBookingForm()">Book Now</button>
                             </div>
-                            <div class="destination-feature">
-                                <i class="fas fa-calendar"></i>
-                                <span>10 days</span>
-                            </div>
-                            <div class="destination-feature">
-                                <i class="fas fa-users"></i>
-                                <span>All Inclusive</span>
-                            </div>
-                        </div>
-                       <!-- <div class="destination-price">$1,299.00</div>-->
-                        <div class="destination-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="destination-description">The ultimate Sri Lankan adventure covering ancient cities, hill country, wildlife parks, beaches, and cultural experiences across the entire island.</p>
-                        <p class="destination-note">Comprehensive package with accommodation and meal options</p>
-                        <div class="destination-actions">
-                            <a href="destination-complete-sri-lanka.html" class="btn btn-read-more">Read More</a>
-                            <button class="btn btn-book-now" onclick="openBookingForm()">Book Now</button>
                         </div>
                     </div>
                 </div>
-                <!-- Adventure & Trekking Package -->
-                <div class="destination-package-card" data-aos="fade-up" data-aos-delay="600">
-                    <img src="https://images.pexels.com/photos/4577179/pexels-photo-4577179.jpeg?auto=compress&cs=tinysrgb&w=600&h=280&fit=crop" alt="Adventure Trekking" class="destination-package-image">
-                    <div class="destination-package-content">
-                        <div class="destination-package-features">
-                            <div class="destination-feature">
-                                <i class="fas fa-hiking"></i>
-                                <span>Adventure</span>
+
+                <!-- Kandy Region -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://images.pexels.com/photos/1100206/pexels-photo-1100206.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" class="card-img-top" alt="Kandy Region">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Kandy Region</h5>
+                            <p class="card-text">Visit the Temple of the Tooth, botanical gardens, spice gardens, and enjoy cultural shows and treks in Knuckles.</p>
+                            <div class="mt-auto">
+                                <a href="destination-kandy-region.html" class="btn btn-outline-primary btn-sm">Read More</a>
+                                <button class="btn btn-book-now btn-sm ms-2" onclick="openBookingForm()">Book Now</button>
                             </div>
-                            <div class="destination-feature">
-                                <i class="fas fa-calendar"></i>
-                                <span>7 days</span>
-                            </div>
-                            <div class="destination-feature">
-                                <i class="fas fa-users"></i>
-                                <span>Active Travelers</span>
-                            </div>
-                        </div>
-                        <!--<div class="destination-price">$899.00</div>-->
-                        <div class="destination-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="destination-description">For adventure seekers: trekking Adam's Peak, white water rafting, rock climbing, and exploring hidden waterfalls and caves.</p>
-                        <p class="destination-note">Includes professional guides and safety equipment</p>
-                        <div class="destination-actions">
-                            <a href="destination-adventure-trekking.html" class="btn btn-read-more">Read More</a>
-                            <button class="btn btn-book-now" onclick="openBookingForm()">Book Now</button>
                         </div>
                     </div>
                 </div>
+
+                <!-- Wildlife & Nature -->
+                <div class="col-md-12" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="row g-0">
+                            <div class="col-md-5">
+                                <img src="https://images.pexels.com/photos/631317/pexels-photo-631317.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" class="img-fluid rounded-start w-100 h-100" alt="Wildlife & Nature">
+                            </div>
+                            <div class="col-md-7">
+                                <div class="card-body d-flex flex-column h-100">
+                                    <h5 class="card-title">Wildlife & Nature</h5>
+                                    <p class="card-text">Embark on safaris through Yala, Udawalawe, and Wilpattu. Perfect for spotting elephants, leopards, and birds.</p>
+                                    <div class="mt-auto">
+                                        <a href="destination-wildlife.html" class="btn btn-outline-primary btn-sm">Read More</a>
+                                        <button class="btn btn-book-now btn-sm ms-2" onclick="openBookingForm()">Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
