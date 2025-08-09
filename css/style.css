@@ -867,59 +867,59 @@ footer .input-group .form-control:focus {
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.125rem;
     }
-    
+
     .page-title {
         font-size: 2.5rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .hero-section {
         height: 70vh;
     }
-    
+
     .page-header {
         height: 50vh;
     }
-    
+
     .navbar-nav {
         background: rgba(45, 80, 22, 0.95);
         border-radius: var(--border-radius);
         margin-top: 1rem;
         padding: 1rem;
     }
-    
+
     .hero-navigation {
         display: none;
     }
-    
+
     .service-card, .destination-card, .feature-card {
         margin-bottom: 2rem;
     }
-    
+
     .contact-item {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .contact-icon {
         margin: 0 auto 1rem;
     }
-    
+
     .social-icons {
         flex-wrap: wrap;
     }
-    
+
     .gallery-image {
         height: 250px;
     }
-    
+
     .form-check-group {
         flex-direction: column;
         gap: 0.5rem;
@@ -930,33 +930,33 @@ footer .input-group .form-control:focus {
     .hero-title {
         font-size: 2rem;
     }
-    
+
     .page-title {
         font-size: 2rem;
     }
-    
+
     .section-title {
         font-size: 1.75rem;
     }
-    
+
     .hero-btn, .btn-lg {
         padding: 12px 24px;
         font-size: 1rem;
     }
-    
+
     .service-card, .destination-card, .feature-card,
     .contact-form-wrapper, .contact-info {
         padding: 1.5rem;
     }
-    
+
     .gallery-image {
         height: 200px;
     }
-    
+
     .stat-item h3 {
         font-size: 2.5rem;
     }
-    
+
     .process-number {
         width: 60px;
         height: 60px;
@@ -1069,16 +1069,16 @@ html {
     .navbar, .hero-navigation, .social-links, footer {
         display: none !important;
     }
-    
+
     .page-header {
         margin-top: 0;
     }
-    
+
     body {
         background: var(--white) !important;
         color: var(--text-dark) !important;
     }
-    
+
     .service-card, .destination-card, .feature-card {
         box-shadow: none;
         border: 1px solid var(--border-color);
@@ -1220,23 +1220,23 @@ html {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .destination-package-features {
         flex-direction: column;
         gap: 0.5rem;
         text-align: center;
     }
-    
+
     .destination-actions {
         flex-direction: column;
         gap: 0.5rem;
     }
-    
+
     .btn-read-more,
     .btn-book-now {
         border-radius: 25px;
     }
-    
+
     .destination-price {
         font-size: 2rem;
     }
@@ -1512,21 +1512,21 @@ html {
     .destination-hero-title {
         font-size: 2.5rem;
     }
-    
+
     .destination-hero {
         height: 60vh;
     }
-    
+
     .destination-overview-image {
         height: 300px;
         margin-top: 2rem;
     }
-    
+
     .social-share-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .destination-gallery-grid {
         grid-template-columns: 1fr;
     }

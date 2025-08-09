@@ -1,29 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ben Tours - Premium Sri Lanka Tourism Services. Discover the Pearl of the Indian Ocean with our customized tours and exceptional service.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Visit Siyenga - Premium Sri Lanka Tourism Services. Discover the Pearl of the Indian Ocean with our customized tours and exceptional service.">
     <meta name="keywords" content="Sri Lanka tours, tourism, travel packages, destinations, Sigiriya, Ella, Galle, Kandy">
-    <meta name="author" content="Ben Tours">
-    
-    <title>Ben tours lanka - Discover Sri Lanka's Hidden Gems</title>
-    
-    <!-- Bootstrap CSS -->
+    <meta name="author" content="Visit Siyenga">
+    <title>Ben Tours Lanka — Discover Sri Lanka's Hidden Gems</title>
+
+    <!-- Bootstrap / Icons / AOS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- AOS Animation -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <!-- NEW FONT -->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --bg:#ecedf4;
+            --card:#ffffff;
+            --ink:#0f172a;
+            --muted:#64748b;
+            --primary:#2563eb;
+            --primary-ink:#ffffff;
+            --shadow-lg:0 24px 60px rgba(0,0,0,.16);
+            --shadow-md:0 12px 32px rgba(0,0,0,.10);
+            --radius-xl:28px;
+            --radius-2xl:40px;
+        }
+        *{box-sizing:border-box}
+        /*html,body{height:100%}*/
+        body{
+            margin:0;
+            /*font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;*/
+            font-family: 'Roboto Mono', monospace;
+            color:var(--ink);
+            /*background: radial-gradient(1400px 700px at -10% -10%, #c9d8ff 0%, rgba(201,216,255,0) 60%), var(--bg);*/
+            background: radial-gradient(1500px 700px at -10% -20%, #c9d8ff 60%, rgba(201,216,255,0) 100%), var(--bg);
+        }
+
+        /* Page wrap */
+        .page-wrap{max-width:1280px;margin:34px auto;padding:0 20px}
+
+        /* NAV (rounded, white, sticky) */
+        #mainNav{
+            background:var(--card)!important;
+            border-radius:22px;
+            box-shadow:var(--shadow-md);
+            top:18px; left:0; right:0;
+            width:calc(100% - 40px);
+            margin:0 auto;
+            padding:10px 16px;
+            backdrop-filter:saturate(120%) blur(6px);
+        }
+        #mainNav .navbar-brand{
+            font-weight:800; letter-spacing:.2px; color:#0b1432!important;
+            display:flex; align-items:center; gap:10px;
+        }
+        #mainNav .navbar-nav .nav-link{
+            color:#334155!important; font-weight:600; margin:0 .2rem; border-radius:10px; padding:.55rem .9rem;
+        }
+        #mainNav .navbar-nav .nav-link:hover{color:var(--primary)!important; background:#eff4ff}
+        .btn-primary{background:var(--primary)!important; border:0; border-radius:999px; padding:.75rem 1.15rem; font-weight:700}
+        .btn-outline-primary{border-radius:999px}
+
+        /* HERO */
+        .hero-section{margin-top:110px}
+        .hero-card{
+            position:relative; overflow:hidden; border-radius:var(--radius-2xl);
+            box-shadow:var(--shadow-lg); background:#000;
+        }
+        .hero-slider{position:relative}
+        .hero-slide{
+            /*position:relative; height:64vh; min-height:520px; max-height:720px;*/
+            position:relative; height:80vh; min-height:520px; max-height:720px;
+            background-size:cover; background-position:center; display:none;
+        }
+        .hero-slide.active{display:block}
+        .hero-overlay{position:absolute; inset:0; background:linear-gradient(180deg,rgba(2,8,23,0) 40%, rgba(2,8,23,.55) 80%)}
+        .hero-content{position:absolute; inset:0; display:grid; align-content:end; padding:28px 32px 32px}
+        .hero-title{font-size: clamp(32px, 4vw, 56px); font-weight:800; color:#fff; letter-spacing:-.02em; margin-bottom:.6rem; text-shadow:0 6px 24px rgba(0,0,0,.28)}
+        .hero-subtitle{color:#e5e7eb; opacity:.95}
+        .hero-btn{box-shadow:0 12px 28px rgba(37,99,235,.38)}
+        .hero-word{
+            position:absolute; left:40px; top:8vh; z-index:0;
+            font-size: clamp(96px, 18vw, 240px);
+            font-weight:900; line-height:.85; letter-spacing:-.04em;
+            color:rgba(255,255,255,.85); mix-blend-mode:overlay; user-select:none; pointer-events:none;
+        }
+        .hero-navigation{position:absolute; inset:0; display:flex; justify-content:space-between; align-items:center; padding:0 12px; z-index:2}
+        .hero-nav-btn{width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.9);display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+        .hero-nav-btn:hover{transform:translateY(-1px)}
+
+        /* SECTION TITLES */
+        .destination-container{
+            border: 1px solid #e8edff;
+            border-radius: 30px;
+        }
+        .section-title{font-weight:800; letter-spacing:-.02em}
+        .section-subtitle{color:var(--muted)}
+
+        .why-wrap {
+            background: #fff;
+            border: 1px solid #e8edff;
+            border-radius: 30px;
+            padding: 40px 28px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, .08);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .why-text {
+            text-align: center;
+        }
+
+        .why-title {
+            font-size: clamp(28px, 3.2vw, 40px);
+            /*font-weight: 800;*/
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .why-desc {
+            color: #475569;
+            max-width: 558px;
+        }
+
+        .why-features {
+            display: grid;
+            gap: 16px;
+        }
+
+        .feature-chip {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            /*background: #f6f8ff;*/
+            border: 1px solid #e9efff;
+            padding: 14px 16px;
+            border-radius: 16px;
+            transition: .2s ease;
+            /*box-shadow: 0 6px 14px rgba(0, 0, 0, .05);*/
+            background:#f8faff;               /* slightly lighter */
+            box-shadow:0 4px 10px rgba(0,0,0,.04);
+        }
+
+        .feature-chip:hover {
+            transform: translateY(-2px);
+            background: #f2f6ff;
+        }
+
+        .chip-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: #eaf1ff;
+            /*color: #2563eb;*/
+            /*background:#eef4ff;*/
+            color:#2563ebcc;
+            display: grid;
+            place-items: center;
+            font-size: 18px;
+            flex: 0 0 auto;
+        }
+        .chip-title{ font-weight:400; }      /* keep neutral */
+        .chip-text{ font-weight:300; color:#55657a; } /* lighter body */
+
+
+        /* desktop (default) */
+        .why-wrap{
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "features text";
+            gap:40px;
+            align-items:center;
+        }
+        .why-features{ grid-area: features; }
+        .why-text{ grid-area: text; text-align:center; }
+
+        /* make chips fill nicely */
+        .feature-chip{ width:100%; }
+
+        /* tablet & down */
+        @media (max-width: 992px){
+            .why-wrap{
+                grid-template-columns: 1fr;
+                grid-template-areas:
+      "text"
+      "features";
+                gap:24px;
+                padding:28px 20px;
+            }
+            .why-text{ text-align:center; }
+            .why-desc{ max-width: 36rem; margin: 0 auto; }
+            .why-features{ gap:12px; }
+        }
+
+
+
+
+        /* Services & Destinations cards */
+        .service-card, .destination-card{
+            background:var(--card); border:1px solid #eef2ff; border-radius:22px; padding:24px;
+            box-shadow:0 10px 28px rgba(0,0,0,.06); height:100%;
+        }
+        .service-icon{width:56px;height:56px;border-radius:16px;background:#eff4ff;display:grid;place-items:center;margin-bottom:12px}
+        .service-icon i{color:var(--primary);font-size:22px}
+        .destination-image{width:100%;height:210px;object-fit:cover;border-radius:16px}
+        .destination-content h4{margin-top:14px}
+        .destination-content p{
+            font-weight: 300;
+        }
+        .service-card p {
+            font-weight: 300; /* or 300 for lighter look */
+        }
+
+        /* Location */
+        .location-section{padding:64px 0}
+        .location-content{
+            background:var(--card);
+            border:1px solid #eef2ff;
+            border-radius:22px;
+            padding:20px;
+            box-shadow:0 10px 28px rgba(0,0,0,.06);
+            height: 100%;
+        }
+        .location-info{display:flex;gap:12px;margin-bottom:16px}
+        .location-icon{width:42px;height:42px;border-radius:12px;background:#eff4ff;display:grid;place-items:center;color:var(--primary)}
+        .map-container{border-radius:22px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.06);height: 100%}
+        .map-container iframe{width:100%;height:100%;border:0;min-height: 320px;}
+        .location-details p{
+            font-weight: 300;
+        }
+
+        /* Footer */
+        footer{border-top-left-radius:28px;border-top-right-radius:28px}
+        footer .input-group .form-control{border-radius:999px 0 0 999px}
+        footer .input-group .btn{border-radius:0 999px 999px 0}
+
+        /* Mobile */
+        @media (max-width: 992px){
+            .why-wrap{padding:20px}
+            .why-image{min-height:260px;margin-top:16px}
+            .location-section .row { align-items: stretch; } /* keep consistent */
+
+        }
+        @media (max-width: 760px){
+            #mainNav{width:calc(100% - 24px)}
+            .hero-word{left:16px; top:6vh}
+            .hero-navigation{padding:0 6px}
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
+<div class="page-wrap">
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container-fluid px-3">
             <a class="navbar-brand" href="index.html">
                 <i class="fas fa-compass me-2"></i>Ben Tours
             </a>
@@ -31,168 +268,171 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="destinations.html">Destinations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="src/destination/destinations.html">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="ms-lg-3 mt-2 mt-lg-0">
+                        <a href="src/destination/destinations.html" class="btn btn-primary btn-sm">Get Started</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section class="hero-section">
-        <div class="hero-slider">
-            <div class="hero-slide active" style="background-image: url('https://images.pexels.com/photos/3573382/pexels-photo-3573382.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <div class="container">
-                        <div class="row justify-content-center text-center">
-                            <div class="col-lg-8">
-                                <h1 class="hero-title" data-aos="fade-up">Discover Sri Lanka's Natural Paradise</h1>
-                                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Experience pristine beaches, misty mountains, ancient temples, and exotic wildlife with our authentic travel experiences</p>
-                                <a href="destinations.html" class="btn btn-primary btn-lg hero-btn" data-aos="fade-up" data-aos-delay="400">
-                                    <i class="fas fa-map-marked-alt me-2"></i>Explore Now
-                                </a>
+        <div class="hero-card position-relative">
+            <div class="hero-slider">
+                <div class="hero-slide active" style="background-image:url('src/assets/images/home/ninearch.jpg');">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <div class="container">
+                            <div class="row justify-content-center text-center">
+                                <div class="col-lg-8">
+                                    <h1 class="hero-title">Discover Sri Lanka's Natural Paradise</h1>
+                                    <p class="hero-subtitle">Experience pristine beaches, misty mountains, ancient temples, and exotic wildlife with our authentic travel experiences</p>
+                                    <a href="src/destination/destinations.html" class="btn btn-primary btn-lg hero-btn">
+                                        <i class="fas fa-map-marked-alt me-2"></i>Explore Now
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="hero-word">Explore</div>
                 </div>
-            </div>
-            <div class="hero-slide" style="background-image: url('https://images.pexels.com/photos/6271020/pexels-photo-6271020.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <div class="container">
-                        <div class="row justify-content-center text-center">
-                            <div class="col-lg-8">
-                                <h1 class="hero-title">Journey Through Ancient Ceylon</h1>
-                                <p class="hero-subtitle">Explore 2,500 years of history through magnificent temples, royal palaces, and UNESCO World Heritage sites</p>
-                                <a href="destinations.html" class="btn btn-primary btn-lg hero-btn">
-                                    <i class="fas fa-history me-2"></i>Discover Heritage
-                                </a>
+
+                <div class="hero-slide" style="background-image:url('src/assets/images/home/sigiriya.jpg');">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <div class="container">
+                            <div class="row justify-content-center text-center">
+                                <div class="col-lg-8">
+                                    <h1 class="hero-title">Journey Through Ancient Ceylon</h1>
+                                    <p class="hero-subtitle">Explore 2,500 years of history through magnificent temples, royal palaces, and UNESCO World Heritage sites</p>
+                                    <a href="src/destination/destinations.html" class="btn btn-primary btn-lg hero-btn">
+                                        <i class="fas fa-history me-2"></i>Discover Heritage
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="hero-word">Explore</div>
                 </div>
-            </div>
-            <div class="hero-slide" style="background-image: url('https://images.pexels.com/photos/4577179/pexels-photo-4577179.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <div class="container">
-                        <div class="row justify-content-center text-center">
-                            <div class="col-lg-8">
-                                <h1 class="hero-title">Wildlife & Adventure Paradise</h1>
-                                <p class="hero-subtitle">Encounter leopards, elephants, and exotic birds in pristine national parks and tropical rainforests</p>
-                                <a href="services.html" class="btn btn-primary btn-lg hero-btn">
-                                    <i class="fas fa-mountain me-2"></i>Start Adventure
-                                </a>
+
+                <div class="hero-slide" style="background-image:url('src/assets/images/home/elephants-sri-lanka.jpg');">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <div class="container">
+                            <div class="row justify-content-center text-center">
+                                <div class="col-lg-8">
+                                    <h1 class="hero-title">Wildlife & Adventure Paradise</h1>
+                                    <p class="hero-subtitle">Encounter leopards, elephants, and exotic birds in pristine national parks and tropical rainforests</p>
+                                    <a href="services.html" class="btn btn-primary btn-lg hero-btn">
+                                        <i class="fas fa-mountain me-2"></i>Start Adventure
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="hero-word">Explore</div>
                 </div>
             </div>
-        </div>
-        <div class="hero-navigation">
-            <button class="hero-nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-            <button class="hero-nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+
+            <div class="hero-navigation">
+                <button class="hero-nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="hero-nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="py-5 bg-light">
+    <section class="py-5">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <img src="https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?auto=compress&cs=tinysrgb&w=800" alt="About Ben Tours" class="img-fluid rounded shadow">
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="ps-lg-4 mt-4 mt-lg-0">
-                        <h2 class="section-title">Why Choose Ben Tours?</h2>
-                        <p class="lead">We are passionate local experts dedicated to showcasing Sri Lanka's untouched natural beauty, authentic cultural experiences, and the legendary warmth of our people.</p>
-                        <div class="row mt-4">
-                            <div class="col-sm-6 mb-3">
-                                <div class="feature-item">
-                                    <i class="fas fa-leaf text-primary mb-2"></i>
-                                    <h5>Eco-Friendly Tours</h5>
-                                    <p>Sustainable travel that protects our natural heritage</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 mb-3">
-                                <div class="feature-item">
-                                    <i class="fas fa-heart text-primary mb-2"></i>
-                                    <h5>Authentic Experiences</h5>
-                                    <p>Connect with local communities and traditions</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 mb-3">
-                                <div class="feature-item">
-                                    <i class="fas fa-binoculars text-primary mb-2"></i>
-                                    <h5>Wildlife Expertise</h5>
-                                    <p>Expert naturalist guides for wildlife encounters</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 mb-3">
-                                <div class="feature-item">
-                                    <i class="fas fa-camera text-primary mb-2"></i>
-                                    <h5>Photography Focus</h5>
-                                    <p>Capture stunning moments with photo-friendly itineraries</p>
-                                </div>
-                            </div>
+            <div class="why-wrap">
+
+                <!-- Left side - features -->
+                <div class="why-features">
+                    <div class="feature-chip">
+                        <div class="chip-icon"><i class="fa-solid fa-leaf"></i></div>
+                        <div>
+                            <p class="chip-title mb-1">Eco-Friendly Tours</p>
+                            <p class="chip-text mb-0">Low-impact travel that protects habitats and supports conservation.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-chip">
+                        <div class="chip-icon"><i class="fa-solid fa-heart"></i></div>
+                        <div>
+                            <p class="chip-title mb-1">Authentic Experiences</p>
+                            <p class="chip-text mb-0">Share meals, stories, and traditions with local communities.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-chip">
+                        <div class="chip-icon"><i class="fa-solid fa-binoculars"></i></div>
+                        <div>
+                            <p class="chip-title mb-1">Wildlife Expertise</p>
+                            <p class="chip-text mb-0">Naturalist guides who know the land, seasons, and species.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-chip">
+                        <div class="chip-icon"><i class="fa-solid fa-camera"></i></div>
+                        <div>
+                            <p class="chip-title mb-1">Photography Focus</p>
+                            <p class="chip-text mb-0">Golden-hour stops and hidden vantage points baked into routes.</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Right side - title + desc -->
+                <div class="why-text">
+                    <h2 class="why-title">Why Choose Ben Tours?</h2>
+                    <p class="lead why-desc">
+                        We’re proud local experts with a deep-rooted understanding of Sri Lanka, dedicated to crafting authentic, nature-first journeys that immerse you in the island’s true essence. Our carefully designed experiences weave together breathtaking landscapes, centuries of living heritage, and the legendary warmth of our people, ensuring every moment is rich in culture, beauty, and connection.
+                    </p>
+                </div>
+
+
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+
+
+
+
+
+    <!-- SERVICES -->
     <section class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="section-title" data-aos="fade-up">Our Nature-Focused Services</h2>
+                    <h2 class="section-title" data-aos="fade-up">Our Nature‑Focused Services</h2>
                     <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Authentic Sri Lankan experiences designed for nature lovers and culture enthusiasts</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-paw"></i>
-                        </div>
+                        <div class="service-icon"><i class="fas fa-paw"></i></div>
                         <h4>Wildlife Safaris</h4>
                         <p>Experience Sri Lanka's incredible biodiversity with expert naturalist guides in pristine national parks.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-mountain"></i>
-                        </div>
+                        <div class="service-icon"><i class="fas fa-mountain"></i></div>
                         <h4>Hill Country Adventures</h4>
                         <p>Explore misty mountains, tea plantations, and scenic train journeys through Sri Lanka's highlands.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-water"></i>
-                        </div>
+                        <div class="service-icon"><i class="fas fa-water"></i></div>
                         <h4>Beach & Marine Life</h4>
                         <p>Discover pristine beaches, whale watching, and vibrant coral reefs along our tropical coastline.</p>
                     </div>
@@ -201,8 +441,8 @@
         </div>
     </section>
 
-    <!-- Featured Destinations -->
-    <section class="py-5 bg-light">
+    <!-- DESTINATIONS -->
+    <section class="py-5 bg-light destination-container">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
@@ -216,8 +456,8 @@
                         <img src="https://images.pexels.com/photos/10498070/pexels-photo-10498070.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sigiriya Rock Fortress" class="destination-image">
                         <div class="destination-content">
                             <h4>Sigiriya</h4>
-                            <p>Ancient sky palace rising from emerald forests with 1,500-year-old frescoes</p>
-                            <a href="destinations.html#sigiriya" class="btn btn-outline-primary">Learn More</a>
+                            <p>Ancient sky palace rising from emerald forests with 1,500‑year‑old frescoes</p>
+                            <a href="src/destination/destinations.html#sigiriya" class="btn btn-outline-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -227,17 +467,17 @@
                         <div class="destination-content">
                             <h4>Ella</h4>
                             <p>Misty mountain paradise with tea gardens, waterfalls, and scenic train journeys</p>
-                            <a href="destinations.html#ella" class="btn btn-outline-primary">Learn More</a>
+                            <a href="src/destination/destinations.html#ella" class="btn btn-outline-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="destination-card">
-                        <img src="https://images.pexels.com/photos/4577179/pexels-photo-4577179.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Galle Fort" class="destination-image">
+                        <img src="https://images.pexels.com/photos/4577179/pexels-photo-4577179.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Yala National Park" class="destination-image">
                         <div class="destination-content">
                             <h4>Yala National Park</h4>
                             <p>Sri Lanka's premier wildlife sanctuary home to leopards, elephants, and exotic birds</p>
-                            <a href="destinations.html#galle" class="btn btn-outline-primary">Learn More</a>
+                            <a href="src/destination/destinations.html#galle" class="btn btn-outline-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -245,7 +485,7 @@
         </div>
     </section>
 
-    <!-- Location Section -->
+    <!-- LOCATION -->
     <section class="location-section">
         <div class="container">
             <div class="row">
@@ -254,31 +494,25 @@
                     <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Located in the heart of Wadduwa, we're here to help plan your perfect Sri Lankan adventure</p>
                 </div>
             </div>
-            <div class="row align-items-center">
-                <div class="col-lg-4 mb-4" data-aos="fade-right">
-                    <div class="location-content">
+            <div class="row align-items-stretch">
+                <div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="location-content h-100">
                         <div class="location-info">
-                            <div class="location-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
+                            <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="location-details">
                                 <h5>Our Address</h5>
                                 <p>352/16C Thalpitiya south<br>Wadduwa, Sri Lanka</p>
                             </div>
                         </div>
                         <div class="location-info">
-                            <div class="location-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
+                            <div class="location-icon"><i class="fas fa-phone"></i></div>
                             <div class="location-details">
                                 <h5>Contact Numbers</h5>
-                                <p>Mobile: +94 77 996 1170<br>WhatsApp: +94 77 996 1170</p>
+                                <p>(+94)077-996-1170</p>
                             </div>
                         </div>
                         <div class="location-info">
-                            <div class="location-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
+                            <div class="location-icon"><i class="fas fa-envelope"></i></div>
                             <div class="location-details">
                                 <h5>Email Address</h5>
                                 <p>bentourslanka@gmail.com</p>
@@ -287,7 +521,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8" data-aos="fade-left">
-                    <div class="map-container">
+                    <div class="map-container h-100">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15506.758890950656!2d79.91864476062015!3d6.6807555009449695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s352%2F16C%20Thalpitiya%20south%20Wadduwa!5e0!3m2!1sen!2slk!4v1753726596146!5m2!1sen!2slk" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
@@ -295,64 +529,87 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h5><i class="fas fa-compass me-2"></i>Ben Tours</h5>
-                    <p>Your trusted local partner for authentic Sri Lankan adventures. We specialize in eco-friendly tours that showcase our island's incredible natural beauty and rich cultural heritage.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://wa.me/94779961170" target="_blank" class="text-white me-3"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <h6>Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white-50">Home</a></li>
-                        <li><a href="about.html" class="text-white-50">About</a></li>
-                        <li><a href="services.html" class="text-white-50">Services</a></li>
-                        <li><a href="destinations.html" class="text-white-50">Destinations</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h6>Contact Info</h6>
-                    <ul class="list-unstyled">
-                        <li class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i>352/16C Thalpitiya south Wadduwa</li>
-                        <li class="text-white-50"><i class="fas fa-phone me-2"></i>+94 77 996 1170</li>
-                        <li class="text-white-50"><i class="fas fa-envelope me-2"></i>bentourslanka@gmail.com</li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h6>Newsletter</h6>
-                    <p class="text-white-50">Subscribe to receive our latest offers and travel updates.</p>
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Your email">
-                        <button class="btn btn-primary" type="button">Subscribe</button>
-                    </div>
+</div><!-- /.page-wrap -->
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white py-5 mt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <h5><i class="fas fa-compass me-2"></i>Ben Tours</h5>
+                <p>Your trusted local partner for authentic Sri Lankan adventures. We specialize in eco-friendly tours that showcase our island's incredible natural beauty and rich cultural heritage.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/94779961170" target="_blank" class="text-white me-3"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-            <hr class="my-4">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="text-white-50 mb-0">&copy; 2024 Ben Tours. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="#" class="text-white-50 me-3">Privacy Policy</a>
-                    <a href="#" class="text-white-50">Terms of Service</a>
+            <div class="col-lg-2 col-md-4 mb-4">
+                <h6>Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-white-50">Home</a></li>
+                    <li><a href="about.html" class="text-white-50">About</a></li>
+                    <li><a href="services.html" class="text-white-50">Services</a></li>
+                    <li><a href="src/destination/destinations.html" class="text-white-50">Destinations</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4">
+                <h6>Contact Info</h6>
+                <ul class="list-unstyled">
+                    <li class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i>352/16C Thalpitiya south Wadduwa</li>
+                    <li class="text-white-50"><i class="fas fa-phone me-2"></i>+94 77 996 1170</li>
+                    <li class="text-white-50"><i class="fas fa-envelope me-2"></i>bentourslanka@gmail.com</li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4">
+                <h6>Newsletter</h6>
+                <p class="text-white-50">Subscribe to receive our latest offers and travel updates.</p>
+                <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Your email">
+                    <button class="btn btn-primary" type="button">Subscribe</button>
                 </div>
             </div>
         </div>
-    </footer>
+        <hr class="my-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-white-50 mb-0">&copy; <span id="year"></span> Ben Tours. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="#" class="text-white-50 me-3">Privacy Policy</a>
+                <a href="#" class="text-white-50">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- AOS Animation -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <!-- Custom JS -->
-    <script src="js/script.js"></script>
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    // Init AOS
+    AOS.init({ once:true, duration:700, easing:'ease-out-cubic' });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Slider
+    const slides = Array.from(document.querySelectorAll('.hero-slide'));
+    const nextBtn = document.querySelector('.next-btn');
+    const prevBtn = document.querySelector('.prev-btn');
+    let idx = slides.findIndex(s => s.classList.contains('active'));
+    const show = (i) => { slides.forEach(s => s.classList.remove('active')); slides[i].classList.add('active'); idx = i; };
+    if(nextBtn && prevBtn){
+        nextBtn.addEventListener('click', () => show((idx + 1) % slides.length));
+        prevBtn.addEventListener('click', () => show((idx - 1 + slides.length) % slides.length));
+        setInterval(() => show((idx + 1) % slides.length), 6000);
+    }
+
+    // Parallax for the big word
+    const words = document.querySelectorAll('.hero-word');
+    window.addEventListener('scroll', () => {
+        const y = window.scrollY * 0.15;
+        words.forEach(w => w.style.transform = 'translateY(' + y + 'px)');
+    });
+</script>
 </body>
 </html>

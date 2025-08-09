@@ -581,3 +581,37 @@ function throttle(func, limit) {
         }
     };
 }
+
+// //---------- NEW ---------
+//
+// document.addEventListener('DOMContentLoaded', () => {
+//     const slides = document.querySelectorAll('.hero-slide');
+//     const prevBtn = document.querySelector('.prev-btn');
+//     const nextBtn = document.querySelector('.next-btn');
+//     let currentSlide = 0;
+//
+//     function showSlide(index) {
+//         slides.forEach((slide, i) => {
+//             slide.classList.toggle('active', i === index);
+//         });
+//     }
+//
+//     prevBtn.addEventListener('click', () => {
+//         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+//         showSlide(currentSlide);
+//     });
+//
+//     nextBtn.addEventListener('click', () => {
+//         currentSlide = (currentSlide + 1pca) % slides.length;
+//         showSlide(currentSlide);
+//     });
+//
+//     // Auto-slide every 5 seconds
+//     setInterval(() => {
+//         currentSlide = (currentSlide + 1) % slides.length;
+//         showSlide(currentSlide);
+//     }, 5000);
+//
+//     // Initialize AOS
+//     AOS.init({ duration: 1000, once: true });
+// });
