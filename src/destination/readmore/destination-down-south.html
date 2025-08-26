@@ -1,26 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Sri Lanka's Cultural Triangle in 3 days - Sigiriya, Kandy, and Mirissa with authentic experiences and expert guides.">
-    <title>Cultural Triangle Tour - 3 Days | Visit Siyenga</title>
-    
-    <!-- Bootstrap CSS -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Explore Sri Lanka’s Cultural Triangle in 3 days — Sigiriya, Kandy & Mirissa with authentic experiences and expert guides."/>
+    <title>Cultural Triangle — 3 Days | Visit Siyenga</title>
+
+    <!-- Bootstrap / Icons / AOS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- AOS Animation -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="../../../css/style.css" rel="stylesheet">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+
+    <style>
+        :root{
+            --bg:#ecedf4;
+            --card:#ffffff;
+            --ink:#0f172a;
+            --muted:#64748b;
+            --primary:#2563eb;
+            --primary-ink:#ffffff;
+            --shadow-lg:0 24px 60px rgba(0,0,0,.16);
+            --shadow-md:0 12px 32px rgba(0,0,0,.10);
+            --radius-xl:28px;
+            --radius-2xl:40px;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family:'DM Sans', system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+            color:var(--ink);
+            background: radial-gradient(1500px 700px at -10% -20%, #c9d8ff 60%, rgba(201,216,255,0) 100%), var(--bg);
+        }
+        .page-wrap{max-width:1280px;margin:34px auto;padding:0 20px}
+
+        /* NAV (theme) */
+        #mainNav{
+            background:var(--card)!important;
+            border-radius:22px;
+            box-shadow:var(--shadow-md);
+            top:18px; left:0; right:0;
+            width:calc(100% - 40px);
+            margin:0 auto;
+            padding:10px 16px;
+            backdrop-filter:saturate(120%) blur(6px);
+        }
+        #mainNav .navbar-brand{font-weight:800; letter-spacing:.2px; color:#0b1432!important; display:flex; align-items:center; gap:10px;}
+        #mainNav .navbar-nav .nav-link{color:#334155!important; font-weight:600; margin:0 .2rem; border-radius:10px; padding:.55rem .9rem;}
+        #mainNav .navbar-nav .nav-link:hover{color:var(--primary)!important; background:#eff4ff}
+        .btn-primary{background:var(--primary)!important; border:0; border-radius:999px; padding:.75rem 1.15rem; font-weight:700}
+
+        /* SUB-HERO (same pattern as services.html) */
+        .sub-hero{margin-top:110px}
+        .sub-hero-card{position:relative; overflow:hidden; border-radius:var(--radius-2xl); box-shadow:var(--shadow-lg); background:#000;}
+        .sub-hero-bg{height:46vh; min-height:360px; max-height:520px; background-size:cover; background-position:center;}
+        .sub-hero-overlay{position:absolute; inset:0; background:linear-gradient(180deg,rgba(2,8,23,0) 35%, rgba(2,8,23,.62) 86%)}
+        .sub-hero-content{position:absolute; inset:0; display:grid; align-content:end; padding:28px 32px 32px}
+        .sub-hero-title{font-size: clamp(28px, 4vw, 48px); font-weight:800; color:#fff; letter-spacing:-.02em; margin-bottom:.5rem; text-shadow:0 6px 24px rgba(0,0,0,.28)}
+        .sub-hero-sub{color:#e5e7eb; opacity:.95; max-width:960px; margin:0 auto}
+
+        /* Section headings */
+        .section-title{font-weight:800; letter-spacing:-.02em}
+        .section-subtitle{color:var(--muted)}
+        .lead{color:#334155}
+
+        /* Overview */
+        .overview-card{
+            background:var(--card); border:1px solid #e8edff; border-radius:var(--radius-xl); box-shadow:0 10px 28px rgba(0,0,0,.06); padding:24px;
+        }
+        .overview-media{border-radius:22px; overflow:hidden; box-shadow:0 16px 34px rgba(0,0,0,.12)}
+        .overview-media img{width:100%; height:40%; object-fit:cover}
+
+        /* Itinerary (timeline cards) */
+        .itin-wrap{display:grid; gap:16px}
+        .itin-day{
+            position:relative; background:#f8faff; border:1px solid #e9efff; border-radius:22px; padding:22px;
+            box-shadow:0 6px 14px rgba(0,0,0,.05); transition:.2s ease;
+        }
+        .itin-day:hover{transform:translateY(-2px); background:#f2f6ff}
+        .itin-num{width:42px;height:42px;border-radius:12px;background:#eaf1ff;color:#2563ebcc;display:grid;place-items:center;font-weight:800;position:absolute;left:18px;top:-18px; box-shadow:0 6px 16px rgba(37,99,235,.18)}
+        .itin-day h4{margin-left:60px; margin-top:0}
+        .itin-day p,.itin-day ul{margin-left:60px}
+        .itin-day ul{padding-left:18px}
+        .itin-day li{color:#4a5b71; font-weight:300; margin:.25rem 0}
+
+        /* Gallery */
+        .gallery-grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fill, minmax(240px,1fr));}
+        .g-item{border-radius:18px; overflow:hidden; background:#0b122b; cursor:pointer; box-shadow:0 16px 34px rgba(0,0,0,.14); transition:transform .22s ease, box-shadow .22s ease}
+        .g-item:hover{transform:translateY(-4px); box-shadow:0 22px 54px rgba(0,0,0,.16)}
+        .g-item img{width:100%; height:200px; object-fit:cover; display:block}
+
+        /* Share + CTA */
+        .cta-card{
+            background:linear-gradient(135deg, #2563eb, #4f46e5);
+            color:#fff; border-radius:28px; padding:28px; box-shadow:var(--shadow-lg);
+        }
+        .share-btn{
+            display:inline-flex; align-items:center; gap:10px; padding:.8rem 1.2rem; border-radius:999px; font-weight:700;
+            background:#fff; color:#0b1432; border:1px solid #dfe8ff; text-decoration:none; margin:.25rem;
+        }
+        .share-btn:hover{background:#eff4ff}
+        .book-btn{background:#fff; color:#1e3a8a; border:1px solid #cfe0ff; border-radius:999px; padding:1rem 1.25rem; font-weight:800; text-decoration:none}
+
+        /* Footer tweaks */
+        footer{border-top-left-radius:28px;border-top-right-radius:28px}
+        footer .input-group .form-control{border-radius:999px 0 0 999px}
+        footer .input-group .btn{border-radius:0 999px 999px 0}
+
+        @media (max-width:760px){
+            #mainNav{width:calc(100% - 24px)}
+            .itin-day h4, .itin-day p, .itin-day ul{margin-left:56px}
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
+<div class="page-wrap">
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container-fluid px-3">
             <a class="navbar-brand" href="../../../index.html">
                 <i class="fas fa-compass me-2"></i>Visit Siyenga
             </a>
@@ -28,275 +127,259 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../destinations.html">Destinations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../contact.html">Contact</a>
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="../../../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../destinations.html">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../contact.html">Contact</a></li>
+                    <li class="ms-lg-3 mt-2 mt-lg-0">
+                        <a href="../destinations.html" class="btn btn-primary btn-sm">Get Started</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Destination Hero -->
-    <section class="destination-hero" style="background-image: url('https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');">
-        <div class="destination-hero-overlay"></div>
-        <div class="container">
-            <div class="destination-hero-content">
-                <h1 class="destination-hero-title" data-aos="fade-up">Down South</h1>
-                <p class="destination-hero-subtitle" data-aos="fade-up" data-aos-delay="200">3 Days of Ancient Wonders & Sacred Sites</p>
+    <!-- SUB-HERO -->
+    <section class="sub-hero">
+        <div class="sub-hero-card">
+            <div class="sub-hero-bg" style="background-image:url('https://images.pexels.com/photos/10498070/pexels-photo-10498070.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');"></div>
+            <div class="sub-hero-overlay"></div>
+            <div class="sub-hero-content">
+                <div class="container text-center">
+                    <h1 class="sub-hero-title" data-aos="fade-up">Cultural Triangle — 3 Days</h1>
+                    <p class="sub-hero-sub" data-aos="fade-up" data-aos-delay="200">
+                        Sigiriya • Kandy • Mirissa — ancient wonders, sacred sites, and golden coasts.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Overview Section -->
-    <section class="destination-overview">
+    <!-- OVERVIEW -->
+    <section class="py-5">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row g-4 align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
-                    <h2 class="section-title">Short and Sweet Getaway</h2>
-                    <p class="lead">A quick getaway to explore Sri Lanka's iconic sights in just 3 days, featuring Sigiriya, Kandy, and Mirissa with related activities.</p>
-                    <p>This carefully crafted tour takes you through Sri Lanka's most celebrated destinations, combining ancient history, spiritual heritage, and coastal beauty. Perfect for travelers with limited time who want to experience the essence of Ceylon.</p>
-                    <div class="row mt-4">
-                        <div class="col-md-4 mb-3">
-                            <div class="text-center">
+                    <div class="overview-card">
+                        <h2 class="section-title mb-2">Short and Sweet Getaway</h2>
+                        <p class="lead">A quick escape through Sri Lanka’s icons in just 3 days — Sigiriya, Kandy, and Mirissa with curated activities.</p>
+                        <p class="mb-4">This compact itinerary blends ancient history, living heritage, and coastal calm. Ideal if you’re tight on time but want the island’s essential flavor.</p>
+
+                        <div class="row text-center">
+                            <div class="col-4">
                                 <i class="fas fa-calendar text-primary fa-2x mb-2"></i>
-                                <h5>Duration</h5>
-                                <p>3 Days / 2 Nights</p>
+                                <h6 class="mb-0">Duration</h6><small>3 Days / 2 Nights</small>
                             </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="text-center">
+                            <div class="col-4">
                                 <i class="fas fa-users text-primary fa-2x mb-2"></i>
-                                <h5>Group Size</h5>
-                                <p>Customizable</p>
+                                <h6 class="mb-0">Group Size</h6><small>Customizable</small>
                             </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="text-center">
+                            <div class="col-4">
                                 <i class="fas fa-dollar-sign text-primary fa-2x mb-2"></i>
-                                <h5>Price</h5>
-                                <p>$349.00</p>
+                                <h6 class="mb-0">Price</h6><small>$349.00</small>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <img src="https://images.pexels.com/photos/10498070/pexels-photo-10498070.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sigiriya Rock Fortress" class="destination-overview-image">
+                    <div class="overview-media">
+                        <img src="../sigiriya.jpg" alt="Sigiriya Rock Fortress">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Itinerary Section -->
-    <section class="itinerary-section">
+    <!-- ITINERARY -->
+    <section class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center mb-5">
+                <div class="col-12 text-center mb-4">
                     <h2 class="section-title" data-aos="fade-up">Day-by-Day Itinerary</h2>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Your journey through Sri Lanka's cultural heartland</p>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">Your journey through Sri Lanka’s cultural heartland</p>
                 </div>
             </div>
-            
-            <div class="row">
-                <div class="col-12">
-                    <div class="itinerary-day" data-aos="fade-up" data-aos-delay="100">
-                        <div class="itinerary-day-number">1</div>
-                        <h4>Arrival & Sigiriya Rock Fortress</h4>
-                        <p>Begin your Sri Lankan adventure with the iconic Sigiriya Rock Fortress, a UNESCO World Heritage site rising 200 meters above the surrounding plains.</p>
-                        <ul class="itinerary-activities">
-                            <li>Airport pickup and transfer to Sigiriya</li>
-                            <li>Climb the ancient Sigiriya Rock Fortress</li>
-                            <li>Explore the royal gardens and water features</li>
-                            <li>Visit the famous frescoes of the "Heavenly Maidens"</li>
-                            <li>Sunset viewing from Pidurangala Rock (optional)</li>
-                            <li>Overnight stay in Sigiriya</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="itinerary-day" data-aos="fade-up" data-aos-delay="200">
-                        <div class="itinerary-day-number">2</div>
-                        <h4>Kandy - Cultural Capital</h4>
-                        <p>Journey to Kandy, the last royal capital of Sri Lanka, nestled in the hills and home to the sacred Temple of the Tooth.</p>
-                        <ul class="itinerary-activities">
-                            <li>Morning departure to Kandy via scenic route</li>
-                            <li>Visit a traditional spice garden</li>
-                            <li>Explore the Temple of the Sacred Tooth Relic</li>
-                            <li>Walk around the beautiful Kandy Lake</li>
-                            <li>Traditional Kandyan dance performance</li>
-                            <li>Shopping at Kandy's local markets</li>
-                            <li>Overnight stay in Kandy</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="itinerary-day" data-aos="fade-up" data-aos-delay="300">
-                        <div class="itinerary-day-number">3</div>
-                        <h4>Mirissa Beach & Departure</h4>
-                        <p>Complete your journey with relaxation at the pristine Mirissa Beach, known for its golden sands and whale watching opportunities.</p>
-                        <ul class="itinerary-activities">
-                            <li>Early morning departure to Mirissa</li>
-                            <li>Relax at the beautiful Mirissa Beach</li>
-                            <li>Optional whale watching excursion (seasonal)</li>
-                            <li>Fresh seafood lunch by the beach</li>
-                            <li>Visit the iconic Coconut Tree Hill</li>
-                            <li>Transfer to airport for departure</li>
-                        </ul>
-                    </div>
-                </div>
+
+            <div class="itin-wrap">
+                <article class="itin-day" data-aos="fade-up" data-aos-delay="50">
+                    <div class="itin-num">1</div>
+                    <h4>Arrival & Sigiriya Rock Fortress</h4>
+                    <p>Touch down and head straight to the lion’s fortress — a 200m monolith crowned by ancient splendor.</p>
+                    <ul>
+                        <li>Airport pickup and transfer to Sigiriya</li>
+                        <li>Climb the Sigiriya Rock Fortress (UNESCO)</li>
+                        <li>Royal gardens & water features</li>
+                        <li>Frescoes of the “Heavenly Maidens”</li>
+                        <li>Optional sunset at Pidurangala</li>
+                        <li>Overnight in Sigiriya</li>
+                    </ul>
+                </article>
+
+                <article class="itin-day" data-aos="fade-up" data-aos-delay="120">
+                    <div class="itin-num">2</div>
+                    <h4>Kandy — The Hill Capital</h4>
+                    <p>Wind into the hills for temples, dance, and lakeside calm in the island’s last royal city.</p>
+                    <ul>
+                        <li>Scenic drive to Kandy via spice garden</li>
+                        <li>Temple of the Sacred Tooth Relic</li>
+                        <li>Stroll around Kandy Lake</li>
+                        <li>Traditional Kandyan dance performance</li>
+                        <li>Markets & craft shops</li>
+                        <li>Overnight in Kandy</li>
+                    </ul>
+                </article>
+
+                <article class="itin-day" data-aos="fade-up" data-aos-delay="180">
+                    <div class="itin-num">3</div>
+                    <h4>Mirissa Beach & Departure</h4>
+                    <p>Finish with sea breeze and sand — or chase giants on a seasonal whale-watching cruise.</p>
+                    <ul>
+                        <li>Early departure to Mirissa</li>
+                        <li>Relax on the golden beach</li>
+                        <li>Optional whale watching (seasonal)</li>
+                        <li>Seafood lunch by the shore</li>
+                        <li>Visit Coconut Tree Hill</li>
+                        <li>Transfer to airport</li>
+                    </ul>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="destination-gallery-section">
+    <!-- GALLERY -->
+    <section class="py-4">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center mb-5">
+                <div class="col-12 text-center mb-4">
                     <h2 class="section-title" data-aos="fade-up">Tour Gallery</h2>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Glimpses of your cultural triangle adventure</p>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">Glimpses of your Cultural Triangle adventure</p>
                 </div>
             </div>
-            <div class="destination-gallery-grid" data-aos="fade-up" data-aos-delay="300">
-                <div class="destination-gallery-item" onclick="openLightbox('https://images.pexels.com/photos/10498070/pexels-photo-10498070.jpeg?auto=compress&cs=tinysrgb&w=1200', 'Sigiriya Rock Fortress')">
-                    <img src="https://images.pexels.com/photos/10498070/pexels-photo-10498070.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Sigiriya" class="destination-gallery-image">
+
+            <div class="gallery-grid" data-aos="fade-up" data-aos-delay="250">
+                <div class="g-item" onclick="openLightbox('https://images.pexels.com/photos/10498070/pexels-photo-10498070.jpeg?auto=compress&cs=tinysrgb&w=1400', 'Sigiriya Rock Fortress')">
+                    <img src="https://images.pexels.com/photos/10498070/pexels-photo-10498070.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Sigiriya">
                 </div>
-                <div class="destination-gallery-item" onclick="openLightbox('https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?auto=compress&cs=tinysrgb&w=1200', 'Temple of the Tooth Kandy')">
-                    <img src="https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Kandy Temple" class="destination-gallery-image">
+                <div class="g-item" onclick="openLightbox('https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?auto=compress&cs=tinysrgb&w=1400', 'Temple of the Tooth, Kandy')">
+                    <img src="https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Temple of the Tooth">
                 </div>
-                <div class="destination-gallery-item" onclick="openLightbox('https://images.pexels.com/photos/1680140/pexels-photo-1680140.jpeg?auto=compress&cs=tinysrgb&w=1200', 'Mirissa Beach Paradise')">
-                    <img src="https://images.pexels.com/photos/1680140/pexels-photo-1680140.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Mirissa Beach" class="destination-gallery-image">
+                <div class="g-item" onclick="openLightbox('https://images.pexels.com/photos/1680140/pexels-photo-1680140.jpeg?auto=compress&cs=tinysrgb&w=1400', 'Mirissa Beach Paradise')">
+                    <img src="https://images.pexels.com/photos/1680140/pexels-photo-1680140.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Mirissa Beach">
                 </div>
-                <div class="destination-gallery-item" onclick="openLightbox('https://images.pexels.com/photos/1557843/pexels-photo-1557843.jpeg?auto=compress&cs=tinysrgb&w=1200', 'Traditional Kandyan Dance')">
-                    <img src="https://images.pexels.com/photos/1557843/pexels-photo-1557843.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Cultural Dance" class="destination-gallery-image">
+                <div class="g-item" onclick="openLightbox('https://images.pexels.com/photos/1557843/pexels-photo-1557843.jpeg?auto=compress&cs=tinysrgb&w=1400', 'Traditional Kandyan Dance')">
+                    <img src="https://images.pexels.com/photos/1557843/pexels-photo-1557843.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Kandyan Dance">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Share Section -->
-    <section class="social-share-section">
+    <!-- SHARE + BOOK -->
+    <section class="py-4">
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h3 data-aos="fade-up">Share This Amazing Experience</h3>
-                    <p data-aos="fade-up" data-aos-delay="200">Tell your friends about this incredible Sri Lankan adventure</p>
-                    <div class="social-share-buttons" data-aos="fade-up" data-aos-delay="300">
-                        <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" class="social-share-btn facebook-btn">
-                            <i class="fab fa-facebook-f"></i>Share on Facebook
-                        </a>
-                        <a href="https://wa.me/94779961170?text=Check%20out%20this%20amazing%20Cultural%20Triangle%20tour%20in%20Sri%20Lanka!" target="_blank" class="social-share-btn whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i>Share on WhatsApp
-                        </a>
+            <div class="cta-card" data-aos="fade-up">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h2 class="mb-2">Ready to explore Sri Lanka’s Cultural Triangle?</h2>
+                        <p class="mb-3">Share with friends or lock in your dates — we’ll make it smooth and unforgettable.</p>
+                        <a class="share-btn" target="_blank" href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i>Share on Facebook</a>
+                        <a class="share-btn" target="_blank" href="https://wa.me/94779961170?text=Check%20out%20this%203-day%20Cultural%20Triangle%20tour%20in%20Sri%20Lanka!"><i class="fab fa-whatsapp"></i>Share on WhatsApp</a>
+                    </div>
+                    <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                        <a class="book-btn" target="_blank" href="https://forms.gle/VDrLYWPTGUb3Gs5A6"><i class="fas fa-calendar-check me-2"></i>Book This Tour</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Booking CTA Section -->
-    <section class="booking-cta-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h2 data-aos="fade-up">Ready to Explore Sri Lanka's Cultural Triangle?</h2>
-                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Book your 3-day cultural adventure today and create memories that will last a lifetime.</p>
-                    <a href="https://forms.gle/VDrLYWPTGUb3Gs5A6" target="_blank" class="booking-cta-btn" data-aos="fade-up" data-aos-delay="300">
-                        <i class="fas fa-calendar-check me-2"></i>Book This Tour Now
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+</div><!-- /.page-wrap -->
 
-    <!-- Lightbox Modal -->
-    <div class="modal fade" id="lightboxModal" tabindex="-1" aria-labelledby="lightboxModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content bg-transparent border-0">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center p-0">
-                    <img id="lightboxImage" src="" alt="" class="img-fluid rounded">
-                    <div class="mt-3">
-                        <h5 id="lightboxTitle" class="text-white"></h5>
-                    </div>
+<!-- LIGHTBOX MODAL -->
+<div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content bg-transparent border-0">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center p-0">
+                <img id="lightboxImage" src="" alt="" class="img-fluid rounded">
+                <div class="mt-3">
+                    <h5 id="lightboxTitle" class="text-white"></h5>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h5><i class="fas fa-compass me-2"></i>Visit Siyenga</h5>
-                    <p>Your trusted local partner for authentic Sri Lankan adventures. We specialize in eco-friendly tours that showcase our island's incredible natural beauty and rich cultural heritage.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://wa.me/94779961170" target="_blank" class="text-white me-3"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <h6>Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="../../../index.html" class="text-white-50">Home</a></li>
-                        <li><a href="../../../about.html" class="text-white-50">About</a></li>
-                        <li><a href="../../../services.html" class="text-white-50">Services</a></li>
-                        <li><a href="../destinations.html" class="text-white-50">Destinations</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h6>Contact Info</h6>
-                    <ul class="list-unstyled">
-                        <li class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i>352/16C Thalpitiya south Wadduwa</li>
-                        <li class="text-white-50"><i class="fas fa-phone me-2"></i>+94 77 996 1170</li>
-                        <li class="text-white-50"><i class="fas fa-envelope me-2"></i>bentourslanka@gmail.com</li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h6>Newsletter</h6>
-                    <p class="text-white-50">Subscribe to receive our latest offers and travel updates.</p>
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Your email">
-                        <button class="btn btn-primary" type="button">Subscribe</button>
-                    </div>
+<!-- FOOTER (theme) -->
+<footer class="bg-dark text-white py-5 mt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <h5><i class="fas fa-compass me-2"></i>Visit Siyenga</h5>
+                <p>Your trusted local partner for authentic Sri Lankan adventures. We specialize in eco-friendly tours that showcase our island's incredible natural beauty and rich cultural heritage.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/94779961170" target="_blank" class="text-white me-3"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-            <hr class="my-4">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="text-white-50 mb-0">&copy; 2024 Visit Siyenga. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="#" class="text-white-50 me-3">Privacy Policy</a>
-                    <a href="#" class="text-white-50">Terms of Service</a>
+            <div class="col-lg-2 col-md-4 mb-4">
+                <h6>Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="../../../index.html" class="text-white-50">Home</a></li>
+                    <li><a href="../../../about.html" class="text-white-50">About</a></li>
+                    <li><a href="../../../services.html" class="text-white-50">Services</a></li>
+                    <li><a href="../destinations.html" class="text-white-50">Destinations</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4">
+                <h6>Contact Info</h6>
+                <ul class="list-unstyled">
+                    <li class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i>352/16C Thalpitiya South, Wadduwa</li>
+                    <li class="text-white-50"><i class="fas fa-phone me-2"></i>+94 77 996 1170</li>
+                    <li class="text-white-50"><i class="fas fa-envelope me-2"></i>bentourslanka@gmail.com</li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4">
+                <h6>Newsletter</h6>
+                <p class="text-white-50">Subscribe to receive our latest offers and travel updates.</p>
+                <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Your email">
+                    <button class="btn btn-primary" type="button">Subscribe</button>
                 </div>
             </div>
         </div>
-    </footer>
+        <hr class="my-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-white-50 mb-0">&copy; <span id="year"></span> Visit Siyenga. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="#" class="text-white-50 me-3">Privacy Policy</a>
+                <a href="#" class="text-white-50">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- AOS Animation -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <!-- Custom JS -->
-    <script src="../../../js/script.js"></script>
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    // AOS + Year
+    AOS.init({ once:true, duration:700, easing:'ease-out-cubic' });
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple Lightbox
+    function openLightbox(src, title){
+        document.getElementById('lightboxImage').src = src;
+        document.getElementById('lightboxTitle').textContent = title || '';
+        const modal = new bootstrap.Modal(document.getElementById('lightboxModal'));
+        modal.show();
+    }
+</script>
 </body>
 </html>
