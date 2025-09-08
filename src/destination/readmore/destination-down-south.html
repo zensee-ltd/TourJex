@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,40 +7,40 @@
     <meta name="description" content="Explore Sri Lanka’s Cultural Triangle in 3 days — Sigiriya, Kandy & Mirissa with authentic experiences and expert guides."/>
     <title>Cultural Triangle — 3 Days | Visit Siyenga</title>
 
-    <!-- Bootstrap / Icons / AOS -->
+    &lt;!&ndash; Bootstrap / Icons / AOS &ndash;&gt;
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <!-- Font -->
+    &lt;!&ndash; Font &ndash;&gt;
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet"/>
 
     <style>
         :root{
-            --bg:#ecedf4;
-            --card:#ffffff;
-            --ink:#0f172a;
-            --muted:#64748b;
-            --primary:#2563eb;
-            --primary-ink:#ffffff;
-            --shadow-lg:0 24px 60px rgba(0,0,0,.16);
-            --shadow-md:0 12px 32px rgba(0,0,0,.10);
-            --radius-xl:28px;
-            --radius-2xl:40px;
+            &#45;&#45;bg:#ecedf4;
+            &#45;&#45;card:#ffffff;
+            &#45;&#45;ink:#0f172a;
+            &#45;&#45;muted:#64748b;
+            &#45;&#45;primary:#2563eb;
+            &#45;&#45;primary-ink:#ffffff;
+            &#45;&#45;shadow-lg:0 24px 60px rgba(0,0,0,.16);
+            &#45;&#45;shadow-md:0 12px 32px rgba(0,0,0,.10);
+            &#45;&#45;radius-xl:28px;
+            &#45;&#45;radius-2xl:40px;
         }
         *{box-sizing:border-box}
         body{
             margin:0;
             font-family:'DM Sans', system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-            color:var(--ink);
-            background: radial-gradient(1500px 700px at -10% -20%, #c9d8ff 60%, rgba(201,216,255,0) 100%), var(--bg);
+            color:var(&#45;&#45;ink);
+            background: radial-gradient(1500px 700px at -10% -20%, #c9d8ff 60%, rgba(201,216,255,0) 100%), var(&#45;&#45;bg);
         }
         .page-wrap{max-width:1280px;margin:34px auto;padding:0 20px}
 
         /* NAV (theme) */
         #mainNav{
-            background:var(--card)!important;
+            background:var(&#45;&#45;card)!important;
             border-radius:22px;
-            box-shadow:var(--shadow-md);
+            box-shadow:var(&#45;&#45;shadow-md);
             top:18px; left:0; right:0;
             width:calc(100% - 40px);
             margin:0 auto;
@@ -48,12 +49,12 @@
         }
         #mainNav .navbar-brand{font-weight:800; letter-spacing:.2px; color:#0b1432!important; display:flex; align-items:center; gap:10px;}
         #mainNav .navbar-nav .nav-link{color:#334155!important; font-weight:600; margin:0 .2rem; border-radius:10px; padding:.55rem .9rem;}
-        #mainNav .navbar-nav .nav-link:hover{color:var(--primary)!important; background:#eff4ff}
-        .btn-primary{background:var(--primary)!important; border:0; border-radius:999px; padding:.75rem 1.15rem; font-weight:700}
+        #mainNav .navbar-nav .nav-link:hover{color:var(&#45;&#45;primary)!important; background:#eff4ff}
+        .btn-primary{background:var(&#45;&#45;primary)!important; border:0; border-radius:999px; padding:.75rem 1.15rem; font-weight:700}
 
         /* SUB-HERO (same pattern as services.html) */
         .sub-hero{margin-top:110px}
-        .sub-hero-card{position:relative; overflow:hidden; border-radius:var(--radius-2xl); box-shadow:var(--shadow-lg); background:#000;}
+        .sub-hero-card{position:relative; overflow:hidden; border-radius:var(&#45;&#45;radius-2xl); box-shadow:var(&#45;&#45;shadow-lg); background:#000;}
         .sub-hero-bg{height:46vh; min-height:360px; max-height:520px; background-size:cover; background-position:center;}
         .sub-hero-overlay{position:absolute; inset:0; background:linear-gradient(180deg,rgba(2,8,23,0) 35%, rgba(2,8,23,.62) 86%)}
         .sub-hero-content{position:absolute; inset:0; display:grid; align-content:end; padding:28px 32px 32px}
@@ -62,12 +63,12 @@
 
         /* Section headings */
         .section-title{font-weight:800; letter-spacing:-.02em}
-        .section-subtitle{color:var(--muted)}
+        .section-subtitle{color:var(&#45;&#45;muted)}
         .lead{color:#334155}
 
         /* Overview */
         .overview-card{
-            background:var(--card); border:1px solid #e8edff; border-radius:var(--radius-xl); box-shadow:0 10px 28px rgba(0,0,0,.06); padding:24px;
+            background:var(&#45;&#45;card); border:1px solid #e8edff; border-radius:var(&#45;&#45;radius-xl); box-shadow:0 10px 28px rgba(0,0,0,.06); padding:24px;
         }
         .overview-media{border-radius:22px; overflow:hidden; box-shadow:0 16px 34px rgba(0,0,0,.12)}
         .overview-media img{width:100%; height:40%; object-fit:cover}
@@ -94,7 +95,7 @@
         /* Share + CTA */
         .cta-card{
             background:linear-gradient(135deg, #2563eb, #4f46e5);
-            color:#fff; border-radius:28px; padding:28px; box-shadow:var(--shadow-lg);
+            color:#fff; border-radius:28px; padding:28px; box-shadow:var(&#45;&#45;shadow-lg);
         }
         .share-btn{
             display:inline-flex; align-items:center; gap:10px; padding:.8rem 1.2rem; border-radius:999px; font-weight:700;
@@ -117,7 +118,7 @@
 <body>
 <div class="page-wrap">
 
-    <!-- NAV -->
+    &lt;!&ndash; NAV &ndash;&gt;
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container-fluid px-3">
             <a class="navbar-brand" href="../../../index.html">
@@ -142,7 +143,7 @@
         </div>
     </nav>
 
-    <!-- SUB-HERO -->
+    &lt;!&ndash; SUB-HERO &ndash;&gt;
     <section class="sub-hero">
         <div class="sub-hero-card">
             <div class="sub-hero-bg" style="background-image:url('https://images.pexels.com/photos/10498070/pexels-photo-10498070.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');"></div>
@@ -158,7 +159,7 @@
         </div>
     </section>
 
-    <!-- OVERVIEW -->
+    &lt;!&ndash; OVERVIEW &ndash;&gt;
     <section class="py-5">
         <div class="container">
             <div class="row g-4 align-items-center">
@@ -193,7 +194,7 @@
         </div>
     </section>
 
-    <!-- ITINERARY -->
+    &lt;!&ndash; ITINERARY &ndash;&gt;
     <section class="py-5">
         <div class="container">
             <div class="row">
@@ -249,7 +250,7 @@
         </div>
     </section>
 
-    <!-- GALLERY -->
+    &lt;!&ndash; GALLERY &ndash;&gt;
     <section class="py-4">
         <div class="container">
             <div class="row">
@@ -276,7 +277,7 @@
         </div>
     </section>
 
-    <!-- SHARE + BOOK -->
+    &lt;!&ndash; SHARE + BOOK &ndash;&gt;
     <section class="py-4">
         <div class="container">
             <div class="cta-card" data-aos="fade-up">
@@ -295,9 +296,9 @@
         </div>
     </section>
 
-</div><!-- /.page-wrap -->
+</div>&lt;!&ndash; /.page-wrap &ndash;&gt;
 
-<!-- LIGHTBOX MODAL -->
+&lt;!&ndash; LIGHTBOX MODAL &ndash;&gt;
 <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content bg-transparent border-0">
@@ -314,7 +315,861 @@
     </div>
 </div>
 
-<!-- FOOTER (theme) -->
+&lt;!&ndash; FOOTER (theme) &ndash;&gt;
+<footer class="bg-dark text-white py-5 mt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <h5><i class="fas fa-compass me-2"></i>Visit Siyenga</h5>
+                <p>Your trusted local partner for authentic Sri Lankan adventures. We specialize in eco-friendly tours that showcase our island's incredible natural beauty and rich cultural heritage.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/94779961170" target="_blank" class="text-white me-3"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4">
+                <h6>Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="../../../index.html" class="text-white-50">Home</a></li>
+                    <li><a href="../../../about.html" class="text-white-50">About</a></li>
+                    <li><a href="../../../services.html" class="text-white-50">Services</a></li>
+                    <li><a href="../destinations.html" class="text-white-50">Destinations</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4">
+                <h6>Contact Info</h6>
+                <ul class="list-unstyled">
+                    <li class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i>352/16C Thalpitiya South, Wadduwa</li>
+                    <li class="text-white-50"><i class="fas fa-phone me-2"></i>+94 77 996 1170</li>
+                    <li class="text-white-50"><i class="fas fa-envelope me-2"></i>visitsiyenga@gmail.com</li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4">
+                <h6>Newsletter</h6>
+                <p class="text-white-50">Subscribe to receive our latest offers and travel updates.</p>
+                <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Your email">
+                    <button class="btn btn-primary" type="button">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-white-50 mb-0">&copy; <span id="year"></span> Visit Siyenga. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="#" class="text-white-50 me-3">Privacy Policy</a>
+                <a href="#" class="text-white-50">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+&lt;!&ndash; SCRIPTS &ndash;&gt;
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    // AOS + Year
+    AOS.init({ once:true, duration:700, easing:'ease-out-cubic' });
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple Lightbox
+    function openLightbox(src, title){
+        document.getElementById('lightboxImage').src = src;
+        document.getElementById('lightboxTitle').textContent = title || '';
+        const modal = new bootstrap.Modal(document.getElementById('lightboxModal'));
+        modal.show();
+    }
+</script>
+</body>
+</html>
+-->
+
+
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Destination details for Visit Siyenga — highlights, gallery, and Add to My Trip."/>
+    <title>Yala National Park — Visit Siyenga</title>
+
+    &lt;!&ndash; Bootstrap / Icons / AOS &ndash;&gt;
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    &lt;!&ndash; Font &ndash;&gt;
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+
+    <style>
+        :root{
+            &#45;&#45;bg:#ecedf4; &#45;&#45;card:#ffffff; &#45;&#45;ink:#0f172a; &#45;&#45;muted:#64748b;
+            &#45;&#45;primary:#2563eb; &#45;&#45;primary-ink:#ffffff; &#45;&#45;shadow-lg:0 24px 60px rgba(0,0,0,.16);
+            &#45;&#45;shadow-md:0 12px 32px rgba(0,0,0,.10); &#45;&#45;radius-xl:28px; &#45;&#45;radius-2xl:40px;
+        }
+        *{box-sizing:border-box}
+        body{margin:0; font-family:'DM Sans', system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(&#45;&#45;ink);
+            background: radial-gradient(1500px 700px at -10% -20%, #c9d8ff 60%, rgba(201,216,255,0) 100%), var(&#45;&#45;bg);
+        }
+        .page-wrap{max-width:1280px;margin:34px auto;padding:0 20px}
+
+        /* NAV (kept in-sync with destinations.html) */
+        #mainNav{background:var(&#45;&#45;card)!important; border-radius:22px; box-shadow:var(&#45;&#45;shadow-md);
+            top:18px; left:0; right:0; width:calc(100% - 40px); margin:0 auto; padding:10px 16px; backdrop-filter:saturate(120%) blur(6px);
+        }
+        #mainNav .navbar-brand{font-weight:800; letter-spacing:.2px; color:#0b1432!important; display:flex; align-items:center; gap:10px}
+        #mainNav .nav-link{color:#334155!important; font-weight:600; margin:0 .2rem; border-radius:10px; padding:.55rem .9rem}
+        #mainNav .nav-link:hover{color:var(&#45;&#45;primary)!important; background:#eff4ff}
+        .btn-primary{background:var(&#45;&#45;primary)!important; border:0; border-radius:999px; padding:.75rem 1.15rem; font-weight:700}
+        .btn-outline-primary{border-radius:999px}
+
+        /* HERO */
+        .hero{margin-top:110px}
+        .hero-card{position:relative; overflow:hidden; border-radius:var(&#45;&#45;radius-2xl); box-shadow:var(&#45;&#45;shadow-lg); background:#000}
+        .hero-bg{height:52vh; min-height:380px; max-height:560px; background-size:cover; background-position:center}
+        .hero-overlay{position:absolute; inset:0; background:linear-gradient(180deg,rgba(2,8,23,0) 28%, rgba(2,8,23,.62) 86%)}
+        .hero-content{position:absolute; inset:0; display:grid; align-content:end; padding:28px 32px 34px}
+        .hero-title{font-size:clamp(28px,4vw,52px); font-weight:800; color:#fff; letter-spacing:-.02em; margin-bottom:.25rem; text-shadow:0 6px 24px rgba(0,0,0,.28)}
+        .hero-sub{color:#e5e7eb; opacity:.95; max-width:960px; margin:0 auto}
+
+        /* Sections */
+        .section-title{font-weight:800; letter-spacing:-.02em}
+        .section-subtitle{color:var(&#45;&#45;muted)}
+
+        /* HIGHLIGHTS */
+        .highlights-grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+        .hl-card{background:var(&#45;&#45;card); border:1px solid #e8edff; border-radius:22px; box-shadow:0 10px 28px rgba(0,0,0,.06); overflow:hidden}
+        .hl-media{height:160px; background:#0b122b}
+        .hl-media img{width:100%; height:100%; object-fit:cover}
+        .hl-body{padding:16px 16px 18px}
+        .hl-title{font-weight:700; font-size:18px; margin:4px 0 6px}
+        .hl-desc{color:#4a5b71; font-weight:300; margin:0}
+        .hl-chip{display:inline-flex; align-items:center; gap:8px; background:#f8faff; border:1px solid #e9efff; color:#0f172a; padding:6px 10px; border-radius:999px; font-size:13px}
+
+        /* Gallery */
+        .gallery-grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fill, minmax(240px,1fr))}
+        .g-item{border-radius:18px; overflow:hidden; background:#0b122b; cursor:pointer; box-shadow:0 16px 34px rgba(0,0,0,.14); transition:transform .22s ease, box-shadow .22s ease}
+        .g-item:hover{transform:translateY(-4px); box-shadow:0 22px 54px rgba(0,0,0,.16)}
+        .g-item img{width:100%; height:200px; object-fit:cover; display:block}
+
+        /* CTA */
+        .cta{background:linear-gradient(135deg,#2563eb,#4f46e5); color:#fff; border-radius:28px; padding:24px; box-shadow:var(&#45;&#45;shadow-lg)}
+        .cta .btn{border-radius:999px; font-weight:800}
+        .btn-added{background:#10b981!important; color:#fff!important}
+
+        /* Floating Trip List Icon */
+        .floating-icon{position:fixed; bottom:20px; right:20px; background:var(&#45;&#45;primary); color:#fff; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:24px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,.2); z-index:9999; transition:transform .15s ease}
+        .floating-icon:hover{transform:translateY(-2px)}
+        .float-badge{position:absolute; top:-6px; right:-6px; background:#111827; color:#fff; border-radius:999px; font-size:12px; padding:2px 7px; border:2px solid #fff; box-shadow:0 2px 6px rgba(0,0,0,.2)}
+
+        /* Modal polish */
+        .modal-elevated .modal-content{border:0; border-radius:22px; box-shadow:var(&#45;&#45;shadow-lg)}
+        .modal-elevated .modal-header{border:0; padding:20px 24px; background:linear-gradient(135deg,#eef4ff,#ffffff); border-top-left-radius:22px; border-top-right-radius:22px}
+        .modal-elevated .modal-title{font-weight:800; letter-spacing:-.01em}
+        .list-group-compact .list-group-item{display:flex; align-items:center; justify-content:space-between; gap:12px; border:0; border-bottom:1px solid #eef2ff; padding:14px 0}
+        .list-destination{display:flex; align-items:center; gap:10px; font-weight:600; color:#0f172a}
+        .list-destination i{color:#2563eb}
+
+        footer{border-top-left-radius:28px;border-top-right-radius:28px}
+        footer .input-group .form-control{border-radius:999px 0 0 999px}
+        footer .input-group .btn{border-radius:0 999px 999px 0}
+
+        @media (max-width:760px){#mainNav{width:calc(100% - 24px)}}
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    &lt;!&ndash; NAV &ndash;&gt;
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container-fluid px-3">
+            <a class="navbar-brand" href="../../../index.html"><i class="fas fa-compass me-2"></i>Visit Siyenga</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="../../../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../destinations.html">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../contact.html">Contact</a></li>
+                    <li class="ms-lg-3 mt-2 mt-lg-0"><a href="../destinations.html" class="btn btn-primary btn-sm">Get Started</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    &lt;!&ndash; HERO (Large banner + short description) &ndash;&gt;
+    <section class="hero">
+        <div class="hero-card">
+            <div class="hero-bg" style="background-image:url('https://images.pexels.com/photos/1559822/pexels-photo-1559822.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="container text-center">
+                    <h1 class="hero-title" data-aos="fade-up">Yala National Park</h1>
+                    <p class="hero-sub" data-aos="fade-up" data-aos-delay="150">Yala is Sri Lanka’s most famous national park, known for one of the world’s highest leopard densities, thriving elephant herds, rich birdlife, and cinematic coastal dunes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    &lt;!&ndash; HIGHLIGHTS / ACTIVITIES (no fixed itinerary) &ndash;&gt;
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2 class="section-title" data-aos="fade-up">Key Highlights & Activities</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">Build your own flow — we’ll craft the route around these experiences</p>
+                </div>
+            </div>
+
+            <div class="highlights-grid">
+                &lt;!&ndash; Safari Drives &ndash;&gt;
+                <article class="hl-card" data-aos="fade-up">
+                    <div class="hl-media"><img src="https://images.pexels.com/photos/792381/pexels-photo-792381.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="Safari jeep in Yala"></div>
+                    <div class="hl-body">
+                        <span class="hl-chip"><i class="fa-solid fa-binoculars"></i> Safari Drives</span>
+                        <h3 class="hl-title">Leopard & Elephant Safaris</h3>
+                        <p class="hl-desc">Golden-hour jeep drives in Blocks I & V with expert trackers to find leopards, elephants, sloth bears, and more.</p>
+                    </div>
+                </article>
+                &lt;!&ndash; Bird Watching &ndash;&gt;
+                <article class="hl-card" data-aos="fade-up" data-aos-delay="60">
+                    <div class="hl-media"><img src="https://images.pexels.com/photos/326900/pexels-photo-326900.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="Bird watching"></div>
+                    <div class="hl-body">
+                        <span class="hl-chip"><i class="fa-solid fa-dove"></i> Birding</span>
+                        <h3 class="hl-title">Bird Watching</h3>
+                        <p class="hl-desc">Wetlands and scrub forest host raptors, bee-eaters, storks, and seasonal migrants — bring your long lens.</p>
+                    </div>
+                </article>
+                &lt;!&ndash; Scenic Jeep Tours &ndash;&gt;
+                <article class="hl-card" data-aos="fade-up" data-aos-delay="120">
+                    <div class="hl-media"><img src="https://images.pexels.com/photos/165943/pexels-photo-165943.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="Scenic dunes"></div>
+                    <div class="hl-body">
+                        <span class="hl-chip"><i class="fa-solid fa-route"></i> Scenic</span>
+                        <h3 class="hl-title">Scenic Jeep Tours</h3>
+                        <p class="hl-desc">Dune-backed beaches, lagoons, and thorny savannah — routes tuned to your pace (sunrise or sunset runs).</p>
+                    </div>
+                </article>
+                &lt;!&ndash; Nature Walks / Camping &ndash;&gt;
+                <article class="hl-card" data-aos="fade-up" data-aos-delay="180">
+                    <div class="hl-media"><img src="https://images.pexels.com/photos/1136575/pexels-photo-1136575.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="Camp under stars"></div>
+                    <div class="hl-body">
+                        <span class="hl-chip"><i class="fa-solid fa-tree"></i> Outdoors</span>
+                        <h3 class="hl-title">Nature Walks & Bush Camping</h3>
+                        <p class="hl-desc">Guided walks near buffer zones and tented glamping under a star-laced sky — low-impact and eco-friendly.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    &lt;!&ndash; OPTIONAL GALLERY &ndash;&gt;
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-3">
+                    <h2 class="section-title" data-aos="fade-up">Inspiration Gallery</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">A few moments to spark your plan</p>
+                </div>
+            </div>
+            <div class="gallery-grid" data-aos="fade-up" data-aos-delay="220">
+                <div class="g-item"><img src="https://images.pexels.com/photos/1449058/pexels-photo-1449058.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Elephants"></div>
+                <div class="g-item"><img src="https://images.pexels.com/photos/1298684/pexels-photo-1298684.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Lagoon"></div>
+                <div class="g-item"><img src="https://images.pexels.com/photos/843494/pexels-photo-843494.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Leopard"></div>
+                <div class="g-item"><img src="https://images.pexels.com/photos/158028/leopard-dangerous-big-cat-wildcat-158028.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Leopard close-up"></div>
+            </div>
+        </div>
+    </section>
+
+    &lt;!&ndash; CTA: Add to My Trip &ndash;&gt;
+    <section class="py-4">
+        <div class="container">
+            <div class="cta" data-aos="fade-up">
+                <div class="row align-items-center g-3">
+                    <div class="col-lg-8">
+                        <h3 class="mb-1">Include Yala in your plan?</h3>
+                        <p class="mb-0">Tap below to add it to your Trip List. When you’re ready, send us your list and we’ll craft a custom itinerary.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <button id="addBtn" class="btn btn-light px-4 py-2" type="button" onclick="addToTrip('Yala National Park')">
+                            <i class="fa-solid fa-plus me-2"></i> Add to My Trip
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>&lt;!&ndash; /.page-wrap &ndash;&gt;
+
+&lt;!&ndash; Floating Trip icon (shared across pages) &ndash;&gt;
+<div id="tripIcon" class="floating-icon" onclick="openTripList()" style="display:none;">
+    <i class="fa-solid fa-suitcase-rolling"></i>
+    <span id="tripCount" class="float-badge">0</span>
+</div>
+
+&lt;!&ndash; Trip List Modal &ndash;&gt;
+<div class="modal fade modal-elevated" id="tripModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title">Your Trip List</h5>
+                    <small class="text-muted">Destinations you’ve added. Remove or reorder anytime.</small>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="tripEmpty" class="text-center text-muted d-none p-3">No destinations yet. Tap “Add to My Trip”.</div>
+                <ul id="tripItems" class="list-group list-group-compact"></ul>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+                <button class="btn btn-outline-danger" type="button" onclick="clearTrip()"><i class="fa-solid fa-trash-can me-1"></i>Clear All</button>
+                <button id="inquiryBtn" class="btn btn-primary" type="button" onclick="sendInquiry()" disabled>Proceed to Inquiry</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+&lt;!&ndash; FOOTER (same theme) &ndash;&gt;
+<footer class="bg-dark text-white py-5 mt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <h5><i class="fas fa-compass me-2"></i>Visit Siyenga</h5>
+                <p>Your trusted local partner for authentic Sri Lankan adventures. Eco‑friendly, flexible, unforgettable.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/94779961170" target="_blank" class="text-white me-3"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4">
+                <h6>Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="../../../index.html" class="text-white-50">Home</a></li>
+                    <li><a href="../../../about.html" class="text-white-50">About</a></li>
+                    <li><a href="../../../services.html" class="text-white-50">Services</a></li>
+                    <li><a href="../destinations.html" class="text-white-50">Destinations</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4">
+                <h6>Contact Info</h6>
+                <ul class="list-unstyled">
+                    <li class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i>352/16C Thalpitiya South, Wadduwa</li>
+                    <li class="text-white-50"><i class="fas fa-phone me-2"></i>+94 77 996 1170</li>
+                    <li class="text-white-50"><i class="fas fa-envelope me-2"></i>visitsiyenga@gmail.com</li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4">
+                <h6>Newsletter</h6>
+                <p class="text-white-50">Subscribe to receive our latest offers and travel updates.</p>
+                <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Your email">
+                    <button class="btn btn-primary" type="button">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-white-50 mb-0">&copy; <span id="year"></span> Visit Siyenga. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="#" class="text-white-50 me-3">Privacy Policy</a>
+                <a href="#" class="text-white-50">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+&lt;!&ndash; SCRIPTS &ndash;&gt;
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({ once:true, duration:700, easing:'ease-out-cubic' });
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // -&#45;&#45; Trip List (shared logic) -&#45;&#45;
+    const STORAGE_KEY = 'tripList';
+    const FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSdY2COR1q8duWEOi4cn2tGKIdbC7SE05rkS64J2jOvBq2lhKQ/viewform?usp=pp_url';
+    const ENTRY_DEST = 'entry.662015136'; // checkbox field in your form
+
+    let tripList = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+
+    function persist(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(tripList)); }
+    function syncFloating(){
+        const icon = document.getElementById('tripIcon');
+        const badge = document.getElementById('tripCount');
+        icon.style.display = tripList.length ? 'flex' : 'none';
+        badge.textContent = tripList.length;
+    }
+    function renderModal(){
+        const empty = document.getElementById('tripEmpty');
+        const listEl = document.getElementById('tripItems');
+        const inquiryBtn = document.getElementById('inquiryBtn');
+        listEl.innerHTML = '';
+        if(tripList.length === 0){ empty.classList.remove('d-none'); inquiryBtn.disabled = true; }
+        else{
+            empty.classList.add('d-none'); inquiryBtn.disabled = false;
+            tripList.forEach((title, i)=>{
+                const li = document.createElement('li');
+                li.className = 'list-group-item';
+                li.innerHTML = `
+          <div class="list-destination"><i class="fa-solid fa-location-dot"></i><span>${title}</span></div>
+          <div class="d-flex align-items-center gap-2">
+            <button class="btn btn-sm btn-outline-secondary" title="Up" onclick="moveUp(${i})"><i class='fa-solid fa-arrow-up'></i></button>
+            <button class="btn btn-sm btn-outline-secondary" title="Down" onclick="moveDown(${i})"><i class='fa-solid fa-arrow-down'></i></button>
+            <button class="btn btn-sm btn-outline-danger" title="Remove" onclick="removeFromTrip(${i})"><i class='fa-solid fa-xmark'></i></button>
+          </div>`;
+                listEl.appendChild(li);
+            });
+        }
+    }
+    function markAddedIfNeeded(title){
+        const btn = document.getElementById('addBtn');
+        if(!btn) return;
+        if(tripList.includes(title)){
+            btn.classList.add('btn-added');
+            btn.innerHTML = '<i class="fa-solid fa-check me-2"></i> Added';
+            btn.disabled = true;
+        }
+    }
+
+    function addToTrip(title){
+        if(!tripList.includes(title)){
+            tripList.push(title); persist(); syncFloating(); renderModal();
+            const btn = document.getElementById('addBtn');
+            if(btn){ btn.classList.add('btn-added'); btn.innerHTML = '<i class="fa-solid fa-check me-2"></i> Added'; btn.disabled = true; }
+        }
+    }
+    function removeFromTrip(i){ tripList.splice(i,1); persist(); syncFloating(); renderModal(); if(tripList.length===0){ const btn=document.getElementById('addBtn'); if(btn){btn.classList.remove('btn-added'); btn.innerHTML='<i class="fa-solid fa-plus me-2"></i> Add to My Trip'; btn.disabled=false;} } }
+    function moveUp(i){ if(i<=0) return; [tripList[i-1], tripList[i]]=[tripList[i], tripList[i-1]]; persist(); renderModal(); }
+    function moveDown(i){ if(i>=tripList.length-1) return; [tripList[i+1], tripList[i]]=[tripList[i], tripList[i+1]]; persist(); renderModal(); }
+    function clearTrip(){ tripList=[]; persist(); syncFloating(); renderModal(); const btn=document.getElementById('addBtn'); if(btn){btn.classList.remove('btn-added'); btn.innerHTML='<i class="fa-solid fa-plus me-2"></i> Add to My Trip'; btn.disabled=false;} }
+    function openTripList(){ renderModal(); new bootstrap.Modal(document.getElementById('tripModal')).show(); }
+    function sendInquiry(){ if(tripList.length===0) return; const q = tripList.map(d=>`&${ENTRY_DEST}=${encodeURIComponent(d)}`).join(''); const url = FORM_BASE + q; window.open(url, '_blank'); }
+
+    document.addEventListener('DOMContentLoaded', ()=>{ syncFloating(); renderModal(); markAddedIfNeeded('Yala National Park'); });
+</script>
+&lt;!&ndash; Put this <script> at the very end of <body> on EVERY page that needs the Book List &ndash;&gt;
+<script>
+    /* &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; Shared Book List (localStorage) &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; */
+    const BL_STORAGE_KEY = 'tripList';                 // same key everywhere
+    const BL_FORM_BASE   = 'https://docs.google.com/forms/d/e/1FAIpQLSdY2COR1q8duWEOi4cn2tGKIdbC7SE05rkS64J2jOvBq2lhKQ/viewform?usp=pp_url';
+    const BL_ENTRY_DEST  = 'entry.662015136';          // your checkbox field id
+    let   bookList       = JSON.parse(localStorage.getItem(BL_STORAGE_KEY) || '[]');
+
+    function blPersist(){ localStorage.setItem(BL_STORAGE_KEY, JSON.stringify(bookList)); }
+    function blAdd(title){
+        if(!title) return;
+        if(!bookList.includes(title)){ bookList.push(title); blPersist(); }
+        blSyncFloating(); blRenderModal(); blUpdateAllAddButtons();
+    }
+    function blRemove(i){ bookList.splice(i,1); blPersist(); blSyncFloating(); blRenderModal(); blUpdateAllAddButtons(true); }
+    function blClear(){ bookList = []; blPersist(); blSyncFloating(); blRenderModal(); blUpdateAllAddButtons(true); }
+    function blMoveUp(i){ if(i<=0) return; [bookList[i-1],bookList[i]]=[bookList[i],bookList[i-1]]; blPersist(); blRenderModal(); }
+    function blMoveDown(i){ if(i>=bookList.length-1) return; [bookList[i+1],bookList[i]]=[bookList[i],bookList[i+1]]; blPersist(); blRenderModal(); }
+
+    function blSyncFloating(){
+        const icon  = document.getElementById('bookListIcon');
+        const badge = document.getElementById('bookCountBadge');
+        if(!icon||!badge) return;
+        icon.style.display = bookList.length ? 'flex' : 'none';
+        badge.textContent  = bookList.length;
+    }
+    function blRenderModal(){
+        const empty = document.getElementById('bookListEmpty');
+        const list  = document.getElementById('bookListItems');
+        const goBtn = document.getElementById('proceedBtn');
+        if(!empty||!list||!goBtn) return;
+
+        list.innerHTML = '';
+        if(bookList.length===0){
+            empty.classList.remove('d-none'); goBtn.disabled = true;
+        }else{
+            empty.classList.add('d-none');    goBtn.disabled = false;
+            bookList.forEach((t,i)=>{
+                const li = document.createElement('li');
+                li.className = 'list-group-item';
+                li.innerHTML = `
+        <div class="list-destination"><i class="fa-solid fa-location-dot"></i><span>${t}</span></div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-outline-secondary" onclick="blMoveUp(${i})"   title="Move up"><i class="fa-solid fa-arrow-up"></i></button>
+          <button class="btn btn-sm btn-outline-secondary" onclick="blMoveDown(${i})" title="Move down"><i class="fa-solid fa-arrow-down"></i></button>
+          <button class="btn btn-sm btn-outline-danger"    onclick="blRemove(${i})"   title="Remove"><i class="fa-solid fa-xmark"></i></button>
+        </div>`;
+                list.appendChild(li);
+            });
+        }
+    }
+    function blOpenModal(){ blRenderModal(); new bootstrap.Modal(document.getElementById('bookListModal')).show(); }
+    function blProceed(){
+        if(bookList.length===0) return;
+        const q = bookList.map(v=>`&${BL_ENTRY_DEST}=${encodeURIComponent(v)}`).join('');
+        window.open(BL_FORM_BASE + q, '_blank');
+    }
+
+    /* Mark/Unmark “Add to Book List” buttons across pages */
+    function blMarkAdded(btn){
+        btn.classList.add('btn-added');
+        btn.innerHTML = '<i class="fa-solid fa-check me-1"></i> Added';
+        btn.setAttribute('disabled','disabled');
+    }
+    function blResetBtn(btn){
+        btn.classList.remove('btn-added');
+        btn.innerHTML = 'Add to Book List';
+        btn.removeAttribute('disabled');
+    }
+    function blUpdateAllAddButtons(forceReset=false){
+        document.querySelectorAll('.add-btn[data-title]').forEach(btn=>{
+            const t = btn.dataset.title;
+            if(forceReset) blResetBtn(btn);
+            if(bookList.includes(t)) blMarkAdded(btn);
+        });
+    }
+
+    /* Auto-add when landing from Learn More via URL ?add=... */
+    function blAutoAddFromURL(){
+        const params = new URLSearchParams(location.search);
+        const add = params.get('add');
+        if(add) blAdd(add);
+    }
+
+    /* Convert plain Learn-More hrefs into “?add=Title” deeplinks (used on grid page) */
+    function blWireLearnMoreLinks(){
+        document.querySelectorAll('a.learn-more[data-title]').forEach(a=>{
+            try{
+                const url = new URL(a.getAttribute('href'), location.href);
+                url.searchParams.set('add', a.dataset.title);
+                a.setAttribute('href', url.pathname + url.search);
+            }catch(e){}
+        });
+    }
+
+    /* Public helpers to call from HTML */
+    window.addToBookList   = (btn,title)=>{ blAdd(title); if(btn) blMarkAdded(btn); };
+    window.openBookList    = blOpenModal;
+    window.clearAll        = blClear;
+    window.moveUp          = blMoveUp;
+    window.moveDown        = blMoveDown;
+    window.removeFromBookList = blRemove;
+    window.proceedToBooking= blProceed;
+
+    /* Init */
+    document.addEventListener('DOMContentLoaded', ()=>{
+        blWireLearnMoreLinks();      // only rewrites links if they carry .learn-more
+        blAutoAddFromURL();          // detail pages will auto-add on arrival
+        blSyncFloating();
+        blRenderModal();
+        blUpdateAllAddButtons();
+    });
+</script>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Down South — Galle • Mirissa • Unawatuna • Tangalle • Hiriketiya. Explore fort walls, whale watching, surfing, and sea-turtle conservation with Visit Siyenga."/>
+    <title>Down South — Galle • Mirissa • Unawatuna • Tangalle • Hiriketiya | Visit Siyenga</title>
+
+    <!-- Bootstrap / Icons / AOS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+
+    <style>
+        :root{
+            --bg:#ecedf4; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+            --primary:#2563eb; --primary-ink:#ffffff; --shadow-lg:0 24px 60px rgba(0,0,0,.16);
+            --shadow-md:0 12px 32px rgba(0,0,0,.10); --radius-xl:28px; --radius-2xl:40px;
+            --success:#10b981;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0; font-family:'DM Sans', system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink);
+            background: radial-gradient(1500px 700px at -10% -20%, #c9d8ff 60%, rgba(201,216,255,0) 100%), var(--bg);
+        }
+        .page-wrap{max-width:1280px;margin:34px auto;padding:0 20px}
+
+        /* NAV (theme parity) */
+        #mainNav{
+            background:var(--card)!important; border-radius:22px; box-shadow:var(--shadow-md);
+            top:18px; left:0; right:0; width:calc(100% - 40px); margin:0 auto; padding:10px 16px;
+            backdrop-filter:saturate(120%) blur(6px);
+        }
+        #mainNav .navbar-brand{font-weight:800; letter-spacing:.2px; color:#0b1432!important; display:flex; align-items:center; gap:10px;}
+        #mainNav .navbar-nav .nav-link{color:#334155!important; font-weight:600; margin:0 .2rem; border-radius:10px; padding:.55rem .9rem;}
+        #mainNav .navbar-nav .nav-link:hover{color:var(--primary)!important; background:#eff4ff}
+        .btn-primary{background:var(--primary)!important; border:0; border-radius:999px; padding:.75rem 1.15rem; font-weight:700}
+
+        /* HERO */
+        .hero{margin-top:110px}
+        .hero-card{position:relative; overflow:hidden; border-radius:var(--radius-2xl); box-shadow:var(--shadow-lg); background:#000}
+        .hero-bg{height:52vh; min-height:380px; max-height:560px; background-size:cover; background-position:center}
+        .hero-overlay{position:absolute; inset:0; background:linear-gradient(180deg,rgba(2,8,23,0) 28%, rgba(2,8,23,.62) 86%)}
+        .hero-content{position:absolute; inset:0; display:grid; align-content:end; padding:28px 32px 34px}
+        .hero-title{font-size:clamp(28px,4vw,52px); font-weight:800; color:#fff; letter-spacing:-.02em; margin-bottom:.25rem; text-shadow:0 6px 24px rgba(0,0,0,.28)}
+        .hero-sub{color:#e5e7eb; opacity:.95; max-width:960px; margin:0 auto}
+
+        /* Sections */
+        .section-title{font-weight:800; letter-spacing:-.02em}
+        .section-subtitle{color:var(--muted)}
+        .lead{color:#334155}
+
+        /* Highlights */
+        .highlights-grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+        .hl-card{background:var(--card); border:1px solid #e8edff; border-radius:22px; box-shadow:0 10px 28px rgba(0,0,0,.06); overflow:hidden}
+        .hl-media{height:160px; background:#0b122b}
+        .hl-media img{width:100%; height:100%; object-fit:cover}
+        .hl-body{padding:16px 16px 18px}
+        .hl-title{font-weight:700; font-size:18px; margin:4px 0 6px}
+        .hl-desc{color:#4a5b71; font-weight:300; margin:0}
+        .hl-chip{display:inline-flex; align-items:center; gap:8px; background:#f8faff; border:1px solid #e9efff; color:#0f172a; padding:6px 10px; border-radius:999px; font-size:13px}
+
+        /* Gallery */
+        .gallery-grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fill, minmax(240px,1fr))}
+        .g-item{border-radius:18px; overflow:hidden; background:#0b122b; box-shadow:0 16px 34px rgba(0,0,0,.14)}
+        .g-item img{width:100%; height:200px; object-fit:cover; display:block}
+
+        /* CTA */
+        .cta{background:linear-gradient(135deg,#2563eb,#4f46e5); color:#fff; border-radius:28px; padding:24px; box-shadow:var(--shadow-lg)}
+        .cta .btn{border-radius:999px; font-weight:800}
+        .btn-added{background:var(--success)!important; color:#fff!important}
+
+        /* Floating Book List Icon + badge */
+        .floating-icon{
+            position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: #fff;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 24px;
+            cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9999;
+            transition: transform .15s ease;
+        }
+        .floating-icon:hover{transform: translateY(-2px)}
+        .float-badge{
+            position:absolute; top:-6px; right:-6px; background:#111827; color:#fff;
+            border-radius:999px; font-size:12px; padding:2px 7px; border:2px solid #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,.2);
+        }
+
+        /* Modal polish */
+        .modal-elevated .modal-content{border:0; border-radius:22px; box-shadow:var(--shadow-lg)}
+        .modal-elevated .modal-header{border:0; padding:20px 24px; background:linear-gradient(135deg,#eef4ff,#ffffff); border-top-left-radius:22px; border-top-right-radius:22px}
+        .modal-elevated .modal-title{font-weight:800; letter-spacing:-.01em}
+        .booklist-empty{text-align:center; padding:26px 16px; color:var(--muted);}
+        .list-group-compact .list-group-item{display:flex; align-items:center; justify-content:space-between; gap:12px; border:0; border-bottom:1px solid #eef2ff; padding:14px 0}
+        .list-destination{display:flex; align-items:center; gap:10px; font-weight:600; color:#0f172a}
+        .list-destination i{color:#2563eb}
+
+        footer{border-top-left-radius:28px;border-top-right-radius:28px}
+        footer .input-group .form-control{border-radius:999px 0 0 999px}
+        footer .input-group .btn{border-radius:0 999px 999px 0}
+
+        @media (max-width:760px){
+            #mainNav{width:calc(100% - 24px)}
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container-fluid px-3">
+            <a class="navbar-brand" href="../../../index.html">
+                <i class="fas fa-compass me-2"></i>Visit Siyenga
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="../../../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../destinations.html">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../contact.html">Contact</a></li>
+                    <li class="ms-lg-3 mt-2 mt-lg-0">
+                        <a href="../destinations.html" class="btn btn-primary btn-sm">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO (Large banner + short description) -->
+    <section class="hero">
+        <div class="hero-card">
+            <div class="hero-bg" style="background-image:url('https://images.pexels.com/photos/3236656/pexels-photo-3236656.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="container text-center">
+                    <h1 class="hero-title" data-aos="fade-up">Down South</h1>
+                    <p class="hero-sub" data-aos="fade-up" data-aos-delay="150">
+                        Galle • Mirissa • Unawatuna • Tangalle • Hiriketiya </br> cobblestone fort streets, palm-fringed bays, whale-watching mornings, and laid-back surf towns wrapped in golden sunsets.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHTS / ACTIVITIES -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2 class="section-title" data-aos="fade-up">Key Highlights & Activities</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">Pick your vibe! we’ll plan the flow around these experiences</p>
+                </div>
+            </div>
+
+            <div class="highlights-grid">
+                <!-- Galle Fort -->
+                <article class="hl-card" data-aos="fade-up">
+                    <div class="hl-media">
+                        <img src="https://images.pexels.com/photos/12514320/pexels-photo-12514320.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="Galle Fort walls">
+                    </div>
+                    <div class="hl-body">
+                        <span class="hl-chip"><i class="fa-solid fa-landmark"></i> Heritage</span>
+                        <h3 class="hl-title">Galle Fort Exploration</h3>
+                        <p class="hl-desc">Walk the 17th-century ramparts, lighthouses, and alleyway cafés inside Sri Lanka’s best-preserved coastal fort.</p>
+                    </div>
+                </article>
+
+                <!-- Whale Watching -->
+                <article class="hl-card" data-aos="fade-up" data-aos-delay="60">
+                    <div class="hl-media">
+                        <img src="https://images.pexels.com/photos/889929/pexels-photo-889929.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="Whale watching Mirissa">
+                    </div>
+                    <div class="hl-body">
+                        <span class="hl-chip"><i class="fa-solid fa-water"></i> Ocean</span>
+                        <h3 class="hl-title">Whale Watching (Mirissa)</h3>
+                        <p class="hl-desc">Early-morning cruises to spot blue whales, dolphins, and flying fish off the south coast (seasonal).</p>
+                    </div>
+                </article>
+
+                <!-- Surf & Beach -->
+                <article class="hl-card" data-aos="fade-up" data-aos-delay="120">
+                    <div class="hl-media">
+                        <img src="https://images.pexels.com/photos/386148/pexels-photo-386148.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="Surfing south coast">
+                    </div>
+                    <div class="hl-body">
+                        <span class="hl-chip"><i class="fa-solid fa-person-swimming"></i> Beach</span>
+                        <h3 class="hl-title">Surf & Beach Time</h3>
+                        <p class="hl-desc">From beginner-friendly breaks in Weligama to the crescent of Hiriketiya — chill, swim, and surf.</p>
+                    </div>
+                </article>
+
+                <!-- Turtles & Stilt Fishermen -->
+                <article class="hl-card" data-aos="fade-up" data-aos-delay="180">
+                    <div class="hl-media">
+                        <img src="https://images.pexels.com/photos/1529360/pexels-photo-1529360.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="Sea turtle conservation">
+                    </div>
+                    <div class="hl-body">
+                        <span class="hl-chip"><i class="fa-solid fa-seedling"></i> Nature</span>
+                        <h3 class="hl-title">Turtle Conservation & Stilt Fishermen</h3>
+                        <p class="hl-desc">Visit hatcheries, release hatchlings (responsibly), and catch those iconic stilt-fishing silhouettes at sunset.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPTIONAL GALLERY -->
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-3">
+                    <h2 class="section-title" data-aos="fade-up">Inspiration Gallery</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">A few frames to spark your plan</p>
+                </div>
+            </div>
+            <div class="gallery-grid" data-aos="fade-up" data-aos-delay="220">
+                <div class="g-item"><img src="https://images.pexels.com/photos/13821556/pexels-photo-13821556.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Galle lighthouse"></div>
+                <div class="g-item"><img src="https://images.pexels.com/photos/2835583/pexels-photo-2835583.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Mirissa bay"></div>
+                <div class="g-item"><img src="https://images.pexels.com/photos/1917486/pexels-photo-1917486.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Unawatuna beach"></div>
+                <div class="g-item"><img src="https://images.pexels.com/photos/3566133/pexels-photo-3566133.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Hiriketiya cove"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA: Add to My Trip -->
+    <section class="py-4">
+        <div class="container">
+            <div class="cta" data-aos="fade-up">
+                <div class="row align-items-center g-3">
+                    <div class="col-lg-8">
+                        <h3 class="mb-1">Include Down South in your plan?</h3>
+                        <p class="mb-0">Tap below to add it to your Book List. When you’re ready, send your list — we’ll craft a custom route.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <button id="addBtn"
+                                class="btn btn-light px-4 py-2 add-btn"
+                                data-title="Down South (Galle • Mirissa • Unawatuna • Tangalle • Hiriketiya)"
+                                onclick="addToBookList(this, this.dataset.title)">
+                            <i class="fa-solid fa-plus me-2"></i> Add to My Trip
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div><!-- /.page-wrap -->
+
+<!-- Floating icon with counter (shared) -->
+<div id="bookListIcon" class="floating-icon" onclick="openBookList()" style="display:none;">
+    <i class="fa-solid fa-list"></i>
+    <span id="bookCountBadge" class="float-badge">0</span>
+</div>
+
+<!-- Book List Modal (shared) -->
+<div class="modal fade modal-elevated" id="bookListModal" tabindex="-1" aria-labelledby="bookListModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="bookListModalLabel">Your Book List</h5>
+                    <small class="text-muted">Choose your favourite routes. Remove if you change your mind.</small>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div id="bookListEmpty" class="booklist-empty d-none">
+                    <i class="fa-regular fa-face-smile-beam fa-2x mb-2"></i>
+                    <div>No destinations yet. Add some from the cards.</div>
+                </div>
+                <ul id="bookListItems" class="list-group list-group-compact"></ul>
+            </div>
+
+            <div class="modal-footer d-flex justify-content-between">
+                <button class="btn btn-danger-soft" id="clearAllBtn" onclick="clearAll()" type="button">
+                    <i class="fa-solid fa-trash-can me-1"></i> Clear All
+                </button>
+                <button class="btn btn-primary" id="proceedBtn" onclick="proceedToBooking()" type="button" disabled>
+                    Proceed to Booking
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
 <footer class="bg-dark text-white py-5 mt-4">
     <div class="container">
         <div class="row">
@@ -369,17 +1224,122 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
-    // AOS + Year
     AOS.init({ once:true, duration:700, easing:'ease-out-cubic' });
     document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
-    // Simple Lightbox
-    function openLightbox(src, title){
-        document.getElementById('lightboxImage').src = src;
-        document.getElementById('lightboxTitle').textContent = title || '';
-        const modal = new bootstrap.Modal(document.getElementById('lightboxModal'));
-        modal.show();
+<!-- ===== Shared Book List (global) — paste this on every page that should share the list ===== -->
+<script>
+    /* ---------- Shared Book List (localStorage) ---------- */
+    const BL_STORAGE_KEY = 'tripList';                 // same key everywhere
+    const BL_FORM_BASE   = 'https://docs.google.com/forms/d/e/1FAIpQLSdY2COR1q8duWEOi4cn2tGKIdbC7SE05rkS64J2jOvBq2lhKQ/viewform?usp=pp_url';
+    const BL_ENTRY_DEST  = 'entry.662015136';          // your checkbox field id
+    let   bookList       = JSON.parse(localStorage.getItem(BL_STORAGE_KEY) || '[]');
+
+    function blPersist(){ localStorage.setItem(BL_STORAGE_KEY, JSON.stringify(bookList)); }
+    function blAdd(title){
+        if(!title) return;
+        if(!bookList.includes(title)){ bookList.push(title); blPersist(); }
+        blSyncFloating(); blRenderModal(); blUpdateAllAddButtons();
     }
+    function blRemove(i){ bookList.splice(i,1); blPersist(); blSyncFloating(); blRenderModal(); blUpdateAllAddButtons(true); }
+    function blClear(){ bookList = []; blPersist(); blSyncFloating(); blRenderModal(); blUpdateAllAddButtons(true); }
+    function blMoveUp(i){ if(i<=0) return; [bookList[i-1],bookList[i]]=[bookList[i],bookList[i-1]]; blPersist(); blRenderModal(); }
+    function blMoveDown(i){ if(i>=bookList.length-1) return; [bookList[i+1],bookList[i]]=[bookList[i],bookList[i+1]]; blPersist(); blRenderModal(); }
+
+    function blSyncFloating(){
+        const icon  = document.getElementById('bookListIcon');
+        const badge = document.getElementById('bookCountBadge');
+        if(!icon||!badge) return;
+        icon.style.display = bookList.length ? 'flex' : 'none';
+        badge.textContent  = bookList.length;
+    }
+    function blRenderModal(){
+        const empty = document.getElementById('bookListEmpty');
+        const list  = document.getElementById('bookListItems');
+        const goBtn = document.getElementById('proceedBtn');
+        if(!empty||!list||!goBtn) return;
+
+        list.innerHTML = '';
+        if(bookList.length===0){
+            empty.classList.remove('d-none'); goBtn.disabled = true;
+        }else{
+            empty.classList.add('d-none');    goBtn.disabled = false;
+            bookList.forEach((t,i)=>{
+                const li = document.createElement('li');
+                li.className = 'list-group-item';
+                li.innerHTML = `
+        <div class="list-destination"><i class="fa-solid fa-location-dot"></i><span>${t}</span></div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-outline-secondary" onclick="blMoveUp(${i})"   title="Move up"><i class="fa-solid fa-arrow-up"></i></button>
+          <button class="btn btn-sm btn-outline-secondary" onclick="blMoveDown(${i})" title="Move down"><i class="fa-solid fa-arrow-down"></i></button>
+          <button class="btn btn-sm btn-outline-danger"    onclick="blRemove(${i})"   title="Remove"><i class="fa-solid fa-xmark"></i></button>
+        </div>`;
+                list.appendChild(li);
+            });
+        }
+    }
+    function blOpenModal(){ blRenderModal(); new bootstrap.Modal(document.getElementById('bookListModal')).show(); }
+    function blProceed(){
+        if(bookList.length===0) return;
+        const q = bookList.map(v=>`&${BL_ENTRY_DEST}=${encodeURIComponent(v)}`).join('');
+        window.open(BL_FORM_BASE + q, '_blank');
+    }
+
+    /* Mark/Unmark “Add to Book List” buttons across pages */
+    function blMarkAdded(btn){
+        btn.classList.add('btn-added');
+        btn.innerHTML = '<i class="fa-solid fa-check me-1"></i> Added';
+        btn.setAttribute('disabled','disabled');
+    }
+    function blResetBtn(btn){
+        btn.classList.remove('btn-added');
+        btn.innerHTML = 'Add to My Trip';
+        btn.removeAttribute('disabled');
+    }
+    function blUpdateAllAddButtons(forceReset=false){
+        document.querySelectorAll('.add-btn[data-title]').forEach(btn=>{
+            const t = btn.dataset.title;
+            if(forceReset) blResetBtn(btn);
+            if(bookList.includes(t)) blMarkAdded(btn);
+        });
+    }
+
+    /* Auto-add when landing from Learn More via URL ?add=... */
+    function blAutoAddFromURL(){
+        const params = new URLSearchParams(location.search);
+        const add = params.get('add');
+        if(add) blAdd(add);
+    }
+
+    /* Convert plain Learn-More hrefs into “?add=Title” deeplinks (if page has any .learn-more) */
+    function blWireLearnMoreLinks(){
+        document.querySelectorAll('a.learn-more[data-title]').forEach(a=>{
+            try{
+                const url = new URL(a.getAttribute('href'), location.href);
+                url.searchParams.set('add', a.dataset.title);
+                a.setAttribute('href', url.pathname + url.search);
+            }catch(e){}
+        });
+    }
+
+    /* Public helpers used by HTML */
+    window.addToBookList       = (btn,title)=>{ blAdd(title); if(btn) blMarkAdded(btn); };
+    window.openBookList        = blOpenModal;
+    window.clearAll            = blClear;
+    window.moveUp              = blMoveUp;
+    window.moveDown            = blMoveDown;
+    window.removeFromBookList  = blRemove;
+    window.proceedToBooking    = blProceed;
+
+    /* Init */
+    document.addEventListener('DOMContentLoaded', ()=>{
+        blWireLearnMoreLinks();      // NOP on this page (no .learn-more links), harmless
+        blAutoAddFromURL();          // auto-add if opened via Learn More
+        blSyncFloating();
+        blRenderModal();
+        blUpdateAllAddButtons();
+    });
 </script>
 </body>
 </html>
