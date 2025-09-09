@@ -86,7 +86,9 @@
         .badge-row{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px}
         .badge-chip{display:inline-flex; align-items:center; gap:8px; background:#f8faff; border:1px solid #e9efff; color:#0f172a; padding:8px 12px; border-radius:999px; font-size:13px;}
         .badge-chip i{color:var(--primary)}
-        .pkg-title{font-size:18px; font-weight:700; margin-bottom:20px; height:45px}
+        .pkg-title{font-size:18px; font-weight:700; margin-bottom:6px;}
+        /* NEW: subtle subtitle under the title */
+        .pkg-subtitle{font-size:13px; color:var(--muted); margin-bottom:16px;}
         .pkg-list{margin:0 0 12px; padding-left:18px}
         .pkg-list li{margin:.25rem 0; color:#55657a; font-weight:300}
         .pkg-actions{display:flex; gap:10px; margin-top:auto; padding:0 20px 20px}
@@ -234,11 +236,11 @@
                     </div>
                     <div class="pkg-body">
                         <div class="badge-row">
+                            <!-- kept only destination tag -->
                             <span class="badge-chip"><i class="fas fa-umbrella-beach"></i> Down South</span>
-                            <span class="badge-chip"><i class="fas fa-calendar"></i> 3 days</span>
-                            <span class="badge-chip"><i class="fas fa-users"></i> Customizable</span>
                         </div>
                         <h3 class="pkg-title">Galle • Mirissa • Unawatuna • Tangalle • Hiriketiya</h3>
+                        <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
                         <ul class="pkg-list">
                             <li>Galle Fort exploration</li>
                             <li>Whale watching (Mirissa)</li>
@@ -249,11 +251,10 @@
                     </div>
                     <div class="pkg-actions">
                         <a class="btn btn-outline-primary btn-pill" href="./readmore/destination-down-south.html">Learn More</a>
-                        <!-- pass the button element + title -->
                         <a class="btn btn-primary btn-pill add-btn"
                            data-title="Down South (Galle • Mirissa • Unawatuna • Tangalle • Hiriketiya)"
                            onclick="addToBookList(this, this.dataset.title)">
-                            Add to Book List
+                            Add to My Journey
                         </a>
                     </div>
                 </article>
@@ -266,10 +267,10 @@
                     <div class="pkg-body">
                         <div class="badge-row">
                             <span class="badge-chip"><i class="fas fa-mountain"></i> Up Country</span>
-                            <span class="badge-chip"><i class="fas fa-calendar"></i> 5 days</span>
-                            <span class="badge-chip"><i class="fas fa-users"></i> Customizable</span>
+                            <!-- removed days & customizable -->
                         </div>
                         <h3 class="pkg-title">Nuwara Eliya • Ella • Haputale • Bandarawela</h3>
+                        <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
                         <ul class="pkg-list">
                             <li>Scenic train rides (Kandy → Ella)</li>
                             <li>Tea estates & factory visits</li>
@@ -286,7 +287,7 @@
                         <a class="btn btn-primary btn-pill add-btn"
                            data-title="Up Country (Nuwara Eliya • Ella • Haputale • Bandarawela)"
                            onclick="addToBookList(this, this.dataset.title)">
-                            Add to Book List
+                            Add to My Journey
                         </a>
                     </div>
                 </article>
@@ -299,10 +300,10 @@
                     <div class="pkg-body">
                         <div class="badge-row">
                             <span class="badge-chip"><i class="fas fa-landmark"></i> Cultural Triangle</span>
-                            <span class="badge-chip"><i class="fas fa-calendar"></i> 4 days</span>
-                            <span class="badge-chip"><i class="fas fa-users"></i> Customizable</span>
+                            <!-- removed days & customizable -->
                         </div>
                         <h3 class="pkg-title">Sigiriya • Dambulla • Anuradhapura • Polonnaruwa • Mihintale</h3>
+                        <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
                         <ul class="pkg-list">
                             <li>Sigiriya Rock Fortress & Dambulla Caves</li>
                             <li>Ancient cities & ruins</li>
@@ -317,7 +318,7 @@
                         <a class="btn btn-primary btn-pill add-btn"
                            data-title="Cultural Triangle (Sigiriya • Dambulla • Anuradhapura • Polonnaruwa • Mihintale)"
                            onclick="addToBookList(this, this.dataset.title)">
-                            Add to Book List
+                            Add to My Journey
                         </a>
                     </div>
                 </article>
@@ -330,10 +331,10 @@
                     <div class="pkg-body">
                         <div class="badge-row">
                             <span class="badge-chip"><i class="fas fa-water"></i> East Coast</span>
-                            <span class="badge-chip"><i class="fas fa-calendar"></i> 6 days</span>
-                            <span class="badge-chip"><i class="fas fa-users"></i> Customizable</span>
+                            <!-- removed days & customizable -->
                         </div>
                         <h3 class="pkg-title">Trincomalee • Arugam Bay • Pasikuda • Nilaveli</h3>
+                        <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
                         <ul class="pkg-list">
                             <li>Surfing (Arugam Bay)</li>
                             <li>Snorkeling & scuba (Pigeon Island)</li>
@@ -350,7 +351,7 @@
                         <a class="btn btn-primary btn-pill add-btn"
                            data-title="East Coast (Trincomalee • Arugam Bay • Pasikuda • Nilaveli)"
                            onclick="addToBookList(this, this.dataset.title)">
-                            Add to Book List
+                            Add to My Journey
                         </a>
                     </div>
                 </article>
@@ -363,10 +364,10 @@
                     <div class="pkg-body">
                         <div class="badge-row">
                             <span class="badge-chip"><i class="fas fa-city"></i> Colombo</span>
-                            <span class="badge-chip"><i class="fas fa-calendar"></i> 3 days</span>
-                            <span class="badge-chip"><i class="fas fa-users"></i> Customizable</span>
+                            <!-- removed days & customizable -->
                         </div>
                         <h3 class="pkg-title">Colombo • Negombo • Kalutara</h3>
+                        <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
                         <ul class="pkg-list">
                             <li>City tours & shopping</li>
                             <li>Negombo lagoon boat rides</li>
@@ -381,7 +382,7 @@
                         <a class="btn btn-primary btn-pill add-btn"
                            data-title="Colombo & Surroundings (Colombo • Negombo • Kalutara)"
                            onclick="addToBookList(this, this.dataset.title)">
-                            Add to Book List
+                            Add to My Journey
                         </a>
                     </div>
                 </article>
@@ -394,10 +395,10 @@
                     <div class="pkg-body">
                         <div class="badge-row">
                             <span class="badge-chip"><i class="fas fa-mountain"></i> Central Highlands</span>
-                            <span class="badge-chip"><i class="fas fa-calendar"></i> 8 days</span>
-                            <span class="badge-chip"><i class="fas fa-users"></i> Customizable</span>
+                            <!-- removed days & customizable -->
                         </div>
                         <h3 class="pkg-title">Kandy • Knuckles Range • Matale</h3>
+                        <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
                         <ul class="pkg-list">
                             <li>Temple of the Tooth</li>
                             <li>Peradeniya Botanical Gardens</li>
@@ -413,7 +414,7 @@
                         <a class="btn btn-primary btn-pill add-btn"
                            data-title="Central Highlands (Kandy • Knuckles Range • Matale)"
                            onclick="addToBookList(this, this.dataset.title)">
-                            Add to Book List
+                            Add to My Journey
                         </a>
                     </div>
                 </article>
@@ -426,10 +427,10 @@
                     <div class="pkg-body">
                         <div class="badge-row">
                             <span class="badge-chip"><i class="fas fa-leaf"></i> Wildlife & Nature</span>
-                            <span class="badge-chip"><i class="fas fa-calendar"></i> 10 days</span>
-                            <span class="badge-chip"><i class="fas fa-users"></i> Customizable</span>
+                            <!-- removed days & customizable -->
                         </div>
                         <h3 class="pkg-title">Yala • Udawalawe • Wilpattu • Horton Plains</h3>
+                        <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
                         <ul class="pkg-list">
                             <li>Safaris (elephants, leopards, birdlife)</li>
                             <li>World’s End at Horton Plains</li>
@@ -444,7 +445,7 @@
                         <a class="btn btn-primary btn-pill add-btn"
                            data-title="Wildlife & Nature (Yala • Udawalawe • Wilpattu • Horton Plains)"
                            onclick="addToBookList(this, this.dataset.title)">
-                            Add to Book List
+                            Add to My Journey
                         </a>
                     </div>
                 </article>
@@ -552,7 +553,6 @@
     AOS.init({ once:true, duration:700, easing:'ease-out-cubic' });
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Prefill form (kept, adjust if needed)
     const FORM_BASE =
         'https://docs.google.com/forms/d/e/1FAIpQLSdU05j3QC3RtPcSBO9dhnT6D9eC_5gw-i-Q3cURSVL4zzCNKw/viewform?usp=pp_url&entry.2005620554=';
 
@@ -571,11 +571,11 @@
     // --- Book List state & UI helpers ---
     // let bookList = [];
 
+    function addToBookList(btnEl, title) {
     // Add to list + visually update the clicked button
     /*function addToBookList(btnEl, title) {
         if (!bookList.includes(title)) {
             bookList.push(title);
-            // Change the clicked button appearance
             markButtonAsAdded(btnEl);
             updateBookListUI();
         }
@@ -588,7 +588,6 @@
     }
 
     function updateAllButtons(){
-        // If a title already in list, ensure its button is in Added state
         document.querySelectorAll('.add-btn').forEach(btn=>{
             const t = btn.dataset.title;
             if (bookList.includes(t)) {
@@ -598,13 +597,11 @@
     }
 
     function updateBookListUI() {
-        // Show floating icon
         const icon = document.getElementById('bookListIcon');
         const badge = document.getElementById('bookCountBadge');
         icon.style.display = bookList.length ? 'flex' : 'none';
         badge.textContent = bookList.length;
 
-        // Update modal content
         const empty = document.getElementById('bookListEmpty');
         const listEl = document.getElementById('bookListItems');
         const proceedBtn = document.getElementById('proceedBtn');
@@ -643,11 +640,10 @@
 
     function removeFromBookList(index) {
         const removed = bookList.splice(index, 1)[0];
-        // Re-enable the corresponding "Add" button if present
         document.querySelectorAll('.add-btn').forEach(btn=>{
             if (btn.dataset.title === removed){
                 btn.classList.remove('btn-added');
-                btn.innerHTML = 'Add to Book List';
+                btn.innerHTML = 'Add to My Journey';
                 btn.removeAttribute('disabled');
             }
         });
@@ -667,10 +663,9 @@
 
     function clearAll(){
         bookList = [];
-        // Reset buttons
         document.querySelectorAll('.add-btn').forEach(btn=>{
             btn.classList.remove('btn-added');
-            btn.innerHTML = 'Add to Book List';
+            btn.innerHTML = 'Add to My Journey';
             btn.removeAttribute('disabled');
         });
         updateBookListUI();
@@ -682,7 +677,6 @@
         modal.show();
     }*/
 
-    // Build Google Form URL with multiple values for the same entry
     function proceedToBooking() {
         if (bookList.length === 0) return;
 
@@ -694,7 +688,6 @@
         window.open(url, "_blank");
     }
 
-    // Initialize on load (keeps UI consistent if you later persist in storage)
     document.addEventListener('DOMContentLoaded', ()=>{
         updateAllButtons();
         updateBookListUI();
