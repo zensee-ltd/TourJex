@@ -280,7 +280,10 @@
                         </ul>
                     </div>
                     <div class="pkg-actions">
-                        <a class="btn btn-outline-primary btn-pill" href="./readmore/destination-up-country.html">Learn More</a>
+                        <a class="btn btn-outline-primary btn-pill"
+                           href="./readmore/destination-up-country.html"
+                           data-title="Down South (Galle • Mirissa • Unawatuna • Tangalle • Hiriketiya)">
+                            Learn More</a>
                         <a class="btn btn-primary btn-pill add-btn"
                            data-title="Up Country (Nuwara Eliya • Ella • Haputale • Bandarawela)"
                            onclick="addToBookList(this, this.dataset.title)">
@@ -309,7 +312,9 @@
                         </ul>
                     </div>
                     <div class="pkg-actions">
-                        <a class="btn btn-outline-primary btn-pill" href="./readmore/destination-cultural-triangle.html">Learn More</a>
+                        <a class="btn btn-outline-primary btn-pill" href="./readmore/destination-cultural-triangle.html"
+                           data-title="Cultural Triangle (Sigiriya • Dambulla • Anuradhapura • Polonnaruwa • Mihintale)">
+                            Learn More</a>
                         <a class="btn btn-primary btn-pill add-btn"
                            data-title="Cultural Triangle (Sigiriya • Dambulla • Anuradhapura • Polonnaruwa • Mihintale)"
                            onclick="addToBookList(this, this.dataset.title)">
@@ -339,7 +344,10 @@
                         </ul>
                     </div>
                     <div class="pkg-actions">
-                        <a class="btn btn-outline-primary btn-pill" href="./readmore/destination-east-coast.html">Learn More</a>
+                        <a class="btn btn-outline-primary btn-pill"
+                           href="./readmore/destination-east-coast.html"
+                           data-title="East Coast (Trincomalee • Arugam Bay • Pasikuda • Nilaveli)">
+                            Learn More</a>
                         <a class="btn btn-primary btn-pill add-btn"
                            data-title="East Coast (Trincomalee • Arugam Bay • Pasikuda • Nilaveli)"
                            onclick="addToBookList(this, this.dataset.title)">
@@ -368,7 +376,9 @@
                         </ul>
                     </div>
                     <div class="pkg-actions">
-                        <a class="btn btn-outline-primary btn-pill" href="./readmore/destination-colombo.html">Learn More</a>
+                        <a class="btn btn-outline-primary btn-pill" href="./readmore/destination-colombo.html"
+                           data-title="Colombo & Surroundings (Colombo • Negombo • Kalutara)">
+                            Learn More</a>
                         <a class="btn btn-primary btn-pill add-btn"
                            data-title="Colombo & Surroundings (Colombo • Negombo • Kalutara)"
                            onclick="addToBookList(this, this.dataset.title)">
@@ -398,7 +408,9 @@
                         </ul>
                     </div>
                     <div class="pkg-actions">
-                        <a class="btn btn-outline-primary btn-pill" href="./readmore/destination-central-highlands.html">Learn More</a>
+                        <a class="btn btn-outline-primary btn-pill" href="./readmore/destination-central-highlands.html"
+                           data-title="Central Highlands (Kandy • Knuckles Range • Matale)">
+                            Learn More</a>
                         <a class="btn btn-primary btn-pill add-btn"
                            data-title="Central Highlands (Kandy • Knuckles Range • Matale)"
                            onclick="addToBookList(this, this.dataset.title)">
@@ -427,7 +439,9 @@
                         </ul>
                     </div>
                     <div class="pkg-actions">
-                        <a class="btn btn-outline-primary btn-pill" href="./readmore/destination-wildlife-nature.html">Learn More</a>
+                        <a class="btn btn-outline-primary btn-pill" href="./readmore/destination-wildlife-nature.html"
+                           data-title="Wildlife & Nature (Yala • Udawalawe • Wilpattu • Horton Plains)">
+                            Learn More</a>
                         <a class="btn btn-primary btn-pill add-btn"
                            data-title="Wildlife & Nature (Yala • Udawalawe • Wilpattu • Horton Plains)"
                            onclick="addToBookList(this, this.dataset.title)">
@@ -555,15 +569,17 @@
 
 <script>
     // --- Book List state & UI helpers ---
-    let bookList = [];
+    // let bookList = [];
 
     function addToBookList(btnEl, title) {
+    // Add to list + visually update the clicked button
+    /*function addToBookList(btnEl, title) {
         if (!bookList.includes(title)) {
             bookList.push(title);
             markButtonAsAdded(btnEl);
             updateBookListUI();
         }
-    }
+    }*/
 
     function markButtonAsAdded(btn){
         btn.classList.add('btn-added');
@@ -655,11 +671,11 @@
         updateBookListUI();
     }
 
-    function openBookList() {
+    /*function openBookList() {
         updateBookListUI();
         const modal = new bootstrap.Modal(document.getElementById('bookListModal'));
         modal.show();
-    }
+    }*/
 
     function proceedToBooking() {
         if (bookList.length === 0) return;
@@ -677,6 +693,120 @@
         updateBookListUI();
     });
 </script>
+<!-- Put this <script> at the very end of <body> on EVERY page that needs the Book List -->
+<script>
+    /* ---------- Shared Book List (localStorage) ---------- */
+    const BL_STORAGE_KEY = 'tripList';                 // same key everywhere
+    const BL_FORM_BASE   = 'https://docs.google.com/forms/d/e/1FAIpQLSdY2COR1q8duWEOi4cn2tGKIdbC7SE05rkS64J2jOvBq2lhKQ/viewform?usp=pp_url';
+    const BL_ENTRY_DEST  = 'entry.662015136';          // your checkbox field id
+    let   bookList       = JSON.parse(localStorage.getItem(BL_STORAGE_KEY) || '[]');
+
+    function blPersist(){ localStorage.setItem(BL_STORAGE_KEY, JSON.stringify(bookList)); }
+    function blAdd(title){
+        if(!title) return;
+        if(!bookList.includes(title)){ bookList.push(title); blPersist(); }
+        blSyncFloating(); blRenderModal(); blUpdateAllAddButtons();
+    }
+    function blRemove(i){ bookList.splice(i,1); blPersist(); blSyncFloating(); blRenderModal(); blUpdateAllAddButtons(true); }
+    function blClear(){ bookList = []; blPersist(); blSyncFloating(); blRenderModal(); blUpdateAllAddButtons(true); }
+    function blMoveUp(i){ if(i<=0) return; [bookList[i-1],bookList[i]]=[bookList[i],bookList[i-1]]; blPersist(); blRenderModal(); }
+    function blMoveDown(i){ if(i>=bookList.length-1) return; [bookList[i+1],bookList[i]]=[bookList[i],bookList[i+1]]; blPersist(); blRenderModal(); }
+
+    function blSyncFloating(){
+        const icon  = document.getElementById('bookListIcon');
+        const badge = document.getElementById('bookCountBadge');
+        if(!icon||!badge) return;
+        icon.style.display = bookList.length ? 'flex' : 'none';
+        badge.textContent  = bookList.length;
+    }
+    function blRenderModal(){
+        const empty = document.getElementById('bookListEmpty');
+        const list  = document.getElementById('bookListItems');
+        const goBtn = document.getElementById('proceedBtn');
+        if(!empty||!list||!goBtn) return;
+
+        list.innerHTML = '';
+        if(bookList.length===0){
+            empty.classList.remove('d-none'); goBtn.disabled = true;
+        }else{
+            empty.classList.add('d-none');    goBtn.disabled = false;
+            bookList.forEach((t,i)=>{
+                const li = document.createElement('li');
+                li.className = 'list-group-item';
+                li.innerHTML = `
+        <div class="list-destination"><i class="fa-solid fa-location-dot"></i><span>${t}</span></div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-outline-secondary" onclick="blMoveUp(${i})"   title="Move up"><i class="fa-solid fa-arrow-up"></i></button>
+          <button class="btn btn-sm btn-outline-secondary" onclick="blMoveDown(${i})" title="Move down"><i class="fa-solid fa-arrow-down"></i></button>
+          <button class="btn btn-sm btn-outline-danger"    onclick="blRemove(${i})"   title="Remove"><i class="fa-solid fa-xmark"></i></button>
+        </div>`;
+                list.appendChild(li);
+            });
+        }
+    }
+    function blOpenModal(){ blRenderModal(); new bootstrap.Modal(document.getElementById('bookListModal')).show(); }
+    function blProceed(){
+        if(bookList.length===0) return;
+        const q = bookList.map(v=>`&${BL_ENTRY_DEST}=${encodeURIComponent(v)}`).join('');
+        window.open(BL_FORM_BASE + q, '_blank');
+    }
+
+    /* Mark/Unmark “Add to Book List” buttons across pages */
+    function blMarkAdded(btn){
+        btn.classList.add('btn-added');
+        btn.innerHTML = '<i class="fa-solid fa-check me-1"></i> Added';
+        btn.setAttribute('disabled','disabled');
+    }
+    function blResetBtn(btn){
+        btn.classList.remove('btn-added');
+        btn.innerHTML = 'Add to Book List';
+        btn.removeAttribute('disabled');
+    }
+    function blUpdateAllAddButtons(forceReset=false){
+        document.querySelectorAll('.add-btn[data-title]').forEach(btn=>{
+            const t = btn.dataset.title;
+            if(forceReset) blResetBtn(btn);
+            if(bookList.includes(t)) blMarkAdded(btn);
+        });
+    }
+
+    /* Auto-add when landing from Learn More via URL ?add=... */
+    function blAutoAddFromURL(){
+        const params = new URLSearchParams(location.search);
+        const add = params.get('add');
+        if(add) blAdd(add);
+    }
+
+    /* Convert plain Learn-More hrefs into “?add=Title” deeplinks (used on grid page) */
+    function blWireLearnMoreLinks(){
+        document.querySelectorAll('a.learn-more[data-title]').forEach(a=>{
+            try{
+                const url = new URL(a.getAttribute('href'), location.href);
+                url.searchParams.set('add', a.dataset.title);
+                a.setAttribute('href', url.pathname + url.search);
+            }catch(e){}
+        });
+    }
+
+    /* Public helpers to call from HTML */
+    window.addToBookList   = (btn,title)=>{ blAdd(title); if(btn) blMarkAdded(btn); };
+    window.openBookList    = blOpenModal;
+    window.clearAll        = blClear;
+    window.moveUp          = blMoveUp;
+    window.moveDown        = blMoveDown;
+    window.removeFromBookList = blRemove;
+    window.proceedToBooking= blProceed;
+
+    /* Init */
+    document.addEventListener('DOMContentLoaded', ()=>{
+        blWireLearnMoreLinks();      // only rewrites links if they carry .learn-more
+        blAutoAddFromURL();          // detail pages will auto-add on arrival
+        blSyncFloating();
+        blRenderModal();
+        blUpdateAllAddButtons();
+    });
+</script>
+
 
 </body>
 </html>

@@ -1,26 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Experience Sri Lanka's incredible wildlife in 4 days - leopard spotting in Yala, elephant encounters in Udawalawe, and bird watching.">
-    <title>Wildlife Safari - 4 Days | Visit Siyenga</title>
-    
-    <!-- Bootstrap CSS -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="East Coast — Trincomalee • Arugam Bay • Pasikuda • Nilaveli. Surfing, snorkeling & scuba (Pigeon Island), turquoise calm beaches, whale & dolphin watching, local culture & temples."/>
+    <title>East Coast — Trincomalee • Arugam Bay • Pasikuda • Nilaveli | Visit Siyenga</title>
+
+    <!-- Bootstrap / Icons / AOS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- AOS Animation -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="../../../css/style.css" rel="stylesheet">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+
+    <style>
+        :root{
+            --bg:#ecedf4; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+            --primary:#2563eb; --primary-ink:#ffffff; --shadow-lg:0 24px 60px rgba(0,0,0,.16);
+            --shadow-md:0 12px 32px rgba(0,0,0,.10); --radius-xl:28px; --radius-2xl:40px; --success:#10b981;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0; font-family:'DM Sans', system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink);
+            background: radial-gradient(1500px 700px at -10% -20%, #c9d8ff 60%, rgba(201,216,255,0) 100%), var(--bg);
+        }
+        .page-wrap{max-width:1280px;margin:34px auto;padding:0 20px}
+
+        /* NAV */
+        #mainNav{
+            background:var(--card)!important; border-radius:22px; box-shadow:var(--shadow-md);
+            top:18px; left:0; right:0; width:calc(100% - 40px); margin:0 auto; padding:10px 16px;
+            backdrop-filter:saturate(120%) blur(6px);
+        }
+        #mainNav .navbar-brand{font-weight:800; letter-spacing:.2px; color:#0b1432!important; display:flex; align-items:center; gap:10px;}
+        #mainNav .navbar-nav .nav-link{color:#334155!important; font-weight:600; margin:0 .2rem; border-radius:10px; padding:.55rem .9rem;}
+        #mainNav .navbar-nav .nav-link:hover{color:var(--primary)!important; background:#eff4ff}
+        .btn-primary{background:var(--primary)!important; border:0; border-radius:999px; padding:.75rem 1.15rem; font-weight:700}
+
+        /* HERO */
+        .hero{margin-top:110px}
+        .hero-card{position:relative; overflow:hidden; border-radius:var(--radius-2xl); box-shadow:var(--shadow-lg); background:#000}
+        .hero-bg{height:52vh; min-height:380px; max-height:560px; background-size:cover; background-position:center}
+        .hero-overlay{position:absolute; inset:0; background:linear-gradient(180deg,rgba(2,8,23,0) 28%, rgba(2,8,23,.62) 86%)}
+        .hero-content{position:absolute; inset:0; display:grid; align-content:end; padding:28px 32px 34px}
+        .hero-title{font-size:clamp(28px,4vw,52px); font-weight:800; color:#fff; letter-spacing:-.02em; margin-bottom:.25rem; text-shadow:0 6px 24px rgba(0,0,0,.28)}
+        .hero-sub{color:#e5e7eb; opacity:.95; max-width:960px; margin:0 auto}
+
+        /* Sections */
+        .section-title{font-weight:800; letter-spacing:-.02em}
+        .section-subtitle{color:var(--muted)}
+        .lead{color:#334155}
+
+        /* Highlights */
+        .highlights-grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+        .hl-card{background:var(--card); border:1px solid #e8edff; border-radius:22px; box-shadow:0 10px 28px rgba(0,0,0,.06); overflow:hidden}
+        .hl-media{height:160px; background:#0b122b}
+        .hl-media img{width:100%; height:100%; object-fit:cover}
+        .hl-body{padding:16px 16px 18px}
+        .hl-title{font-weight:700; font-size:18px; margin:4px 0 6px}
+        .hl-desc{color:#4a5b71; font-weight:300; margin:0}
+        .hl-chip{display:inline-flex; align-items:center; gap:8px; background:#f8faff; border:1px solid #e9efff; color:#0f172a; padding:6px 10px; border-radius:999px; font-size:13px}
+
+        /* Gallery */
+        .gallery-grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fill, minmax(240px,1fr))}
+        .g-item{border-radius:18px; overflow:hidden; background:#0b122b; box-shadow:0 16px 34px rgba(0,0,0,.14)}
+        .g-item img{width:100%; height:200px; object-fit:cover; display:block}
+
+        /* CTA */
+        .cta{background:linear-gradient(135deg,#2563eb,#4f46e5); color:#fff; border-radius:28px; padding:24px; box-shadow:var(--shadow-lg)}
+        .cta .btn{border-radius:999px; font-weight:800}
+        .btn-added{background:var(--success)!important; color:#fff!important}
+
+        /* Floating icon + modal */
+        .floating-icon{position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9999; transition: transform .15s ease;}
+        .floating-icon:hover{transform: translateY(-2px)}
+        .float-badge{position:absolute; top:-6px; right:-6px; background:#111827; color:#fff; border-radius:999px; font-size:12px; padding:2px 7px; border:2px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,.2);}
+
+        .modal-elevated .modal-content{border:0; border-radius:22px; box-shadow:var(--shadow-lg)}
+        .modal-elevated .modal-header{border:0; padding:20px 24px; background:linear-gradient(135deg,#eef4ff,#ffffff); border-top-left-radius:22px; border-top-right-radius:22px}
+        .modal-elevated .modal-title{font-weight:800; letter-spacing:-.01em}
+        .booklist-empty{text-align:center; padding:26px 16px; color:var(--muted);}
+        .list-group-compact .list-group-item{display:flex; align-items:center; justify-content:space-between; gap:12px; border:0; border-bottom:1px solid #eef2ff; padding:14px 0}
+        .list-destination{display:flex; align-items:center; gap:10px; font-weight:600; color:#0f172a}
+        .list-destination i{color:#2563eb}
+
+        footer{border-top-left-radius:28px;border-top-right-radius:28px}
+        footer .input-group .form-control{border-radius:999px 0 0 999px}
+        footer .input-group .btn{border-radius:0 999px 999px 0}
+
+        @media (max-width:760px){ #mainNav{width:calc(100% - 24px)} }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
+<div class="page-wrap">
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container-fluid px-3">
             <a class="navbar-brand" href="../../../index.html">
                 <i class="fas fa-compass me-2"></i>Visit Siyenga
             </a>
@@ -28,291 +104,306 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../destinations.html">Destinations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../contact.html">Contact</a>
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="../../../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../destinations.html">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../contact.html">Contact</a></li>
+                    <li class="ms-lg-3 mt-2 mt-lg-0">
+                        <a href="../destinations.html" class="btn btn-primary btn-sm">Get Started</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Destination Hero -->
-    <section class="destination-hero" style="background-image: url('https://images.pexels.com/photos/631317/pexels-photo-631317.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');">
-        <div class="destination-hero-overlay"></div>
-        <div class="container">
-            <div class="destination-hero-content">
-                <h1 class="destination-hero-title" data-aos="fade-up">East Coast</h1>
-                <p class="destination-hero-subtitle" data-aos="fade-up" data-aos-delay="200">4 Days of Incredible Wildlife Encounters</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Overview Section -->
-    <section class="destination-overview">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h2 class="section-title">Wildlife Paradise</h2>
-                    <p class="lead">Experience Sri Lanka's incredible wildlife with leopard spotting in Yala, elephant encounters in Udawalawe, and bird watching in Sinharaja.</p>
-                    <p>Sri Lanka is a wildlife enthusiast's paradise, home to leopards, elephants, sloth bears, and over 400 bird species. This safari adventure takes you through the island's premier national parks, offering the best opportunities to witness these magnificent creatures in their natural habitat.</p>
-                    <div class="row mt-4">
-                        <div class="col-md-4 mb-3">
-                            <div class="text-center">
-                                <i class="fas fa-calendar text-primary fa-2x mb-2"></i>
-                                <h5>Duration</h5>
-                                <p>4 Days / 3 Nights</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="text-center">
-                                <i class="fas fa-users text-primary fa-2x mb-2"></i>
-                                <h5>Group Size</h5>
-                                <p>Nature Lovers</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="text-center">
-                                <i class="fas fa-dollar-sign text-primary fa-2x mb-2"></i>
-                                <h5>Price</h5>
-                                <p>$749.00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <img src="https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sri Lankan Leopard" class="destination-overview-image">
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-card">
+            <!-- East coast beach & boats -->
+            <div class="hero-bg" style="background-image:url('https://images.pexels.com/photos/533923/pexels-photo-533923.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="container text-center">
+                    <h1 class="hero-title" data-aos="fade-up">East Coast</h1>
+                    <p class="hero-sub" data-aos="fade-up" data-aos-delay="150">
+                        Trincomalee • Arugam Bay • Pasikuda • Nilaveli — surfy bays, glass-clear lagoons and coral isles. Think blue-water days, reef life and relaxed seaside towns.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Itinerary Section -->
-    <section class="itinerary-section">
+    <!-- HIGHLIGHTS / ACTIVITIES -->
+    <section class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="section-title" data-aos="fade-up">4-Day Wildlife Safari Itinerary</h2>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Your journey through Sri Lanka's wild kingdom</p>
+                <div class="col-12 text-center mb-4">
+                    <h2 class="section-title" data-aos="fade-up">Key Highlights & Activities</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">No fixed itinerary — mix the coast your way</p>
                 </div>
             </div>
-            
-            <div class="row">
-                <div class="col-12">
-                    <div class="itinerary-day" data-aos="fade-up" data-aos-delay="100">
-                        <div class="itinerary-day-number">1</div>
-                        <h4>Arrival & Yala National Park</h4>
-                        <p>Begin your wildlife adventure at Sri Lanka's most famous national park, home to the highest density of leopards in the world.</p>
-                        <ul class="itinerary-activities">
-                            <li>Airport pickup and transfer to Yala region</li>
-                            <li>Check-in at safari lodge near Yala</li>
-                            <li>Afternoon game drive in Yala National Park</li>
-                            <li>Leopard spotting and wildlife photography</li>
-                            <li>Sunset viewing at Patanangala Beach</li>
-                            <li>Evening wildlife briefing with naturalist</li>
-                            <li>Overnight stay near Yala</li>
-                        </ul>
+
+            <div class="highlights-grid">
+                <!-- Surfing (Arugam Bay) -->
+                <article class="hl-card" data-aos="fade-up">
+                    <div class="hl-media">
+                        <img src="https://images.pexels.com/photos/386148/pexels-photo-386148.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="Surfing Arugam Bay">
                     </div>
-                    
-                    <div class="itinerary-day" data-aos="fade-up" data-aos-delay="200">
-                        <div class="itinerary-day-number">2</div>
-                        <h4>Full Day Yala Safari</h4>
-                        <p>Spend a full day exploring Yala's diverse ecosystems, from dry forests to coastal lagoons.</p>
-                        <ul class="itinerary-activities">
-                            <li>Early morning game drive (best time for leopards)</li>
-                            <li>Breakfast in the wilderness</li>
-                            <li>Visit to ancient Sithulpawwa Rock Temple</li>
-                            <li>Afternoon safari in different park zones</li>
-                            <li>Spot elephants, sloth bears, and crocodiles</li>
-                            <li>Bird watching at Menik Ganga</li>
-                            <li>Overnight stay near Yala</li>
-                        </ul>
+                    <div class="hl-body">
+                        <span class="hl-chip"><i class="fa-solid fa-person-swimming"></i> Surf</span>
+                        <h3 class="hl-title">Surfing (Arugam Bay)</h3>
+                        <p class="hl-desc">Warm points and mellow beach breaks — sunrise sessions to golden-hour glides.</p>
                     </div>
-                    
-                    <div class="itinerary-day" data-aos="fade-up" data-aos-delay="300">
-                        <div class="itinerary-day-number">3</div>
-                        <h4>Udawalawe Elephant Park</h4>
-                        <p>Journey to Udawalawe, famous for its large elephant herds and the Elephant Transit Home.</p>
-                        <ul class="itinerary-activities">
-                            <li>Morning departure to Udawalawe</li>
-                            <li>Visit Elephant Transit Home feeding time</li>
-                            <li>Afternoon game drive in Udawalawe National Park</li>
-                            <li>Observe large elephant herds</li>
-                            <li>Water buffalo and bird watching</li>
-                            <li>Photography at Udawalawe Reservoir</li>
-                            <li>Overnight stay near Udawalawe</li>
-                        </ul>
+                </article>
+
+                <!-- Snorkeling & Scuba (Pigeon Island) -->
+                <article class="hl-card" data-aos="fade-up" data-aos-delay="60">
+                    <div class="hl-media">
+                        <img src="https://images.pexels.com/photos/37530/diver-scuba-diving-diving-scuba-37530.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="Snorkeling Pigeon Island">
                     </div>
-                    
-                    <div class="itinerary-day" data-aos="fade-up" data-aos-delay="400">
-                        <div class="itinerary-day-number">4</div>
-                        <h4>Sinharaja Rainforest & Departure</h4>
-                        <p>Explore the UNESCO World Heritage Sinharaja Rainforest, home to endemic species and incredible biodiversity.</p>
-                        <ul class="itinerary-activities">
-                            <li>Early morning departure to Sinharaja</li>
-                            <li>Guided nature walk in the rainforest</li>
-                            <li>Endemic bird watching with expert guide</li>
-                            <li>Spot purple-faced langurs and other primates</li>
-                            <li>Learn about medicinal plants and ecology</li>
-                            <li>Transfer to airport for departure</li>
-                        </ul>
+                    <div class="hl-body">
+                        <span class="hl-chip"><i class="fa-solid fa-fish"></i> Reefs</span>
+                        <h3 class="hl-title">Snorkeling & Scuba (Pigeon Island)</h3>
+                        <p class="hl-desc">Coral gardens with reef fish, turtles and great visibility off Nilaveli.</p>
                     </div>
-                </div>
+                </article>
+
+                <!-- Turquoise calm beaches (Pasikuda) -->
+                <article class="hl-card" data-aos="fade-up" data-aos-delay="120">
+                    <div class="hl-media">
+                        <img src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="Pasikuda lagoon beach">
+                    </div>
+                    <div class="hl-body">
+                        <span class="hl-chip"><i class="fa-solid fa-umbrella-beach"></i> Lagoon</span>
+                        <h3 class="hl-title">Turquoise Calm Beaches</h3>
+                        <p class="hl-desc">Shallow, glassy waters perfect for wading and long lazy swims (Pasikuda).</p>
+                    </div>
+                </article>
+
+                <!-- Whale & dolphin watching -->
+                <article class="hl-card" data-aos="fade-up" data-aos-delay="180">
+                    <div class="hl-media">
+                        <img src="https://images.pexels.com/photos/533923/pexels-photo-533923.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="Whale and dolphin watching Trincomalee">
+                    </div>
+                    <div class="hl-body">
+                        <span class="hl-chip"><i class="fa-solid fa-binoculars"></i> Ocean</span>
+                        <h3 class="hl-title">Whale & Dolphin Watching</h3>
+                        <p class="hl-desc">Seasonal boat trips from Trincomalee to spot spinners, bottlenose and the giants.</p>
+                    </div>
+                </article>
+
+                <!-- Culture & temples -->
+                <article class="hl-card" data-aos="fade-up" data-aos-delay="240">
+                    <div class="hl-media">
+                        <img src="https://images.pexels.com/photos/11465693/pexels-photo-11465693.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="Koneswaram temple Trincomalee">
+                    </div>
+                    <div class="hl-body">
+                        <span class="hl-chip"><i class="fa-solid fa-place-of-worship"></i> Culture</span>
+                        <h3 class="hl-title">Local Culture & Temples</h3>
+                        <p class="hl-desc">Clifftop shrines like Koneswaram and colourful coastal villages.</p>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="destination-gallery-section">
+    <!-- OPTIONAL GALLERY -->
+    <section class="py-4">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="section-title" data-aos="fade-up">Wildlife Safari Gallery</h2>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Amazing wildlife encounters from your safari</p>
+                <div class="col-12 text-center mb-3">
+                    <h2 class="section-title" data-aos="fade-up">Inspiration Gallery</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">A splash of east-coast blues</p>
                 </div>
             </div>
-            <div class="destination-gallery-grid" data-aos="fade-up" data-aos-delay="300">
-                <div class="destination-gallery-item" onclick="openLightbox('https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=1200', 'Sri Lankan Leopard')">
-                    <img src="https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Sri Lankan Leopard" class="destination-gallery-image">
-                </div>
-                <div class="destination-gallery-item" onclick="openLightbox('https://images.pexels.com/photos/631317/pexels-photo-631317.jpeg?auto=compress&cs=tinysrgb&w=1200', 'Asian Elephant')">
-                    <img src="https://images.pexels.com/photos/631317/pexels-photo-631317.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Asian Elephant" class="destination-gallery-image">
-                </div>
-                <div class="destination-gallery-item" onclick="openLightbox('https://images.pexels.com/photos/792381/pexels-photo-792381.jpeg?auto=compress&cs=tinysrgb&w=1200', 'Endemic Birds')">
-                    <img src="https://images.pexels.com/photos/792381/pexels-photo-792381.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Endemic Birds" class="destination-gallery-image">
-                </div>
-                <div class="destination-gallery-item" onclick="openLightbox('https://images.pexels.com/photos/4577179/pexels-photo-4577179.jpeg?auto=compress&cs=tinysrgb&w=1200', 'Safari Experience')">
-                    <img src="https://images.pexels.com/photos/4577179/pexels-photo-4577179.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Safari Experience" class="destination-gallery-image">
-                </div>
+            <div class="gallery-grid" data-aos="fade-up" data-aos-delay="220">
+                <div class="g-item"><img src="https://images.pexels.com/photos/6535/sea-beach-holiday-vacation.jpg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Nilaveli beach"></div>
+                <div class="g-item"><img src="https://images.pexels.com/photos/37530/diver-scuba-diving-diving-scuba-37530.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Pigeon Island reef"></div>
+                <div class="g-item"><img src="https://images.pexels.com/photos/386148/pexels-photo-386148.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Arugam Bay surf"></div>
+                <div class="g-item"><img src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Pasikuda lagoon"></div>
             </div>
         </div>
     </section>
 
-    <!-- Social Share Section -->
-    <section class="social-share-section">
+    <!-- CTA -->
+    <section class="py-4">
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h3 data-aos="fade-up">Share This Wildlife Adventure</h3>
-                    <p data-aos="fade-up" data-aos-delay="200">Tell your friends about this incredible Sri Lankan safari experience</p>
-                    <div class="social-share-buttons" data-aos="fade-up" data-aos-delay="300">
-                        <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" class="social-share-btn facebook-btn">
-                            <i class="fab fa-facebook-f"></i>Share on Facebook
-                        </a>
-                        <a href="https://wa.me/94779961170?text=Check%20out%20this%20amazing%20Wildlife%20Safari%20in%20Sri%20Lanka!" target="_blank" class="social-share-btn whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i>Share on WhatsApp
-                        </a>
+            <div class="cta" data-aos="fade-up">
+                <div class="row align-items-center g-3">
+                    <div class="col-lg-8">
+                        <h3 class="mb-1">Include the East Coast in your plan?</h3>
+                        <p class="mb-0">Tap below to add it to your Book List. When you’re ready, send your list — we’ll map a custom seaside route.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <button id="addBtn"
+                                class="btn btn-light px-4 py-2 add-btn"
+                                data-title="East Coast (Trincomalee • Arugam Bay • Pasikuda • Nilaveli)"
+                                onclick="addToBookList(this, this.dataset.title)">
+                            <i class="fa-solid fa-plus me-2"></i> Add to My Trip
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Booking CTA Section -->
-    <section class="booking-cta-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h2 data-aos="fade-up">Ready for Your Wildlife Safari?</h2>
-                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Book your 4-day wildlife adventure today and witness Sri Lanka's incredible biodiversity.</p>
-                    <a href="https://forms.gle/VDrLYWPTGUb3Gs5A6" target="_blank" class="booking-cta-btn" data-aos="fade-up" data-aos-delay="300">
-                        <i class="fas fa-calendar-check me-2"></i>Book This Safari Now
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+</div><!-- /.page-wrap -->
 
-    <!-- Lightbox Modal -->
-    <div class="modal fade" id="lightboxModal" tabindex="-1" aria-labelledby="lightboxModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content bg-transparent border-0">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+<!-- Floating icon with counter (shared) -->
+<div id="bookListIcon" class="floating-icon" onclick="openBookList()" style="display:none;">
+    <i class="fa-solid fa-list"></i>
+    <span id="bookCountBadge" class="float-badge">0</span>
+</div>
+
+<!-- Book List Modal (shared) -->
+<div class="modal fade modal-elevated" id="bookListModal" tabindex="-1" aria-labelledby="bookListModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="bookListModalLabel">Your Book List</h5>
+                    <small class="text-muted">Choose your favourite routes. Remove if you change your mind.</small>
                 </div>
-                <div class="modal-body text-center p-0">
-                    <img id="lightboxImage" src="" alt="" class="img-fluid rounded">
-                    <div class="mt-3">
-                        <h5 id="lightboxTitle" class="text-white"></h5>
-                    </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div id="bookListEmpty" class="booklist-empty d-none">
+                    <i class="fa-regular fa-face-smile-beam fa-2x mb-2"></i>
+                    <div>No destinations yet. Add some from the cards.</div>
                 </div>
+                <ul id="bookListItems" class="list-group list-group-compact"></ul>
+            </div>
+
+            <div class="modal-footer d-flex justify-content-between">
+                <button class="btn btn-danger-soft" id="clearAllBtn" onclick="clearAll()" type="button">
+                    <i class="fa-solid fa-trash-can me-1"></i> Clear All
+                </button>
+                <button class="btn btn-primary" id="proceedBtn" onclick="proceedToBooking()" type="button" disabled>
+                    Proceed to Booking
+                </button>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h5><i class="fas fa-compass me-2"></i>Visit Siyenga</h5>
-                    <p>Your trusted local partner for authentic Sri Lankan adventures. We specialize in eco-friendly tours that showcase our island's incredible natural beauty and rich cultural heritage.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://wa.me/94779961170" target="_blank" class="text-white me-3"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <h6>Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="../../../index.html" class="text-white-50">Home</a></li>
-                        <li><a href="../../../about.html" class="text-white-50">About</a></li>
-                        <li><a href="../../../services.html" class="text-white-50">Services</a></li>
-                        <li><a href="../destinations.html" class="text-white-50">Destinations</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h6>Contact Info</h6>
-                    <ul class="list-unstyled">
-                        <li class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i>352/16C Thalpitiya south Wadduwa</li>
-                        <li class="text-white-50"><i class="fas fa-phone me-2"></i>+94 77 996 1170</li>
-                        <li class="text-white-50"><i class="fas fa-envelope me-2"></i>visitsiyenga@gmail.com</li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h6>Newsletter</h6>
-                    <p class="text-white-50">Subscribe to receive our latest offers and travel updates.</p>
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Your email">
-                        <button class="btn btn-primary" type="button">Subscribe</button>
-                    </div>
+<!-- FOOTER -->
+<footer class="bg-dark text-white py-5 mt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <h5><i class="fas fa-compass me-2"></i>Visit Siyenga</h5>
+                <p>Your trusted local partner for authentic Sri Lankan adventures. We specialize in eco-friendly tours that showcase our island's incredible natural beauty and rich cultural heritage.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/94779961170" target="_blank" class="text-white me-3"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-            <hr class="my-4">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="text-white-50 mb-0">&copy; 2024 Visit Siyenga. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="#" class="text-white-50 me-3">Privacy Policy</a>
-                    <a href="#" class="text-white-50">Terms of Service</a>
+            <div class="col-lg-2 col-md-4 mb-4">
+                <h6>Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="../../../index.html" class="text-white-50">Home</a></li>
+                    <li><a href="../../../about.html" class="text-white-50">About</a></li>
+                    <li><a href="../../../services.html" class="text-white-50">Services</a></li>
+                    <li><a href="../destinations.html" class="text-white-50">Destinations</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4">
+                <h6>Contact Info</h6>
+                <ul class="list-unstyled">
+                    <li class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i>352/16C Thalpitiya South, Wadduwa</li>
+                    <li class="text-white-50"><i class="fas fa-phone me-2"></i>+94 77 996 1170</li>
+                    <li class="text-white-50"><i class="fas fa-envelope me-2"></i>visitsiyenga@gmail.com</li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4">
+                <h6>Newsletter</h6>
+                <p class="text-white-50">Subscribe to receive our latest offers and travel updates.</p>
+                <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Your email">
+                    <button class="btn btn-primary" type="button">Subscribe</button>
                 </div>
             </div>
         </div>
-    </footer>
+        <hr class="my-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-white-50 mb-0">&copy; <span id="year"></span> Visit Siyenga. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="#" class="text-white-50 me-3">Privacy Policy</a>
+                <a href="#" class="text-white-50">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- AOS Animation -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <!-- Custom JS -->
-    <script src="../../../js/script.js"></script>
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({ once:true, duration:700, easing:'ease-out-cubic' });
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<!-- ===== Shared Book List (global) ===== -->
+<script>
+    const BL_STORAGE_KEY = 'tripList';
+    const BL_FORM_BASE   = 'https://docs.google.com/forms/d/e/1FAIpQLSdY2COR1q8duWEOi4cn2tGKIdbC7SE05rkS64J2jOvBq2lhKQ/viewform?usp=pp_url';
+    const BL_ENTRY_DEST  = 'entry.662015136';
+    let bookList = JSON.parse(localStorage.getItem(BL_STORAGE_KEY) || '[]');
+
+    function blPersist(){ localStorage.setItem(BL_STORAGE_KEY, JSON.stringify(bookList)); }
+    function blAdd(title){ if(!title) return; if(!bookList.includes(title)){ bookList.push(title); blPersist(); } blSyncFloating(); blRenderModal(); blUpdateAllAddButtons(); }
+    function blRemove(i){ bookList.splice(i,1); blPersist(); blSyncFloating(); blRenderModal(); blUpdateAllAddButtons(true); }
+    function blClear(){ bookList=[]; blPersist(); blSyncFloating(); blRenderModal(); blUpdateAllAddButtons(true); }
+    function blMoveUp(i){ if(i<=0) return; [bookList[i-1],bookList[i]]=[bookList[i],bookList[i-1]]; blPersist(); blRenderModal(); }
+    function blMoveDown(i){ if(i>=bookList.length-1) return; [bookList[i+1],bookList[i]]=[bookList[i],bookList[i+1]]; blPersist(); blRenderModal(); }
+
+    function blSyncFloating(){ const icon=document.getElementById('bookListIcon'); const badge=document.getElementById('bookCountBadge'); if(!icon||!badge) return; icon.style.display = bookList.length ? 'flex' : 'none'; badge.textContent = bookList.length; }
+    function blRenderModal(){
+        const empty=document.getElementById('bookListEmpty'); const list=document.getElementById('bookListItems'); const goBtn=document.getElementById('proceedBtn'); if(!empty||!list||!goBtn) return;
+        list.innerHTML=''; if(bookList.length===0){ empty.classList.remove('d-none'); goBtn.disabled=true; }
+        else{ empty.classList.add('d-none'); goBtn.disabled=false;
+            bookList.forEach((t,i)=>{ const li=document.createElement('li'); li.className='list-group-item'; li.innerHTML=`
+        <div class="list-destination"><i class="fa-solid fa-location-dot"></i><span>${t}</span></div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-outline-secondary" onclick="blMoveUp(${i})" title="Move up"><i class="fa-solid fa-arrow-up"></i></button>
+          <button class="btn btn-sm btn-outline-secondary" onclick="blMoveDown(${i})" title="Move down"><i class="fa-solid fa-arrow-down"></i></button>
+          <button class="btn btn-sm btn-outline-danger" onclick="blRemove(${i})" title="Remove"><i class="fa-solid fa-xmark"></i></button>
+        </div>`; list.appendChild(li); });
+        }
+    }
+    function blOpenModal(){ blRenderModal(); new bootstrap.Modal(document.getElementById('bookListModal')).show(); }
+    function blProceed(){ if(bookList.length===0) return; const q = bookList.map(v=>`&${BL_ENTRY_DEST}=${encodeURIComponent(v)}`).join(''); window.open(BL_FORM_BASE + q, '_blank'); }
+
+    function blMarkAdded(btn){ btn.classList.add('btn-added'); btn.innerHTML='<i class="fa-solid fa-check me-1"></i> Added'; btn.setAttribute('disabled','disabled'); }
+    function blResetBtn(btn){ btn.classList.remove('btn-added'); btn.innerHTML='Add to My Trip'; btn.removeAttribute('disabled'); }
+    function blUpdateAllAddButtons(forceReset=false){
+        document.querySelectorAll('.add-btn[data-title]').forEach(btn=>{ const t=btn.dataset.title; if(forceReset) blResetBtn(btn); if(bookList.includes(t)) blMarkAdded(btn); });
+    }
+
+    function blAutoAddFromURL(){ const params=new URLSearchParams(location.search); const add=params.get('add'); if(add) blAdd(add); }
+    function blWireLearnMoreLinks(){ document.querySelectorAll('a.learn-more[data-title]').forEach(a=>{ try{ const url=new URL(a.getAttribute('href'), location.href); url.searchParams.set('add', a.dataset.title); a.setAttribute('href', url.pathname + url.search);}catch(e){} }); }
+
+    window.addToBookList=(btn,title)=>{ blAdd(title); if(btn) blMarkAdded(btn); };
+    window.openBookList=blOpenModal;
+    window.clearAll=blClear;
+    window.moveUp=blMoveUp;
+    window.moveDown=blMoveDown;
+    window.removeFromBookList=blRemove;
+    window.proceedToBooking=blProceed;
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+        blWireLearnMoreLinks();     // none here, harmless
+        blAutoAddFromURL();         // auto-add if landed via Learn More
+        blSyncFloating();
+        blRenderModal();
+        blUpdateAllAddButtons();
+    });
+</script>
 </body>
 </html>
