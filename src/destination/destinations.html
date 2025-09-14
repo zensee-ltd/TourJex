@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,42 +7,42 @@
     <meta name="description" content="Explore Sri Lanka's most breathtaking destinations including Sigiriya, Ella, Galle, Kandy, Yala National Park, and Colombo with Visit Siyenga Lanka.">
     <title>Destinations — Visit Siyenga Lanka</title>
 
-    <!-- Bootstrap / Icons / AOS -->
+    &lt;!&ndash; Bootstrap / Icons / AOS &ndash;&gt;
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <!-- Font -->
+    &lt;!&ndash; Font &ndash;&gt;
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
         :root{
-            --bg:#ecedf4;
-            --card:#ffffff;
-            --ink:#0f172a;
-            --muted:#64748b;
-            --primary:#2563eb;
-            --primary-ink:#ffffff;
-            --shadow-lg:0 24px 60px rgba(0,0,0,.16);
-            --shadow-md:0 12px 32px rgba(0,0,0,.10);
-            --radius-xl:28px;
-            --radius-2xl:40px;
-            --success:#10b981;
-            --danger:#ef4444;
+            &#45;&#45;bg:#ecedf4;
+            &#45;&#45;card:#ffffff;
+            &#45;&#45;ink:#0f172a;
+            &#45;&#45;muted:#64748b;
+            &#45;&#45;primary:#2563eb;
+            &#45;&#45;primary-ink:#ffffff;
+            &#45;&#45;shadow-lg:0 24px 60px rgba(0,0,0,.16);
+            &#45;&#45;shadow-md:0 12px 32px rgba(0,0,0,.10);
+            &#45;&#45;radius-xl:28px;
+            &#45;&#45;radius-2xl:40px;
+            &#45;&#45;success:#10b981;
+            &#45;&#45;danger:#ef4444;
         }
         *{box-sizing:border-box}
         body{
             margin:0;
             font-family:'DM Sans', sans-serif;
-            color:var(--ink);
-            background: radial-gradient(1500px 700px at -10% -20%, #c9d8ff 60%, rgba(201,216,255,0) 100%), var(--bg);
+            color:var(&#45;&#45;ink);
+            background: radial-gradient(1500px 700px at -10% -20%, #c9d8ff 60%, rgba(201,216,255,0) 100%), var(&#45;&#45;bg);
         }
         .page-wrap{max-width:1280px;margin:34px auto;padding:0 20px}
 
         /* NAV */
         #mainNav{
-            background:var(--card)!important;
+            background:var(&#45;&#45;card)!important;
             border-radius:22px;
-            box-shadow:var(--shadow-md);
+            box-shadow:var(&#45;&#45;shadow-md);
             top:18px; left:0; right:0;
             width:calc(100% - 40px);
             margin:0 auto;
@@ -55,13 +56,13 @@
         #mainNav .navbar-nav .nav-link{
             color:#334155!important; font-weight:600; margin:0 .2rem; border-radius:10px; padding:.55rem .9rem;
         }
-        #mainNav .navbar-nav .nav-link:hover{color:var(--primary)!important; background:#eff4ff}
-        .btn-primary{background:var(--primary)!important; border:0; border-radius:999px; padding:.75rem 1.15rem; font-weight:700}
+        #mainNav .navbar-nav .nav-link:hover{color:var(&#45;&#45;primary)!important; background:#eff4ff}
+        .btn-primary{background:var(&#45;&#45;primary)!important; border:0; border-radius:999px; padding:.75rem 1.15rem; font-weight:700}
         .btn-outline-primary{border-radius:999px}
 
         /* SUB-HERO */
         .sub-hero{margin-top:110px}
-        .sub-hero-card{position:relative; overflow:hidden; border-radius:var(--radius-2xl); box-shadow:var(--shadow-lg); background:#000;}
+        .sub-hero-card{position:relative; overflow:hidden; border-radius:var(&#45;&#45;radius-2xl); box-shadow:var(&#45;&#45;shadow-lg); background:#000;}
         .sub-hero-bg{height:46vh; min-height:360px; max-height:520px; background-size:cover; background-position:center;}
         .sub-hero-overlay{position:absolute; inset:0; background:linear-gradient(180deg,rgba(2,8,23,0) 35%, rgba(2,8,23,.6) 85%)}
         .sub-hero-content{position:absolute; inset:0; display:grid; align-content:end; padding:28px 32px 32px}
@@ -70,12 +71,12 @@
 
         /* Section titles */
         .section-title{font-weight:800; letter-spacing:-.02em}
-        .section-subtitle{color:var(--muted)}
+        .section-subtitle{color:var(&#45;&#45;muted)}
 
         /* Packages grid */
         .packages-grid{display:grid; gap:22px; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));}
         .pkg-card{
-            background:var(--card); border:1px solid #eef2ff; border-radius:22px; overflow:hidden;
+            background:var(&#45;&#45;card); border:1px solid #eef2ff; border-radius:22px; overflow:hidden;
             box-shadow:0 10px 28px rgba(0,0,0,.06); height:100%; display:flex; flex-direction:column;
             transition:transform .25s ease, box-shadow .25s ease;
         }
@@ -85,10 +86,10 @@
         .pkg-body{padding:20px}
         .badge-row{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px}
         .badge-chip{display:inline-flex; align-items:center; gap:8px; background:#f8faff; border:1px solid #e9efff; color:#0f172a; padding:8px 12px; border-radius:999px; font-size:13px;}
-        .badge-chip i{color:var(--primary)}
+        .badge-chip i{color:var(&#45;&#45;primary)}
         .pkg-title{font-size:18px; font-weight:700; margin-bottom:6px;}
         /* NEW: subtle subtitle under the title */
-        .pkg-subtitle{font-size:13px; color:var(--muted); margin-bottom:16px;}
+        .pkg-subtitle{font-size:13px; color:var(&#45;&#45;muted); margin-bottom:16px;}
         .pkg-list{margin:0 0 12px; padding-left:18px}
         .pkg-list li{margin:.25rem 0; color:#55657a; font-weight:300}
         .pkg-actions{display:flex; gap:10px; margin-top:auto; padding:0 20px 20px}
@@ -98,7 +99,7 @@
 
         /* Added-state button */
         .btn-added{
-            background:var(--success)!important;
+            background:var(&#45;&#45;success)!important;
             color:#fff!important;
             border-color:transparent!important;
             cursor:default;
@@ -116,7 +117,7 @@
 
         /* Floating Book List Icon + badge */
         .floating-icon{
-            position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: #fff;
+            position: fixed; bottom: 20px; right: 20px; background: var(&#45;&#45;primary); color: #fff;
             width: 60px; height: 60px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; font-size: 24px;
             cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9999;
@@ -129,9 +130,9 @@
             box-shadow: 0 2px 6px rgba(0,0,0,.2);
         }
 
-        /* --- Polished Book List Modal --- */
+        /* -&#45;&#45; Polished Book List Modal -&#45;&#45; */
         .modal-elevated .modal-content{
-            border:0; border-radius:22px; box-shadow:var(--shadow-lg);
+            border:0; border-radius:22px; box-shadow:var(&#45;&#45;shadow-lg);
         }
         .modal-elevated .modal-header{
             border:0; padding:20px 24px;
@@ -143,7 +144,7 @@
         }
         .modal-elevated .modal-body{padding:0 24px 8px 24px}
         .booklist-empty{
-            text-align:center; padding:26px 16px; color:var(--muted);
+            text-align:center; padding:26px 16px; color:var(&#45;&#45;muted);
         }
         .list-group-compact .list-group-item{
             display:flex; align-items:center; justify-content:space-between; gap:12px;
@@ -161,7 +162,7 @@
 <body>
 <div class="page-wrap">
 
-    <!-- NAV -->
+    &lt;!&ndash; NAV &ndash;&gt;
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container-fluid px-3">
             <a class="navbar-brand" href="../../index.html">
@@ -186,7 +187,7 @@
         </div>
     </nav>
 
-    <!-- PAGE HEADER -->
+    &lt;!&ndash; PAGE HEADER &ndash;&gt;
     <section class="sub-hero">
         <div class="sub-hero-card">
             <div class="sub-hero-bg" style="background-image:url('../assets/images/home/sigiriya.jpg');"></div>
@@ -202,7 +203,7 @@
         </div>
     </section>
 
-    <!-- PACKAGES -->
+    &lt;!&ndash; PACKAGES &ndash;&gt;
     <section class="py-5">
         <div class="container">
             <div class="row">
@@ -214,7 +215,7 @@
 
             <div class="packages-grid">
 
-                <!-- Booking Modal (kept) -->
+                &lt;!&ndash; Booking Modal (kept) &ndash;&gt;
                 <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
@@ -229,14 +230,14 @@
                     </div>
                 </div>
 
-                <!-- Down South -->
+                &lt;!&ndash; Down South &ndash;&gt;
                 <article class="pkg-card" data-aos="fade-up">
                     <div class="pkg-media">
                         <img src="galle.jpg" alt="Down South tour">
                     </div>
                     <div class="pkg-body">
                         <div class="badge-row">
-                            <!-- kept only destination tag -->
+                            &lt;!&ndash; kept only destination tag &ndash;&gt;
                             <span class="badge-chip"><i class="fas fa-umbrella-beach"></i> Down South</span>
                         </div>
                         <h3 class="pkg-title">Galle • Mirissa • Unawatuna • Tangalle • Hiriketiya</h3>
@@ -259,7 +260,7 @@
                     </div>
                 </article>
 
-                <!-- Up Country -->
+                &lt;!&ndash; Up Country &ndash;&gt;
                 <article class="pkg-card" data-aos="fade-up" data-aos-delay="50">
                     <div class="pkg-media">
                         <img src="ella.jpg" alt="Up Country">
@@ -267,7 +268,7 @@
                     <div class="pkg-body">
                         <div class="badge-row">
                             <span class="badge-chip"><i class="fas fa-mountain"></i> Up Country</span>
-                            <!-- removed days & customizable -->
+                            &lt;!&ndash; removed days & customizable &ndash;&gt;
                         </div>
                         <h3 class="pkg-title">Nuwara Eliya • Ella • Haputale • Bandarawela</h3>
                         <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
@@ -292,7 +293,7 @@
                     </div>
                 </article>
 
-                <!-- Cultural Triangle -->
+                &lt;!&ndash; Cultural Triangle &ndash;&gt;
                 <article class="pkg-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="pkg-media">
                         <img src="sigiriya.jpg" alt="Cultural Triangle">
@@ -300,7 +301,7 @@
                     <div class="pkg-body">
                         <div class="badge-row">
                             <span class="badge-chip"><i class="fas fa-landmark"></i> Cultural Triangle</span>
-                            <!-- removed days & customizable -->
+                            &lt;!&ndash; removed days & customizable &ndash;&gt;
                         </div>
                         <h3 class="pkg-title">Sigiriya • Dambulla • Anuradhapura • Polonnaruwa • Mihintale</h3>
                         <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
@@ -323,7 +324,7 @@
                     </div>
                 </article>
 
-                <!-- East Coast -->
+                &lt;!&ndash; East Coast &ndash;&gt;
                 <article class="pkg-card" data-aos="fade-up" data-aos-delay="150">
                     <div class="pkg-media">
                         <img src="arugambay.jpeg" alt="East Coast">
@@ -331,7 +332,7 @@
                     <div class="pkg-body">
                         <div class="badge-row">
                             <span class="badge-chip"><i class="fas fa-water"></i> East Coast</span>
-                            <!-- removed days & customizable -->
+                            &lt;!&ndash; removed days & customizable &ndash;&gt;
                         </div>
                         <h3 class="pkg-title">Trincomalee • Arugam Bay • Pasikuda • Nilaveli</h3>
                         <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
@@ -356,7 +357,7 @@
                     </div>
                 </article>
 
-                <!-- Colombo Area -->
+                &lt;!&ndash; Colombo Area &ndash;&gt;
                 <article class="pkg-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="pkg-media">
                         <img src="colombo.jpeg" alt="Colombo">
@@ -364,7 +365,7 @@
                     <div class="pkg-body">
                         <div class="badge-row">
                             <span class="badge-chip"><i class="fas fa-city"></i> Colombo</span>
-                            <!-- removed days & customizable -->
+                            &lt;!&ndash; removed days & customizable &ndash;&gt;
                         </div>
                         <h3 class="pkg-title">Colombo • Negombo • Kalutara</h3>
                         <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
@@ -387,7 +388,7 @@
                     </div>
                 </article>
 
-                <!-- Central Highlands -->
+                &lt;!&ndash; Central Highlands &ndash;&gt;
                 <article class="pkg-card" data-aos="fade-up" data-aos-delay="250">
                     <div class="pkg-media">
                         <img src="kandy.jpeg" alt="Central Highlands">
@@ -395,7 +396,7 @@
                     <div class="pkg-body">
                         <div class="badge-row">
                             <span class="badge-chip"><i class="fas fa-mountain"></i> Central Highlands</span>
-                            <!-- removed days & customizable -->
+                            &lt;!&ndash; removed days & customizable &ndash;&gt;
                         </div>
                         <h3 class="pkg-title">Kandy • Knuckles Range • Matale</h3>
                         <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
@@ -419,7 +420,7 @@
                     </div>
                 </article>
 
-                <!-- Wildlife & Nature -->
+                &lt;!&ndash; Wildlife & Nature &ndash;&gt;
                 <article class="pkg-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="pkg-media">
                         <img src="elephants-sri-lanka.jpg" alt="Wildlife & Nature">
@@ -427,7 +428,7 @@
                     <div class="pkg-body">
                         <div class="badge-row">
                             <span class="badge-chip"><i class="fas fa-leaf"></i> Wildlife & Nature</span>
-                            <!-- removed days & customizable -->
+                            &lt;!&ndash; removed days & customizable &ndash;&gt;
                         </div>
                         <h3 class="pkg-title">Yala • Udawalawe • Wilpattu • Horton Plains</h3>
                         <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
@@ -454,15 +455,15 @@
         </div>
     </section>
 
-</div><!-- /.page-wrap -->
+</div>&lt;!&ndash; /.page-wrap &ndash;&gt;
 
-<!-- Floating icon with counter -->
+&lt;!&ndash; Floating icon with counter &ndash;&gt;
 <div id="bookListIcon" class="floating-icon" onclick="openBookList()" style="display:none;">
     <i class="fa-solid fa-list"></i>
     <span id="bookCountBadge" class="float-badge">0</span>
 </div>
 
-<!-- REFINED: Book List Modal -->
+&lt;!&ndash; REFINED: Book List Modal &ndash;&gt;
 <div class="modal fade modal-elevated" id="bookListModal" tabindex="-1" aria-labelledby="bookListModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
@@ -495,7 +496,7 @@
     </div>
 </div>
 
-<!-- FOOTER -->
+&lt;!&ndash; FOOTER &ndash;&gt;
 <footer class="bg-dark text-white py-5 mt-4">
     <div class="container">
         <div class="row">
@@ -546,7 +547,7 @@
     </div>
 </footer>
 
-<!-- SCRIPTS -->
+&lt;!&ndash; SCRIPTS &ndash;&gt;
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
@@ -568,7 +569,7 @@
 </script>
 
 <script>
-    // --- Book List state & UI helpers ---
+    // -&#45;&#45; Book List state & UI helpers -&#45;&#45;
     // let bookList = [];
 
     function addToBookList(btnEl, title) {
@@ -693,9 +694,9 @@
         updateBookListUI();
     });
 </script>
-<!-- Put this <script> at the very end of <body> on EVERY page that needs the Book List -->
+&lt;!&ndash; Put this <script> at the very end of <body> on EVERY page that needs the Book List &ndash;&gt;
 <script>
-    /* ---------- Shared Book List (localStorage) ---------- */
+    /* &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; Shared Book List (localStorage) &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; */
     const BL_STORAGE_KEY = 'tripList';                 // same key everywhere
     const BL_FORM_BASE   = 'https://docs.google.com/forms/d/e/1FAIpQLSdY2COR1q8duWEOi4cn2tGKIdbC7SE05rkS64J2jOvBq2lhKQ/viewform?usp=pp_url';
     const BL_ENTRY_DEST  = 'entry.662015136';          // your checkbox field id
@@ -807,6 +808,1140 @@
     });
 </script>
 
+
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description"
+          content="Explore Sri Lanka's most breathtaking destinations including Sigiriya, Ella, Galle, Kandy, Yala National Park, and Colombo with Visit Siyenga Lanka.">
+    <title>Destinations — Visit Siyenga Lanka</title>
+
+    <!-- Bootstrap / Icons / AOS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #ecedf4;
+            --card: #ffffff;
+            --ink: #0f172a;
+            --muted: #64748b;
+            --primary: #2563eb;
+            --primary-ink: #ffffff;
+            --shadow-lg: 0 24px 60px rgba(0, 0, 0, .16);
+            --shadow-md: 0 12px 32px rgba(0, 0, 0, .10);
+            --radius-xl: 28px;
+            --radius-2xl: 40px;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--ink);
+            background: radial-gradient(1500px 700px at -10% -20%, #c9d8ff 60%, rgba(201, 216, 255, 0) 100%), var(--bg);
+        }
+
+        .page-wrap {
+            max-width: 1280px;
+            margin: 34px auto;
+            padding: 0 20px
+        }
+
+        /* NAV */
+        #mainNav {
+            background: var(--card) !important;
+            border-radius: 22px;
+            box-shadow: var(--shadow-md);
+            top: 18px;
+            left: 0;
+            right: 0;
+            width: calc(100% - 40px);
+            margin: 0 auto;
+            padding: 10px 16px;
+            backdrop-filter: saturate(120%) blur(6px);
+        }
+
+        #mainNav .navbar-brand {
+            font-weight: 800;
+            letter-spacing: .2px;
+            color: #0b1432 !important;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #mainNav .navbar-nav .nav-link {
+            color: #334155 !important;
+            font-weight: 600;
+            margin: 0 .2rem;
+            border-radius: 10px;
+            padding: .55rem .9rem;
+        }
+
+        #mainNav .navbar-nav .nav-link:hover {
+            color: var(--primary) !important;
+            background: #eff4ff
+        }
+
+        .btn-primary {
+            background: var(--primary) !important;
+            border: 0;
+            border-radius: 999px;
+            padding: .75rem 1.15rem;
+            font-weight: 700
+        }
+
+        .btn-outline-primary {
+            border-radius: 999px
+        }
+
+        /* SUB-HERO */
+        .sub-hero {
+            margin-top: 110px
+        }
+
+        .sub-hero-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-lg);
+            background: #000;
+        }
+
+        .sub-hero-bg {
+            height: 46vh;
+            min-height: 360px;
+            max-height: 520px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .sub-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(2, 8, 23, 0) 35%, rgba(2, 8, 23, .6) 85%)
+        }
+
+        .sub-hero-content {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            align-content: end;
+            padding: 28px 32px 32px
+        }
+
+        .sub-hero-title {
+            font-size: clamp(28px, 4vw, 48px);
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -.02em;
+            margin-bottom: .5rem;
+            text-shadow: 0 6px 24px rgba(0, 0, 0, .28)
+        }
+
+        .sub-hero-sub {
+            color: #e5e7eb;
+            opacity: .95;
+            max-width: 960px;
+            margin: 0 auto
+        }
+
+        /* Section titles */
+        .section-title {
+            font-weight: 800;
+            letter-spacing: -.02em
+        }
+
+        .section-subtitle {
+            color: var(--muted)
+        }
+
+        /* Packages grid */
+        .packages-grid {
+            display: grid;
+            gap: 22px;
+            grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        .pkg-card {
+            background: var(--card);
+            border: 1px solid #eef2ff;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, .06);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .pkg-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 38px rgba(0, 0, 0, .09)
+        }
+
+        /* Media: carousel block */
+        .pkg-media {
+            height: 220px;
+            background: #ddd;
+            overflow: hidden;
+            position: relative
+        }
+
+        .pkg-media .carousel,
+        .pkg-media .carousel-inner,
+        .pkg-media .carousel-item {
+            height: 100%
+        }
+
+        .pkg-media .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .pkg-media .carousel-indicators {
+            bottom: 6px
+        }
+
+        .pkg-media .carousel-indicators [data-bs-target] {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            margin: 0 3px;
+            background: #fff;
+            opacity: .6
+        }
+
+        .pkg-media .carousel-indicators .active {
+            opacity: 1
+        }
+
+        .pkg-media .carousel-control-prev,
+        .pkg-media .carousel-control-next {
+            width: 12%;
+            opacity: 0;
+            transition: opacity .2s
+        }
+
+        .pkg-media:hover .carousel-control-prev,
+        .pkg-media:hover .carousel-control-next {
+            opacity: .85
+        }
+
+        .pkg-body {
+            padding: 20px
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px
+        }
+
+        .badge-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f8faff;
+            border: 1px solid #e9efff;
+            color: #0f172a;
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-size: 13px;
+        }
+
+        .badge-chip i {
+            color: var(--primary)
+        }
+
+        .pkg-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .pkg-subtitle {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        .pkg-list {
+            margin: 0 0 12px;
+            padding-left: 18px
+        }
+
+        .pkg-list li {
+            margin: .25rem 0;
+            color: #55657a;
+            font-weight: 300
+        }
+
+        .pkg-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+            padding: 0 20px 20px
+        }
+
+        .btn-pill {
+            border-radius: 999px;
+            font-weight: 700;
+            padding: .65rem 1rem
+        }
+
+        .btn-outline-primary {
+            border: 1px solid #c6d5ff;
+            color: #1e3a8a
+        }
+
+        .btn-outline-primary:hover {
+            background: #eff4ff;
+            border-color: #a9c1ff;
+            color: #1e3a8a
+        }
+
+        .btn-added {
+            background: var(--success) !important;
+            color: #fff !important;
+            border-color: transparent !important;
+            cursor: default;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        footer {
+            border-top-left-radius: 28px;
+            border-top-right-radius: 28px
+        }
+
+        footer .input-group .form-control {
+            border-radius: 999px 0 0 999px
+        }
+
+        footer .input-group .btn {
+            border-radius: 0 999px 999px 0
+        }
+
+        @media (max-width: 760px) {
+            #mainNav {
+                width: calc(100% - 24px)
+            }
+        }
+
+        /* Floating Book List Icon + badge */
+        .floating-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            transition: transform .15s ease;
+        }
+
+        .floating-icon:hover {
+            transform: translateY(-2px)
+        }
+
+        .float-badge {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: #111827;
+            color: #fff;
+            border-radius: 999px;
+            font-size: 12px;
+            padding: 2px 7px;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+        }
+
+        /* Modal polish */
+        .modal-elevated .modal-content {
+            border: 0;
+            border-radius: 22px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .modal-elevated .modal-header {
+            border: 0;
+            padding: 20px 24px;
+            background: linear-gradient(135deg, #eef4ff, #ffffff);
+            border-top-left-radius: 22px;
+            border-top-right-radius: 22px;
+        }
+
+        .modal-elevated .modal-title {
+            font-weight: 800;
+            letter-spacing: -.01em;
+        }
+
+        .modal-elevated .modal-body {
+            padding: 0 24px 8px 24px
+        }
+
+        .booklist-empty {
+            text-align: center;
+            padding: 26px 16px;
+            color: var(--muted);
+        }
+
+        .list-group-compact .list-group-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border: 0;
+            border-bottom: 1px solid #eef2ff;
+            padding: 14px 0;
+        }
+
+        .list-destination {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .list-destination i {
+            color: #2563eb
+        }
+
+        .modal-elevated .modal-footer {
+            border: 0;
+            padding: 18px 24px 24px
+        }
+
+        .btn-danger-soft {
+            background: #fff1f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca
+        }
+
+        .btn-danger-soft:hover {
+            background: #ffe4e6
+        }
+
+        .carousel-indicators{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container-fluid px-3">
+            <a class="navbar-brand" href="../../index.html">
+                <i class="fas fa-compass me-2"></i>Visit Siyenga
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./destinations.html">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../contact.html">Contact</a></li>
+                    <li class="ms-lg-3 mt-2 mt-lg-0">
+                        <a href="./destinations.html" class="btn btn-primary btn-sm">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="sub-hero">
+        <div class="sub-hero-card">
+            <div class="sub-hero-bg" style="background-image:url('../assets/images/home/sigiriya.jpg');"></div>
+            <div class="sub-hero-overlay"></div>
+            <div class="sub-hero-content">
+                <div class="container text-center">
+                    <h1 class="sub-hero-title" data-aos="fade-up">Sri Lanka Tour Packages</h1>
+                    <p class="sub-hero-sub" data-aos="fade-up" data-aos-delay="200">
+                        Carefully crafted experiences showcasing the best of Ceylon’s natural and cultural treasures.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2 class="section-title" data-aos="fade-up">Featured Tour Packages</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">Handpicked experiences that
+                        capture the essence of Sri Lanka</p>
+                </div>
+            </div>
+
+            <div class="packages-grid">
+
+                <!-- Booking Modal -->
+                <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="bookingModalLabel">Book Your Sri Lankan Adventure</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <iframe id="bookingFrame"
+                                        src="https://docs.google.com/forms/d/e/1FAIpQLSdU05j3QC3RtPcSBO9dhnT6D9eC_5gw-i-Q3cURSVL4zzCNKw/viewform?usp=pp_url&entry.2005620554=Hasitha+Lakshan&entry.1045781291=hlakshan614@gmail.com&entry.1065046570=%5Ckalutara&entry.1166974658=947777777&entry.839337160=No+co"
+                                        width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">
+                                    Loading...
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Down South -->
+                <article class="pkg-card" data-aos="fade-up">
+                    <div class="pkg-media">
+                        <div id="dsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false"
+                             data-bs-interval="3500">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"><img src="arugambay.jpeg" alt="Galle Lighthouse"></div>
+                                <div class="carousel-item"><img src="1s-min.jpg" alt="Mirissa"></div>
+                                <div class="carousel-item"><img src="2s-min.jpg" alt="Unawatuna"></div>
+                            </div>
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#dsCarousel" data-bs-slide-to="0" class="active"
+                                        aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#dsCarousel" data-bs-slide-to="1"
+                                        aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#dsCarousel" data-bs-slide-to="2"
+                                        aria-label="Slide 3"></button>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#dsCarousel"
+                                    data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span
+                                    class="visually-hidden">Prev</span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#dsCarousel"
+                                    data-bs-slide="next"><span class="carousel-control-next-icon"></span><span
+                                    class="visually-hidden">Next</span></button>
+                        </div>
+                    </div>
+                    <div class="pkg-body">
+                        <div class="badge-row">
+                            <span class="badge-chip"><i class="fas fa-umbrella-beach"></i> Down South</span>
+                        </div>
+                        <h3 class="pkg-title">Galle • Mirissa • Unawatuna • Tangalle • Hiriketiya</h3>
+                        <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
+                        <ul class="pkg-list">
+                            <li>Galle Fort exploration</li>
+                            <li>Whale watching (Mirissa)</li>
+                            <li>Surf & beach relaxation</li>
+                            <li>Sea turtle conservation</li>
+                            <li>Stilt fishermen & village visits</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-actions">
+                        <a class="btn btn-outline-primary btn-pill" href="./readmore/destination-down-south.html">Learn
+                            More</a>
+                        <a class="btn btn-primary btn-pill add-btn"
+                           data-title="Down South (Galle • Mirissa • Unawatuna • Tangalle • Hiriketiya)"
+                           onclick="addToBookList(this, this.dataset.title)">
+                            Add to My Journey
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Up Country -->
+                <article class="pkg-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="pkg-media">
+                        <div id="ucCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false"
+                             data-bs-interval="3600">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"><img src="ella1.jpg" alt="Nine Arch Bridge"></div>
+                                <div class="carousel-item"><img src="ella2.jpg" alt="Tea Estates"></div>
+                                <div class="carousel-item"><img src="ella3.jpg" alt="Little Adam’s Peak"></div>
+                            </div>
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#ucCarousel" data-bs-slide-to="0" class="active"
+                                        aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#ucCarousel" data-bs-slide-to="1"
+                                        aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#ucCarousel" data-bs-slide-to="2"
+                                        aria-label="Slide 3"></button>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#ucCarousel"
+                                    data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#ucCarousel"
+                                    data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                        </div>
+                    </div>
+                    <div class="pkg-body">
+                        <div class="badge-row">
+                            <span class="badge-chip"><i class="fas fa-mountain"></i> Up Country</span>
+                        </div>
+                        <h3 class="pkg-title">Nuwara Eliya • Ella • Haputale • Bandarawela</h3>
+                        <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
+                        <ul class="pkg-list">
+                            <li>Scenic train rides (Kandy → Ella)</li>
+                            <li>Tea estates & factory visits</li>
+                            <li>Waterfalls & hikes (Little Adam’s Peak)</li>
+                            <li>Colonial architecture</li>
+                            <li>Cool climate & vistas</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-actions">
+                        <a class="btn btn-outline-primary btn-pill" href="./readmore/destination-up-country.html">Learn
+                            More</a>
+                        <a class="btn btn-primary btn-pill add-btn"
+                           data-title="Up Country (Nuwara Eliya • Ella • Haputale • Bandarawela)"
+                           onclick="addToBookList(this, this.dataset.title)">
+                            Add to My Journey
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Cultural Triangle -->
+                <article class="pkg-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pkg-media">
+                        <div id="ctCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false"
+                             data-bs-interval="3400">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"><img src="si1%20(1).jpg" alt="Sigiriya Rock"></div>
+                                <div class="carousel-item"><img src="si2.jpg" alt="Dambulla Caves"></div>
+                                <div class="carousel-item"><img src="si22.jpg" alt="Anuradhapura Ruins"></div>
+                            </div>
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#ctCarousel" data-bs-slide-to="0"
+                                        class="active"></button>
+                                <button type="button" data-bs-target="#ctCarousel" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#ctCarousel" data-bs-slide-to="2"></button>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#ctCarousel"
+                                    data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#ctCarousel"
+                                    data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                        </div>
+                    </div>
+                    <div class="pkg-body">
+                        <div class="badge-row">
+                            <span class="badge-chip"><i class="fas fa-landmark"></i> Cultural Triangle</span>
+                        </div>
+                        <h3 class="pkg-title">Sigiriya • Dambulla • Anuradhapura • Polonnaruwa • Mihintale</h3>
+                        <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
+                        <ul class="pkg-list">
+                            <li>Sigiriya Rock Fortress & Dambulla Caves</li>
+                            <li>Ancient cities & ruins</li>
+                            <li>Minneriya safari (elephant gatherings)</li>
+                            <li>Sacred temples & heritage</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-actions">
+                        <a class="btn btn-outline-primary btn-pill"
+                           href="./readmore/destination-cultural-triangle.html">Learn More</a>
+                        <a class="btn btn-primary btn-pill add-btn"
+                           data-title="Cultural Triangle (Sigiriya • Dambulla • Anuradhapura • Polonnaruwa • Mihintale)"
+                           onclick="addToBookList(this, this.dataset.title)">
+                            Add to My Journey
+                        </a>
+                    </div>
+                </article>
+
+                <!-- East Coast -->
+                <article class="pkg-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="pkg-media">
+                        <div id="ecCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false"
+                             data-bs-interval="3500">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"><img src="trin1.jpg" alt="Arugam Bay"></div>
+                                <div class="carousel-item"><img src="ella3.jpg" alt="Pigeon Island"></div>
+                                <div class="carousel-item"><img src="ella1.jpg" alt="Pasikuda"></div>
+                            </div>
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#ecCarousel" data-bs-slide-to="0"
+                                        class="active"></button>
+                                <button type="button" data-bs-target="#ecCarousel" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#ecCarousel" data-bs-slide-to="2"></button>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#ecCarousel"
+                                    data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#ecCarousel"
+                                    data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                        </div>
+                    </div>
+                    <div class="pkg-body">
+                        <div class="badge-row">
+                            <span class="badge-chip"><i class="fas fa-water"></i> East Coast</span>
+                        </div>
+                        <h3 class="pkg-title">Trincomalee • Arugam Bay • Pasikuda • Nilaveli</h3>
+                        <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
+                        <ul class="pkg-list">
+                            <li>Surfing (Arugam Bay)</li>
+                            <li>Snorkeling & scuba (Pigeon Island)</li>
+                            <li>Turquoise calm beaches</li>
+                            <li>Whale & dolphin watching</li>
+                            <li>Local culture & temples</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-actions">
+                        <a class="btn btn-outline-primary btn-pill" href="./readmore/destination-east-coast.html">Learn
+                            More</a>
+                        <a class="btn btn-primary btn-pill add-btn"
+                           data-title="East Coast (Trincomalee • Arugam Bay • Pasikuda • Nilaveli)"
+                           onclick="addToBookList(this, this.dataset.title)">
+                            Add to My Journey
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Colombo Area -->
+                <article class="pkg-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pkg-media">
+                        <div id="coCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false"
+                             data-bs-interval="3600">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"><img src="ella2.jpg" alt="Colombo City"></div>
+                                <div class="carousel-item"><img src="1s-min.jpg" alt="Negombo"></div>
+                                <div class="carousel-item"><img src="trin1.jpg" alt="Kalutara"></div>
+                            </div>
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#coCarousel" data-bs-slide-to="0"
+                                        class="active"></button>
+                                <button type="button" data-bs-target="#coCarousel" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#coCarousel" data-bs-slide-to="2"></button>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#coCarousel"
+                                    data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#coCarousel"
+                                    data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                        </div>
+                    </div>
+                    <div class="pkg-body">
+                        <div class="badge-row">
+                            <span class="badge-chip"><i class="fas fa-city"></i> Colombo</span>
+                        </div>
+                        <h3 class="pkg-title">Colombo • Negombo • Kalutara</h3>
+                        <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
+                        <ul class="pkg-list">
+                            <li>City tours & shopping</li>
+                            <li>Negombo lagoon boat rides</li>
+                            <li>Dutch forts & canals</li>
+                            <li>Great first/last day plan</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-actions">
+                        <a class="btn btn-outline-primary btn-pill" href="./readmore/destination-colombo.html">Learn
+                            More</a>
+                        <a class="btn btn-primary btn-pill add-btn"
+                           data-title="Colombo & Surroundings (Colombo • Negombo • Kalutara)"
+                           onclick="addToBookList(this, this.dataset.title)">
+                            Add to My Journey
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Central Highlands -->
+                <article class="pkg-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="pkg-media">
+                        <div id="chCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false"
+                             data-bs-interval="3300">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"><img src="trin1.jpg" alt="Temple of the Tooth">
+                                </div>
+                                <div class="carousel-item"><img src="2s-min.jpg" alt="Knuckles Range"></div>
+                                <div class="carousel-item"><img src="1s-min.jpg" alt="Botanical Gardens"></div>
+                            </div>
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#chCarousel" data-bs-slide-to="0"
+                                        class="active"></button>
+                                <button type="button" data-bs-target="#chCarousel" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#chCarousel" data-bs-slide-to="2"></button>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#chCarousel"
+                                    data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#chCarousel"
+                                    data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                        </div>
+                    </div>
+                    <div class="pkg-body">
+                        <div class="badge-row">
+                            <span class="badge-chip"><i class="fas fa-mountain"></i> Central Highlands</span>
+                        </div>
+                        <h3 class="pkg-title">Kandy • Knuckles Range • Matale</h3>
+                        <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
+                        <ul class="pkg-list">
+                            <li>Temple of the Tooth</li>
+                            <li>Peradeniya Botanical Gardens</li>
+                            <li>Cultural shows</li>
+                            <li>Knuckles nature treks</li>
+                            <li>Spice gardens & crafts</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-actions">
+                        <a class="btn btn-outline-primary btn-pill"
+                           href="./readmore/destination-central-highlands.html">Learn More</a>
+                        <a class="btn btn-primary btn-pill add-btn"
+                           data-title="Central Highlands (Kandy • Knuckles Range • Matale)"
+                           onclick="addToBookList(this, this.dataset.title)">
+                            Add to My Journey
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Wildlife & Nature -->
+                <article class="pkg-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pkg-media">
+                        <div id="wnCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false"
+                             data-bs-interval="3600">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"><img src="ella1.jpg" alt="Yala Safari"></div>
+                                <div class="carousel-item"><img src="ella2.jpg" alt="Udawalawe Elephants"></div>
+                                <div class="carousel-item"><img src="arugambay.jpeg" alt="Horton Plains"></div>
+                            </div>
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#wnCarousel" data-bs-slide-to="0"
+                                        class="active"></button>
+                                <button type="button" data-bs-target="#wnCarousel" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#wnCarousel" data-bs-slide-to="2"></button>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#wnCarousel"
+                                    data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#wnCarousel"
+                                    data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                        </div>
+                    </div>
+                    <div class="pkg-body">
+                        <div class="badge-row">
+                            <span class="badge-chip"><i class="fas fa-leaf"></i> Wildlife & Nature</span>
+                        </div>
+                        <h3 class="pkg-title">Yala • Udawalawe • Wilpattu • Horton Plains</h3>
+                        <p class="pkg-subtitle">Add to your list & inquire your itinerary</p>
+                        <ul class="pkg-list">
+                            <li>Safaris (elephants, leopards, birdlife)</li>
+                            <li>World’s End at Horton Plains</li>
+                            <li>Birdwatching & nature walks</li>
+                            <li>Eco-lodges & conservation visits</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-actions">
+                        <a class="btn btn-outline-primary btn-pill" href="./readmore/destination-wildlife-nature.html">Learn
+                            More</a>
+                        <a class="btn btn-primary btn-pill add-btn"
+                           data-title="Wildlife & Nature (Yala • Udawalawe • Wilpattu • Horton Plains)"
+                           onclick="addToBookList(this, this.dataset.title)">
+                            Add to My Journey
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+</div><!-- /.page-wrap -->
+
+<!-- Floating icon with counter -->
+<div id="bookListIcon" class="floating-icon" onclick="openBookList()" style="display:none;">
+    <i class="fa-solid fa-list"></i>
+    <span id="bookCountBadge" class="float-badge">0</span>
+</div>
+
+<!-- Book List Modal -->
+<div class="modal fade modal-elevated" id="bookListModal" tabindex="-1" aria-labelledby="bookListModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="bookListModalLabel">Your Book List</h5>
+                    <small class="text-muted">Choose your favourite routes. Remove if you change your mind.</small>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div id="bookListEmpty" class="booklist-empty d-none">
+                    <i class="fa-regular fa-face-smile-beam fa-2x mb-2"></i>
+                    <div>No destinations yet. Add some from the cards.</div>
+                </div>
+                <ul id="bookListItems" class="list-group list-group-compact"></ul>
+            </div>
+
+            <div class="modal-footer d-flex justify-content-between">
+                <button class="btn btn-danger-soft" id="clearAllBtn" onclick="clearAll()" type="button">
+                    <i class="fa-solid fa-trash-can me-1"></i> Clear All
+                </button>
+                <button class="btn btn-primary" id="proceedBtn" onclick="proceedToBooking()" type="button" disabled>
+                    Proceed to Booking
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white py-5 mt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <h5><i class="fas fa-compass me-2"></i>Visit Siyenga</h5>
+                <p>Your trusted local partner for authentic Sri Lankan adventures. We specialize in eco-friendly tours
+                    that showcase our island's incredible natural beauty and rich cultural heritage.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank"
+                       class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/94779961170" target="_blank" class="text-white me-3"><i
+                            class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4">
+                <h6>Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="../../index.html" class="text-white-50">Home</a></li>
+                    <li><a href="../../about.html" class="text-white-50">About</a></li>
+                    <li><a href="../../services.html" class="text-white-50">Services</a></li>
+                    <li><a href="./destinations.html" class="text-white-50">Destinations</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4">
+                <h6>Contact Info</h6>
+                <ul class="list-unstyled">
+                    <li class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i>352/16C Thalpitiya south Wadduwa
+                    </li>
+                    <li class="text-white-50"><i class="fas fa-phone me-2"></i>+94 77 996 1170</li>
+                    <li class="text-white-50"><i class="fas fa-envelope me-2"></i>visitsiyenga@gmail.com</li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4">
+                <h6>Newsletter</h6>
+                <p class="text-white-50">Subscribe to receive our latest offers and travel updates.</p>
+                <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Your email">
+                    <button class="btn btn-primary" type="button">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-white-50 mb-0">&copy; <span id="year"></span> Visit Siyenga. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="#" class="text-white-50 me-3">Privacy Policy</a>
+                <a href="#" class="text-white-50">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({once: true, duration: 700, easing: 'ease-out-cubic'});
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const FORM_BASE =
+        'https://docs.google.com/forms/d/e/1FAIpQLSdU05j3QC3RtPcSBO9dhnT6D9eC_5gw-i-Q3cURSVL4zzCNKw/viewform?usp=pp_url&entry.2005620554=';
+
+    function openBookingForm(btnEl) {
+        const card = btnEl.closest('.pkg-card');
+        const title = card.querySelector('.pkg-title')?.textContent?.trim() || 'Sri Lanka Tour';
+        document.getElementById('bookingModalLabel').textContent = `Book: ${title}`;
+        const frame = document.getElementById('bookingFrame');
+        frame.src = FORM_BASE + encodeURIComponent(title);
+        const modal = new bootstrap.Modal(document.getElementById('bookingModal'));
+        modal.show();
+    }
+</script>
+
+<!-- Shared Book List (localStorage) -->
+<script>
+    const BL_STORAGE_KEY = 'tripList';
+    const BL_FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSdY2COR1q8duWEOi4cn2tGKIdbC7SE05rkS64J2jOvBq2lhKQ/viewform?usp=pp_url';
+    const BL_ENTRY_DEST = 'entry.662015136';
+    let bookList = JSON.parse(localStorage.getItem(BL_STORAGE_KEY) || '[]');
+
+    function blPersist() {
+        localStorage.setItem(BL_STORAGE_KEY, JSON.stringify(bookList));
+    }
+
+    function blAdd(title) {
+        if (!title) return;
+        if (!bookList.includes(title)) {
+            bookList.push(title);
+            blPersist();
+        }
+        blSyncFloating();
+        blRenderModal();
+        blUpdateAllAddButtons();
+    }
+
+    function blRemove(i) {
+        bookList.splice(i, 1);
+        blPersist();
+        blSyncFloating();
+        blRenderModal();
+        blUpdateAllAddButtons(true);
+    }
+
+    function blClear() {
+        bookList = [];
+        blPersist();
+        blSyncFloating();
+        blRenderModal();
+        blUpdateAllAddButtons(true);
+    }
+
+    function blMoveUp(i) {
+        if (i <= 0) return;
+        [bookList[i - 1], bookList[i]] = [bookList[i], bookList[i - 1]];
+        blPersist();
+        blRenderModal();
+    }
+
+    function blMoveDown(i) {
+        if (i >= bookList.length - 1) return;
+        [bookList[i + 1], bookList[i]] = [bookList[i], bookList[i + 1]];
+        blPersist();
+        blRenderModal();
+    }
+
+    function blSyncFloating() {
+        const icon = document.getElementById('bookListIcon');
+        const badge = document.getElementById('bookCountBadge');
+        if (!icon || !badge) return;
+        icon.style.display = bookList.length ? 'flex' : 'none';
+        badge.textContent = bookList.length;
+    }
+
+    function blRenderModal() {
+        const empty = document.getElementById('bookListEmpty');
+        const list = document.getElementById('bookListItems');
+        const goBtn = document.getElementById('proceedBtn');
+        if (!empty || !list || !goBtn) return;
+        list.innerHTML = '';
+        if (bookList.length === 0) {
+            empty.classList.remove('d-none');
+            goBtn.disabled = true;
+        } else {
+            empty.classList.add('d-none');
+            goBtn.disabled = false;
+            bookList.forEach((t, i) => {
+                const li = document.createElement('li');
+                li.className = 'list-group-item';
+                li.innerHTML = `
+          <div class="list-destination"><i class="fa-solid fa-location-dot"></i><span>${t}</span></div>
+          <div class="d-flex align-items-center gap-2">
+            <button class="btn btn-sm btn-outline-secondary" onclick="blMoveUp(${i})" title="Move up"><i class="fa-solid fa-arrow-up"></i></button>
+            <button class="btn btn-sm btn-outline-secondary" onclick="blMoveDown(${i})" title="Move down"><i class="fa-solid fa-arrow-down"></i></button>
+            <button class="btn btn-sm btn-outline-danger" onclick="blRemove(${i})" title="Remove"><i class="fa-solid fa-xmark"></i></button>
+          </div>`;
+                list.appendChild(li);
+            });
+        }
+    }
+
+    function blOpenModal() {
+        blRenderModal();
+        new bootstrap.Modal(document.getElementById('bookListModal')).show();
+    }
+
+    function blProceed() {
+        if (bookList.length === 0) return;
+        const q = bookList.map(v => `&${BL_ENTRY_DEST}=${encodeURIComponent(v)}`).join('');
+        window.open(BL_FORM_BASE + q, '_blank');
+    }
+
+    /* Button helpers */
+    function blMarkAdded(btn) {
+        btn.classList.add('btn-added');
+        btn.innerHTML = '<i class="fa-solid fa-check me-1"></i> Added';
+        btn.setAttribute('disabled', 'disabled');
+    }
+
+    function blResetBtn(btn) {
+        btn.classList.remove('btn-added');
+        btn.innerHTML = 'Add to My Journey';
+        btn.removeAttribute('disabled');
+    }
+
+    function blUpdateAllAddButtons(forceReset = false) {
+        document.querySelectorAll('.add-btn[data-title]').forEach(btn => {
+            const t = btn.dataset.title;
+            if (forceReset) blResetBtn(btn);
+            if (bookList.includes(t)) blMarkAdded(btn);
+        });
+    }
+
+    function blAutoAddFromURL() {
+        const params = new URLSearchParams(location.search);
+        const add = params.get('add');
+        if (add) blAdd(add);
+    }
+
+    function blWireLearnMoreLinks() {
+        document.querySelectorAll('a.learn-more[data-title]').forEach(a => {
+            try {
+                const url = new URL(a.getAttribute('href'), location.href);
+                url.searchParams.set('add', a.dataset.title);
+                a.setAttribute('href', url.pathname + url.search);
+            } catch (e) {
+            }
+        });
+    }
+
+    /* Public API for HTML */
+    window.addToBookList = (btn, title) => {
+        blAdd(title);
+        if (btn) blMarkAdded(btn);
+    };
+    window.openBookList = blOpenModal;
+    window.clearAll = blClear;
+    window.moveUp = blMoveUp;
+    window.moveDown = blMoveDown;
+    window.removeFromBookList = blRemove;
+    window.proceedToBooking = blProceed;
+
+    document.addEventListener('DOMContentLoaded', () => {
+        blWireLearnMoreLinks();
+        blAutoAddFromURL();
+        blSyncFloating();
+        blRenderModal();
+        blUpdateAllAddButtons();
+    });
+</script>
 
 </body>
 </html>
