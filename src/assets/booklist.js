@@ -101,7 +101,7 @@
       </div>
       <div class="modal-footer d-flex justify-content-between">
         <button class="btn btn-outline-secondary" id="bookListClear">Clear All</button>
-        <button class="btn btn-primary" id="bookListProceed">Proceed to Booking</button>
+        <button class="btn btn-primary" id="bookListProceed">Submit Inquiry</button>
       </div>
     </div>
   </div>
