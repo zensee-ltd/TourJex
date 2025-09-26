@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Colombo & Surroundings — Colombo • Negombo • Kalutara. City tours & shopping, Negombo lagoon boat rides, Dutch forts & canals — a perfect first/last day plan near the airport."/>
-    <title>Colombo & Surroundings — Colombo • Negombo • Kalutara | Visit Siyenga</title>
+    <meta name="description" content="Colombo & Surroundings Colombo • Negombo • Kalutara. City tours & shopping, Negombo lagoon boat rides, Dutch forts & canals — a perfect first/last day plan near the airport."/>
+    <title>Colombo & Surroundings Colombo • Negombo • Kalutara | Visit Siyenga</title>
 
     <!-- Bootstrap / Icons / AOS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -89,6 +89,43 @@
         footer .input-group .btn{border-radius:0 999px 999px 0}
 
         @media (max-width:760px){ #mainNav{width:calc(100% - 24px)} }
+
+        /* Brand container */
+        #mainNav .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px; /* spacing between icon + name */
+            padding: 0; /* no extra padding inside */
+        }
+
+        /* Round icon */
+        #mainNav .navbar-brand .brand-logo {
+            /*height: 42px;   !* matches navbar height *!*/
+            height: 42px;   /* matches navbar height */
+            width: auto;
+            display: block;
+        }
+
+        /* Siyenga name image */
+        #mainNav .navbar-brand .siyenga-name img {
+            /*height: 32px;   !* a bit smaller than icon for balance *!*/
+            height: 32px;   /* a bit smaller than icon for balance */
+            width: auto;
+            display: block;
+            margin-top: 2px; /* fine-tune vertical alignment */
+        }
+
+        /* On desktop: increase both slightly */
+        @media (min-width: 992px) {
+            #mainNav .navbar-brand .brand-logo {
+                /*height: 48px;*/
+                height: 32px;
+            }
+            #mainNav .navbar-brand .siyenga-name img {
+                height: 36px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -97,9 +134,16 @@
     <!-- NAV -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container-fluid px-3">
-            <a class="navbar-brand" href="../../../index.html">
-                <i class="fas fa-compass me-2"></i>Visit Siyenga
+
+            <a class="navbar-brand" href="../../index.html">
+                <img src="../../assets/images/siyenga_round_logo.png"
+                     alt="Visit Siyenga"
+                     class="brand-logo" />
+                <span class="siyenga-name">
+                    <img src="../../assets/images/siyenga_name_logo.png">
+                </span>
             </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -109,7 +153,7 @@
                     <li class="nav-item"><a class="nav-link" href="../../../about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../../services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="../destinations.html">Destinations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../../gallery.html">Gallery</a></li>
+                    <!--<li class="nav-item"><a class="nav-link" href="../../../gallery.html">Gallery</a></li>-->
                     <li class="nav-item"><a class="nav-link" href="../../../contact.html">Contact</a></li>
                     <li class="ms-lg-3 mt-2 mt-lg-0">
                         <a href="../destinations.html" class="btn btn-primary btn-sm">Get Started</a>
@@ -129,7 +173,7 @@
                 <div class="container text-center">
                     <h1 class="hero-title" data-aos="fade-up">Colombo & Surroundings</h1>
                     <p class="hero-sub" data-aos="fade-up" data-aos-delay="150">
-                        Colombo • Negombo • Kalutara — city tours & shopping, Negombo lagoon boat rides, and Dutch forts & canals.
+                        Colombo • Negombo • Kalutara <br>City tours & shopping, Negombo lagoon boat rides, and Dutch forts & canals.
                         A great first/last day plan close to the airport.
                     </p>
                 </div>
@@ -143,7 +187,7 @@
             <div class="row">
                 <div class="col-12 text-center mb-4">
                     <h2 class="section-title" data-aos="fade-up">Key Highlights & Activities</h2>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">Simple, flexible — pick what fits your timing</p>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">Simple, flexible pick what fits your timing</p>
                 </div>
             </div>
 
@@ -224,7 +268,7 @@
                 <div class="row align-items-center g-3">
                     <div class="col-lg-8">
                         <h3 class="mb-1">Include Colombo & Surroundings in your plan?</h3>
-                        <p class="mb-0">Tap below to add it to your Book List. When you’re ready, send your list — we’ll map an easy, time-smart route.</p>
+                        <p class="mb-0">Tap below to add it to your Book List. When you’re ready, send your list we’ll map an easy, time-smart route.</p>
                     </div>
                     <div class="col-lg-4 text-lg-end">
                         <button id="addBtn"
@@ -285,7 +329,7 @@
         <div class="row">
             <div class="col-lg-4 mb-4">
                 <h5><i class="fas fa-compass me-2"></i>Visit Siyenga</h5>
-                <p>Your trusted local partner for authentic Sri Lankan adventures. We specialize in eco-friendly tours that showcase our island's incredible natural beauty and rich cultural heritage.</p>
+                <p>Your trusted local partner for authentic Sri Lankan adventures. We specialize in eco friendly tours that showcase our island's incredible natural beauty and rich cultural heritage.</p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://wa.me/94779961170" target="_blank" class="text-white me-3"><i class="fab fa-whatsapp"></i></a>

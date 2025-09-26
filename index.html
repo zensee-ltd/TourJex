@@ -6,7 +6,7 @@
     <meta name="description" content="Visit Siyenga - Premium Sri Lanka Tourism Services. Discover the Pearl of the Indian Ocean with our customized tours and exceptional service.">
     <meta name="keywords" content="Sri Lanka tours, tourism, travel packages, destinations, Sigiriya, Ella, Galle, Kandy">
     <meta name="author" content="Visit Siyenga">
-    <title>Visit Siyenga — Discover Sri Lanka's Hidden Gems</title>
+    <title>Visit Siyenga Discover Sri Lanka's Hidden Gems</title>
 
     <!-- Bootstrap / Icons / AOS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -105,7 +105,10 @@
         .section-subtitle{color:var(--muted)}
 
         .why-wrap {
-            background: #fff;
+            background:
+                    linear-gradient(180deg, rgba(255,255,255,.88) 0%, rgba(255,255,255,.95) 100%), /* fade overlay */
+                    url('src/assets/images/contact_bg_2.jpg') center/cover no-repeat; /* your image */
+            background-color: #f5f8ff; /* fallback */
             border: 1px solid #e8edff;
             border-radius: 30px;
             padding: 40px 28px;
@@ -256,6 +259,42 @@
             .hero-word{left:16px; top:6vh}
             .hero-navigation{padding:0 6px}
         }
+
+        /* Brand container */
+        #mainNav .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px; /* spacing between icon + name */
+            padding: 0; /* no extra padding inside */
+        }
+
+        /* Round icon */
+        #mainNav .navbar-brand .brand-logo {
+            /*height: 42px;   !* matches navbar height *!*/
+            height: 42px;   /* matches navbar height */
+            width: auto;
+            display: block;
+        }
+
+        /* Siyenga name image */
+        #mainNav .navbar-brand .siyenga-name img {
+            /*height: 32px;   !* a bit smaller than icon for balance *!*/
+            height: 32px;   /* a bit smaller than icon for balance */
+            width: auto;
+            display: block;
+            margin-top: 2px; /* fine-tune vertical alignment */
+        }
+
+        /* On desktop: increase both slightly */
+        @media (min-width: 992px) {
+            #mainNav .navbar-brand .brand-logo {
+                /*height: 48px;*/
+                height: 32px;
+            }
+            #mainNav .navbar-brand .siyenga-name img {
+                height: 36px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -264,8 +303,13 @@
     <!-- NAV -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container-fluid px-3">
-            <a class="navbar-brand" href="index.html">
-                <i class="fas fa-compass me-2"></i>Visit Siyenga
+            <a class="navbar-brand" href="../../index.html">
+                <img src="src/assets/images/siyenga_round_logo.png"
+                     alt="Visit Siyenga"
+                     class="brand-logo" />
+                <span class="siyenga-name">
+                    <img src="src/assets/images/siyenga_name_logo.png">
+                </span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -276,7 +320,7 @@
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="src/destination/destinations.html">Destinations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <!--<li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>-->
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="ms-lg-3 mt-2 mt-lg-0">
                         <a href="src/destination/destinations.html" class="btn btn-primary btn-sm">Get Started</a>
@@ -361,7 +405,7 @@
                     <div class="feature-chip">
                         <div class="chip-icon"><i class="fa-solid fa-leaf"></i></div>
                         <div>
-                            <p class="chip-title mb-1">Eco-Friendly Tours</p>
+                            <p class="chip-title mb-1">eco friendly tours</p>
                             <p class="chip-text mb-0">Low-impact travel that protects habitats and supports conservation.</p>
                         </div>
                     </div>
@@ -504,21 +548,24 @@
                             <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="location-details">
                                 <h5>Our Address</h5>
-                                <p>352/16C Thalpitiya south<br>Wadduwa, Sri Lanka</p>
+<!--                                <p>352/16C Thalpitiya south<br>Wadduwa, Sri Lanka</p>-->
+                                <a href="https://www.google.com/maps?q=352/16C+Thalpitiya+South+Wadduwa+Sri+Lanka" target="_blank">
+                                    352/16C Thalpitiya South<br>Wadduwa, Sri Lanka
+                                </a>
                             </div>
                         </div>
                         <div class="location-info">
                             <div class="location-icon"><i class="fas fa-phone"></i></div>
                             <div class="location-details">
                                 <h5>Contact Numbers</h5>
-                                <p>(+94)077-996-1170</p>
+                                <p><a href="tel:+94779961170">(+94) 77-996-1170</a></p>
                             </div>
                         </div>
                         <div class="location-info">
                             <div class="location-icon"><i class="fas fa-envelope"></i></div>
                             <div class="location-details">
                                 <h5>Email Address</h5>
-                                <p>visitsiyenga@gmail.com</p>
+                                <p><a href="mailto:visitsiyenga@gmail.com">visitsiyenga@gmail.com</a></p>
                             </div>
                         </div>
                     </div>
@@ -540,7 +587,7 @@
         <div class="row">
             <div class="col-lg-4 mb-4">
                 <h5><i class="fas fa-compass me-2"></i>Visit Siyenga</h5>
-                <p>Your trusted local partner for authentic Sri Lankan adventures. We specialize in eco-friendly tours that showcase our island's incredible natural beauty and rich cultural heritage.</p>
+                <p>Your trusted local partner for authentic Sri Lankan adventures. We specialize in eco friendly tours that showcase our island's incredible natural beauty and rich cultural heritage.</p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://wa.me/94779961170" target="_blank" class="text-white me-3"><i class="fab fa-whatsapp"></i></a>
