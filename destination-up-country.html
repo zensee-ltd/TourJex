@@ -4,25 +4,29 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description"
-          content="Wildlife & Nature Yala • Udawalawe • Wilpattu • Horton Plains. Safaris, World’s End hike, birdwatching & nature walks, eco-lodges and conservation visits."/>
-    <title>Wildlife & Nature Yala • Udawalawe • Wilpattu • Horton Plains | Visit Siyenga</title>
+          content="Up Country Nuwara Eliya • Ella • Haputale • Bandarawela. Scenic trains, tea country, waterfalls and cool mountain vistas with Visit Siyenga."/>
+    <title>Up Country Nuwara Eliya • Ella • Haputale • Bandarawela | Visit Siyenga</title>
 
+    <!-- Bootstrap / Icons / AOS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet"/>
 
     <style>
         :root {
             --bg: #ecedf4;
-            --card: #fff;
+            --card: #ffffff;
             --ink: #0f172a;
             --muted: #64748b;
             --primary: #2563eb;
+            --primary-ink: #ffffff;
             --shadow-lg: 0 24px 60px rgba(0, 0, 0, .16);
             --shadow-md: 0 12px 32px rgba(0, 0, 0, .10);
+            --radius-xl: 28px;
             --radius-2xl: 40px;
-            --success: #10b981
+            --success: #10b981;
         }
 
         * {
@@ -33,7 +37,7 @@
             margin: 0;
             font-family: 'DM Sans', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
             color: var(--ink);
-            background: radial-gradient(1500px 700px at -10% -20%, #c9d8ff 60%, rgba(201, 216, 255, 0) 100%), var(--bg)
+            background: radial-gradient(1500px 700px at -10% -20%, #c9d8ff 60%, rgba(201, 216, 255, 0) 100%), var(--bg);
         }
 
         .page-wrap {
@@ -42,8 +46,9 @@
             padding: 0 20px
         }
 
+        /* NAV */
         #mainNav {
-            background: #fff !important;
+            background: var(--card) !important;
             border-radius: 22px;
             box-shadow: var(--shadow-md);
             top: 18px;
@@ -51,7 +56,8 @@
             right: 0;
             width: calc(100% - 40px);
             margin: 0 auto;
-            padding: 10px 16px
+            padding: 10px 16px;
+            backdrop-filter: saturate(120%) blur(6px);
         }
 
         #mainNav .navbar-brand {
@@ -60,17 +66,18 @@
             color: #0b1432 !important;
             display: flex;
             align-items: center;
-            gap: 10px
+            gap: 10px;
         }
 
-        #mainNav .nav-link {
+        #mainNav .navbar-nav .nav-link {
             color: #334155 !important;
             font-weight: 600;
+            margin: 0 .2rem;
             border-radius: 10px;
-            padding: .55rem .9rem
+            padding: .55rem .9rem;
         }
 
-        #mainNav .nav-link:hover {
+        #mainNav .navbar-nav .nav-link:hover {
             color: var(--primary) !important;
             background: #eff4ff
         }
@@ -83,6 +90,7 @@
             font-weight: 700
         }
 
+        /* HERO */
         .hero {
             margin-top: 110px
         }
@@ -133,6 +141,7 @@
             margin: 0 auto
         }
 
+        /* Sections */
         .section-title {
             font-weight: 800;
             letter-spacing: -.02em
@@ -142,6 +151,11 @@
             color: var(--muted)
         }
 
+        .lead {
+            color: #334155
+        }
+
+        /* Highlights */
         .highlights-grid {
             display: grid;
             gap: 18px;
@@ -149,7 +163,7 @@
         }
 
         .hl-card {
-            background: #fff;
+            background: var(--card);
             border: 1px solid #e8edff;
             border-radius: 22px;
             box-shadow: 0 10px 28px rgba(0, 0, 0, .06);
@@ -195,6 +209,7 @@
             font-size: 13px
         }
 
+        /* Gallery */
         .gallery-grid {
             display: grid;
             gap: 14px;
@@ -215,6 +230,7 @@
             display: block
         }
 
+        /* CTA */
         .cta {
             background: linear-gradient(135deg, #2563eb, #4f46e5);
             color: #fff;
@@ -233,6 +249,7 @@
             color: #fff !important
         }
 
+        /* Floating icon + modal */
         .floating-icon {
             position: fixed;
             bottom: 20px;
@@ -247,8 +264,13 @@
             justify-content: center;
             font-size: 24px;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
-            z-index: 9999
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            transition: transform .15s ease;
+        }
+
+        .floating-icon:hover {
+            transform: translateY(-2px)
         }
 
         .float-badge {
@@ -260,7 +282,8 @@
             border-radius: 999px;
             font-size: 12px;
             padding: 2px 7px;
-            border: 2px solid #fff
+            border: 2px solid #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
         }
 
         .modal-elevated .modal-content {
@@ -272,15 +295,20 @@
         .modal-elevated .modal-header {
             border: 0;
             padding: 20px 24px;
-            background: linear-gradient(135deg, #eef4ff, #fff);
+            background: linear-gradient(135deg, #eef4ff, #ffffff);
             border-top-left-radius: 22px;
             border-top-right-radius: 22px
+        }
+
+        .modal-elevated .modal-title {
+            font-weight: 800;
+            letter-spacing: -.01em
         }
 
         .booklist-empty {
             text-align: center;
             padding: 26px 16px;
-            color: var(--muted)
+            color: var(--muted);
         }
 
         .list-group-compact .list-group-item {
@@ -323,6 +351,7 @@
                 width: calc(100% - 24px)
             }
         }
+
         /* Brand container */
         #mainNav .navbar-brand {
             display: flex;
@@ -363,28 +392,31 @@
 <body>
 <div class="page-wrap">
 
+    <!-- NAV -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container-fluid px-3">
             <a class="navbar-brand" href="../../index.html">
-                <img src="../../assets/images/siyenga_round_logo.png"
+                <img src="src/assets/images/siyenga_round_logo.png"
                      alt="Visit Siyenga"
                      class="brand-logo" />
                 <span class="siyenga-name">
-                    <img src="../../assets/images/siyenga_name_logo.png">
+                    <img src="src/assets/images/siyenga_name_logo.png">
                 </span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span
-                    class="navbar-toggler-icon"></span></button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link" href="../../../index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../../about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../../services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../../destinations.html">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
                     <!--<li class="nav-item"><a class="nav-link" href="../../../gallery.html">Gallery</a></li>-->
-                    <li class="nav-item"><a class="nav-link" href="../../../contact.html">Contact</a></li>
-                    <li class="ms-lg-3 mt-2 mt-lg-0"><a href="../../../destinations.html" class="btn btn-primary btn-sm">Get
-                        Started</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="ms-lg-3 mt-2 mt-lg-0">
+                        <a href="destinations.html" class="btn btn-primary btn-sm">Get Started</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -393,98 +425,116 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-card">
+            <!-- Nine Arches Bridge / Ella -->
             <div class="hero-bg"
-                 style="background-image:url('../wild6-min.jpg');"></div>
+                 style="background-image:url('src/destination/up2-min.jpg');"></div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <div class="container text-center">
-                    <h1 class="hero-title" data-aos="fade-up">Wildlife &amp; Nature</h1>
+                    <h1 class="hero-title" data-aos="fade-up">Up Country</h1>
                     <p class="hero-sub" data-aos="fade-up" data-aos-delay="150">
-                        Yala • Udawalawe • Wilpattu • Horton Plains <br>Jeep safaris, misty plateau hikes, and bird-rich
-                        wetlands with eco-lodge stays.
+                        Nuwara Eliya • Ella • Haputale • Bandarawela <br>misty peaks, tea-carpeted hills and the iconic
+                        Nine Arches Bridge. Think slow trains, crisp air, waterfalls and wide open vistas.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- HIGHLIGHTS -->
+    <!-- HIGHLIGHTS / ACTIVITIES -->
     <section class="py-5">
         <div class="container">
-            <div class="col-12 text-center mb-4">
-                <h2 class="section-title" data-aos="fade-up">Key Highlights & Activities</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">Focus on experiences no fixed
-                    itinerary</p>
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2 class="section-title" data-aos="fade-up">Key Highlights & Activities</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">Curate your mountain escape
+                        we’ll build the route around these</p>
+                </div>
             </div>
 
             <div class="highlights-grid">
+                <!-- Scenic Train -->
                 <article class="hl-card" data-aos="fade-up">
-                    <div class="hl-media"><img
-                            src="../wild11-min.jpg"
-                            alt="Elephants on safari"></div>
+                    <div class="hl-media">
+                        <img src="src/destination/up1-min.jpg"
+                             alt="Scenic train Kandy to Ella">
+                    </div>
                     <div class="hl-body">
-                        <span class="hl-chip"><i class="fa-solid fa-truck-monster"></i> Safari</span>
-                        <h3 class="hl-title">Safari Drives</h3>
-                        <p class="hl-desc">Yala, Udawalawe & Wilpattu elephants, leopards and rich birdlife.</p>
+                        <span class="hl-chip"><i class="fa-solid fa-train"></i> Scenic</span>
+                        <h3 class="hl-title">Scenic Train (Kandy → Ella)</h3>
+                        <p class="hl-desc">Blue carriages weave through tea slopes and viaducts the classic
+                            hill-country ride.</p>
                     </div>
                 </article>
 
+                <!-- Tea estates -->
                 <article class="hl-card" data-aos="fade-up" data-aos-delay="60">
-                    <div class="hl-media"><img
-                            src="../wild6-min.jpg"
-                            alt="World's End Horton Plains"></div>
+                    <div class="hl-media">
+                        <img src="src/destination/up4-min.jpg"
+                             alt="Tea pluckers and estate">
+                    </div>
                     <div class="hl-body">
-                        <span class="hl-chip"><i class="fa-solid fa-person-hiking"></i> Hike</span>
-                        <h3 class="hl-title">World’s End at Horton Plains</h3>
-                        <p class="hl-desc">High-country trek to dramatic cliffs and cloud forests.</p>
+                        <span class="hl-chip"><i class="fa-solid fa-mug-hot"></i> Tea Country</span>
+                        <h3 class="hl-title">Tea Estates & Factory Visits</h3>
+                        <p class="hl-desc">Walk the emerald terraces, learn the leaf-to-cup process and taste fresh
+                            high-grown brews.</p>
                     </div>
                 </article>
 
+                <!-- Waterfalls & hikes -->
                 <article class="hl-card" data-aos="fade-up" data-aos-delay="120">
-                    <div class="hl-media"><img
-                            src="../wild12.jpg"
-                            alt="Birdwatching Sri Lanka"></div>
+                    <div class="hl-media">
+                        <img src="src/destination/up6-min.jpg"
+                             alt="Little Adam’s Peak & waterfalls">
+                    </div>
                     <div class="hl-body">
-                        <span class="hl-chip"><i class="fa-solid fa-binoculars"></i> Birding</span>
-                        <h3 class="hl-title">Birdwatching & Nature Walks</h3>
-                        <p class="hl-desc">Wetlands and forest edges teeming with endemic species.</p>
+                        <span class="hl-chip"><i class="fa-solid fa-person-hiking"></i> Outdoors</span>
+                        <h3 class="hl-title">Waterfalls & Hikes</h3>
+                        <p class="hl-desc">Little Adam’s Peak, Ella Rock and cascades like Ravana Falls for easy to
+                            moderate trails.</p>
                     </div>
                 </article>
 
+                <!-- Colonial architecture -->
                 <article class="hl-card" data-aos="fade-up" data-aos-delay="180">
-                    <div class="hl-media"><img
-                            src="https://images.pexels.com/photos/572861/pexels-photo-572861.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
-                            alt="Eco lodge in nature"></div>
+                    <div class="hl-media">
+                        <img src="https://images.pexels.com/photos/460376/pexels-photo-460376.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+                             alt="Colonial-era buildings Nuwara Eliya">
+                    </div>
                     <div class="hl-body">
-                        <span class="hl-chip"><i class="fa-solid fa-leaf"></i> Eco</span>
-                        <h3 class="hl-title">Eco-Lodges & Conservation</h3>
-                        <p class="hl-desc">Sustainable stays and visits to rescue centers and projects.</p>
+                        <span class="hl-chip"><i class="fa-solid fa-landmark-flag"></i> Heritage</span>
+                        <h3 class="hl-title">Colonial Architecture</h3>
+                        <p class="hl-desc">Victoria-era cottages, clubs and gardens in “Little England” (Nuwara
+                            Eliya).</p>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- GALLERY -->
+    <!-- OPTIONAL GALLERY -->
     <section class="py-4">
         <div class="container">
-            <div class="col-12 text-center mb-3">
-                <h2 class="section-title" data-aos="fade-up">Inspiration Gallery</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">Wild places of Sri Lanka</p>
+            <div class="row">
+                <div class="col-12 text-center mb-3">
+                    <h2 class="section-title" data-aos="fade-up">Inspiration Gallery</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">Hill-country moments to spark
+                        your plan</p>
+                </div>
             </div>
             <div class="gallery-grid" data-aos="fade-up" data-aos-delay="220">
                 <div class="g-item"><img
-                        src="../wild8-min.jpg"
-                        alt="Elephants"></div>
+                        src="https://images.pexels.com/photos/2659474/pexels-photo-2659474.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                        alt="Nine Arches Bridge, Ella"></div>
                 <div class="g-item"><img
-                        src="../wild10-min.jpg"
-                        alt="Horton Plains"></div>
+                        src="https://images.pexels.com/photos/1001916/pexels-photo-1001916.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                        alt="Tea fields in the mist"></div>
                 <div class="g-item"><img
-                        src="../wild11-min.jpg"
-                        alt="Peacock"></div>
+                        src="https://images.pexels.com/photos/3800808/pexels-photo-3800808.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                        alt="Ella Rock viewpoint"></div>
                 <div class="g-item"><img
-                        src="https://images.pexels.com/photos/572861/pexels-photo-572861.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-                        alt="Eco lodge"></div>
+                        src="https://images.pexels.com/photos/2356045/pexels-photo-2356045.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                        alt="Ravana Falls"></div>
             </div>
         </div>
     </section>
@@ -495,13 +545,14 @@
             <div class="cta" data-aos="fade-up">
                 <div class="row align-items-center g-3">
                     <div class="col-lg-8">
-                        <h3 class="mb-1">Include Wildlife & Nature in your plan?</h3>
+                        <h3 class="mb-1">Include Up Country in your plan?</h3>
                         <p class="mb-0">Tap below to add it to your Book List. When you’re ready, send your list we’ll
-                            craft a custom safari & highlands route.</p>
+                            craft a custom mountain route.</p>
                     </div>
                     <div class="col-lg-4 text-lg-end">
-                        <button class="btn btn-light px-4 py-2 add-btn"
-                                data-title="Wildlife & Nature (Yala • Udawalawe • Wilpattu • Horton Plains)"
+                        <button id="addBtn"
+                                class="btn btn-light px-4 py-2 add-btn"
+                                data-title="Up Country (Nuwara Eliya • Ella • Haputale • Bandarawela)"
                                 onclick="addToBookList(this, this.dataset.title)">
                             <i class="fa-solid fa-plus me-2"></i> Add to My Trip
                         </button>
@@ -511,30 +562,38 @@
         </div>
     </section>
 
-</div>
+</div><!-- /.page-wrap -->
 
+<!-- Floating icon with counter (shared) -->
 <div id="bookListIcon" class="floating-icon" onclick="openBookList()" style="display:none;">
-    <i class="fa-solid fa-list"></i><span id="bookCountBadge" class="float-badge">0</span>
+    <i class="fa-solid fa-list"></i>
+    <span id="bookCountBadge" class="float-badge">0</span>
 </div>
 
-<div class="modal fade modal-elevated" id="bookListModal" tabindex="-1" aria-hidden="true">
+<!-- Book List Modal (shared) -->
+<div class="modal fade modal-elevated" id="bookListModal" tabindex="-1" aria-labelledby="bookListModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <div><h5 class="modal-title">Your Book List</h5><small class="text-muted">Choose your favourite
-                    routes.</small></div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <div>
+                    <h5 class="modal-title" id="bookListModalLabel">Your Book List</h5>
+                    <small class="text-muted">Choose your favourite routes. Remove if you change your mind.</small>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
             <div class="modal-body">
-                <div id="bookListEmpty" class="booklist-empty d-none"><i
-                        class="fa-regular fa-face-smile-beam fa-2x mb-2"></i>
-                    <div>No destinations yet.</div>
+                <div id="bookListEmpty" class="booklist-empty d-none">
+                    <i class="fa-regular fa-face-smile-beam fa-2x mb-2"></i>
+                    <div>No destinations yet. Add some from the cards.</div>
                 </div>
                 <ul id="bookListItems" class="list-group list-group-compact"></ul>
             </div>
+
             <div class="modal-footer d-flex justify-content-between">
-                <button class="btn btn-danger-soft" onclick="clearAll()" type="button"><i
-                        class="fa-solid fa-trash-can me-1"></i> Clear All
+                <button class="btn btn-danger-soft" id="clearAllBtn" onclick="clearAll()" type="button">
+                    <i class="fa-solid fa-trash-can me-1"></i> Clear All
                 </button>
                 <button class="btn btn-primary" id="proceedBtn" onclick="proceedToBooking()" type="button" disabled>
                     Submit Inquiry
@@ -544,12 +603,14 @@
     </div>
 </div>
 
+<!-- FOOTER -->
 <!--<footer class="bg-dark text-white py-5 mt-4">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 mb-4">
                 <h5><i class="fas fa-compass me-2"></i>Visit Siyenga</h5>
-                <p>Your trusted local partner for authentic Sri Lankan adventures.</p>
+                <p>Your trusted local partner for authentic Sri Lankan adventures. We specialize in eco friendly tours
+                    that showcase our island's incredible natural beauty and rich cultural heritage.</p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank"
                        class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
@@ -578,7 +639,7 @@
             </div>
             <div class="col-lg-3 col-md-4 mb-4">
                 <h6>Newsletter</h6>
-                <p class="text-white-50">Subscribe for travel updates.</p>
+                <p class="text-white-50">Subscribe to receive our latest offers and travel updates.</p>
                 <div class="input-group">
                     <input type="email" class="form-control" placeholder="Your email">
                     <button class="btn btn-primary" type="button">Subscribe</button>
@@ -587,11 +648,13 @@
         </div>
         <hr class="my-4">
         <div class="row align-items-center">
-            <div class="col-md-6"><p class="text-white-50 mb-0">&copy; <span id="year"></span> Visit Siyenga. All rights
-                reserved.</p></div>
-            <div class="col-md-6 text-md-end"><a href="#" class="text-white-50 me-3">Privacy Policy</a><a href="#"
-                                                                                                          class="text-white-50">Terms
-                of Service</a></div>
+            <div class="col-md-6">
+                <p class="text-white-50 mb-0">&copy; <span id="year"></span> Visit Siyenga. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="#" class="text-white-50 me-3">Privacy Policy</a>
+                <a href="#" class="text-white-50">Terms of Service</a>
+            </div>
         </div>
     </div>
 </footer>-->
@@ -611,10 +674,10 @@
             <div class="col-lg-2 col-md-4 mb-4">
                 <h6>Quick Links</h6>
                 <ul class="list-unstyled">
-                    <li><a href="../../../index.html" class="text-white-50">Home</a></li>
-                    <li><a href="../../../about.html" class="text-white-50">About</a></li>
-                    <li><a href="../../../services.html" class="text-white-50">Services</a></li>
-                    <li><a href="../../../destinations.html" class="text-white-50">Destinations</a></li>
+                    <li><a href="index.html" class="text-white-50">Home</a></li>
+                    <li><a href="about.html" class="text-white-50">About</a></li>
+                    <li><a href="services.html" class="text-white-50">Services</a></li>
+                    <li><a href="destinations.html" class="text-white-50">Destinations</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-4 mb-4">
@@ -639,143 +702,167 @@
     </div>
 </footer>
 
+<!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init({once: true, duration: 700, easing: 'ease-out-cubic'});
-document.getElementById('year').textContent = new Date().getFullYear();</script>
-
-<!-- Shared Book List (global) -->
 <script>
-    const BL_STORAGE_KEY = 'tripList',
-        BL_FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSdY2COR1q8duWEOi4cn2tGKIdbC7SE05rkS64J2jOvBq2lhKQ/viewform?usp=pp_url',
-        BL_ENTRY_DEST = 'entry.662015136';
+    AOS.init({once: true, duration: 700, easing: 'ease-out-cubic'});
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<!-- ===== Shared Book List (global) ===== -->
+<script>
+    const BL_STORAGE_KEY = 'tripList';
+    const BL_FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSdY2COR1q8duWEOi4cn2tGKIdbC7SE05rkS64J2jOvBq2lhKQ/viewform?usp=pp_url';
+    const BL_ENTRY_DEST = 'entry.662015136';
     let bookList = JSON.parse(localStorage.getItem(BL_STORAGE_KEY) || '[]');
 
     function blPersist() {
-        localStorage.setItem(BL_STORAGE_KEY, JSON.stringify(bookList))
+        localStorage.setItem(BL_STORAGE_KEY, JSON.stringify(bookList));
     }
 
-    function blAdd(t) {
-        if (!t) return;
-        if (!bookList.includes(t)) {
-            bookList.push(t);
-            blPersist()
+    function blAdd(title) {
+        if (!title) return;
+        if (!bookList.includes(title)) {
+            bookList.push(title);
+            blPersist();
         }
-        blSync();
-        blRender();
-        blUpdateBtns()
+        blSyncFloating();
+        blRenderModal();
+        blUpdateAllAddButtons();
     }
 
     function blRemove(i) {
         bookList.splice(i, 1);
         blPersist();
-        blSync();
-        blRender();
-        blUpdateBtns(true)
+        blSyncFloating();
+        blRenderModal();
+        blUpdateAllAddButtons(true);
     }
 
     function blClear() {
         bookList = [];
         blPersist();
-        blSync();
-        blRender();
-        blUpdateBtns(true)
+        blSyncFloating();
+        blRenderModal();
+        blUpdateAllAddButtons(true);
     }
 
     function blMoveUp(i) {
         if (i <= 0) return;
         [bookList[i - 1], bookList[i]] = [bookList[i], bookList[i - 1]];
         blPersist();
-        blRender()
+        blRenderModal();
     }
 
     function blMoveDown(i) {
         if (i >= bookList.length - 1) return;
         [bookList[i + 1], bookList[i]] = [bookList[i], bookList[i + 1]];
         blPersist();
-        blRender()
+        blRenderModal();
     }
 
-    function blSync() {
-        const ic = document.getElementById('bookListIcon'), bd = document.getElementById('bookCountBadge');
-        if (!ic || !bd) return;
-        ic.style.display = bookList.length ? 'flex' : 'none';
-        bd.textContent = bookList.length
+    function blSyncFloating() {
+        const icon = document.getElementById('bookListIcon');
+        const badge = document.getElementById('bookCountBadge');
+        if (!icon || !badge) return;
+        icon.style.display = bookList.length ? 'flex' : 'none';
+        badge.textContent = bookList.length;
     }
 
-    function blRender() {
-        const e = document.getElementById('bookListEmpty'), l = document.getElementById('bookListItems'),
-            g = document.getElementById('proceedBtn');
-        if (!e || !l || !g) return;
-        l.innerHTML = '';
+    function blRenderModal() {
+        const empty = document.getElementById('bookListEmpty');
+        const list = document.getElementById('bookListItems');
+        const goBtn = document.getElementById('proceedBtn');
+        if (!empty || !list || !goBtn) return;
+        list.innerHTML = '';
         if (bookList.length === 0) {
-            e.classList.remove('d-none');
-            g.disabled = true
+            empty.classList.remove('d-none');
+            goBtn.disabled = true;
         } else {
-            e.classList.add('d-none');
-            g.disabled = false;
+            empty.classList.add('d-none');
+            goBtn.disabled = false;
             bookList.forEach((t, i) => {
                 const li = document.createElement('li');
                 li.className = 'list-group-item';
-                li.innerHTML = `<div class="list-destination"><i class="fa-solid fa-location-dot"></i><span>${t}</span></div><div class="d-flex align-items-center gap-2"><button class="btn btn-sm btn-outline-secondary" onclick="blMoveUp(${i})"><i class="fa-solid fa-arrow-up"></i></button><button class="btn btn-sm btn-outline-secondary" onclick="blMoveDown(${i})"><i class="fa-solid fa-arrow-down"></i></button><button class="btn btn-sm btn-outline-danger" onclick="blRemove(${i})"><i class="fa-solid fa-xmark"></i></button></div>`;
-                l.appendChild(li)
-            })
+                li.innerHTML = `
+        <div class="list-destination"><i class="fa-solid fa-location-dot"></i><span>${t}</span></div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-outline-secondary" onclick="blMoveUp(${i})" title="Move up"><i class="fa-solid fa-arrow-up"></i></button>
+          <button class="btn btn-sm btn-outline-secondary" onclick="blMoveDown(${i})" title="Move down"><i class="fa-solid fa-arrow-down"></i></button>
+          <button class="btn btn-sm btn-outline-danger" onclick="blRemove(${i})" title="Remove"><i class="fa-solid fa-xmark"></i></button>
+        </div>`;
+                list.appendChild(li);
+            });
         }
     }
 
-    function blOpen() {
-        blRender();
-        new bootstrap.Modal(document.getElementById('bookListModal')).show()
+    function blOpenModal() {
+        blRenderModal();
+        new bootstrap.Modal(document.getElementById('bookListModal')).show();
     }
 
     function blProceed() {
         if (bookList.length === 0) return;
         const q = bookList.map(v => `&${BL_ENTRY_DEST}=${encodeURIComponent(v)}`).join('');
-        window.open(BL_FORM_BASE + q, '_blank')
+        window.open(BL_FORM_BASE + q, '_blank');
     }
 
-    function blMarkAdded(b) {
-        b.classList.add('btn-added');
-        b.innerHTML = '<i class="fa-solid fa-check me-1"></i> Added';
-        b.setAttribute('disabled', 'disabled')
+    function blMarkAdded(btn) {
+        btn.classList.add('btn-added');
+        btn.innerHTML = '<i class="fa-solid fa-check me-1"></i> Added';
+        btn.setAttribute('disabled', 'disabled');
     }
 
-    function blResetBtn(b) {
-        b.classList.remove('btn-added');
-        b.innerHTML = 'Add to My Trip';
-        b.removeAttribute('disabled')
+    function blResetBtn(btn) {
+        btn.classList.remove('btn-added');
+        btn.innerHTML = 'Add to My Trip';
+        btn.removeAttribute('disabled');
     }
 
-    function blUpdateBtns(reset = false) {
-        document.querySelectorAll('.add-btn[data-title]').forEach(b => {
-            const t = b.dataset.title;
-            if (reset) blResetBtn(b);
-            if (bookList.includes(t)) blMarkAdded(b)
-        })
+    function blUpdateAllAddButtons(forceReset = false) {
+        document.querySelectorAll('.add-btn[data-title]').forEach(btn => {
+            const t = btn.dataset.title;
+            if (forceReset) blResetBtn(btn);
+            if (bookList.includes(t)) blMarkAdded(btn);
+        });
     }
 
-    function blAutoAdd() {
-        const p = new URLSearchParams(location.search);
-        const add = p.get('add');
-        if (add) blAdd(add)
+    function blAutoAddFromURL() {
+        const params = new URLSearchParams(location.search);
+        const add = params.get('add');
+        if (add) blAdd(add);
+    }
+
+    function blWireLearnMoreLinks() {
+        document.querySelectorAll('a.learn-more[data-title]').forEach(a => {
+            try {
+                const url = new URL(a.getAttribute('href'), location.href);
+                url.searchParams.set('add', a.dataset.title);
+                a.setAttribute('href', url.pathname + url.search);
+            } catch (e) {
+            }
+        });
     }
 
     window.addToBookList = (btn, title) => {
         blAdd(title);
-        if (btn) blMarkAdded(btn)
+        if (btn) blMarkAdded(btn);
     };
-    window.openBookList = blOpen;
+    window.openBookList = blOpenModal;
     window.clearAll = blClear;
     window.moveUp = blMoveUp;
     window.moveDown = blMoveDown;
     window.removeFromBookList = blRemove;
     window.proceedToBooking = blProceed;
+
     document.addEventListener('DOMContentLoaded', () => {
-        blAutoAdd();
-        blSync();
-        blRender();
-        blUpdateBtns()
-    })
+        blWireLearnMoreLinks();     // none here, harmless
+        blAutoAddFromURL();         // auto-add if landed via Learn More
+        blSyncFloating();
+        blRenderModal();
+        blUpdateAllAddButtons();
+    });
 </script>
 </body>
 </html>
