@@ -913,10 +913,10 @@
     const BL_STORAGE_KEY = 'tripList';                 // same key everywhere
     const BL_FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSdY2COR1q8duWEOi4cn2tGKIdbC7SE05rkS64J2jOvBq2lhKQ/viewform?usp=pp_url';
     const BL_ENTRY_DEST = 'entry.662015136';          // your checkbox field id
-    let bookList = JSON.parse(sessionStorage.getItem(BL_STORAGE_KEY) || '[]');
+    let bookList = JSON.parse(localStorage.getItem(BL_STORAGE_KEY) || '[]');
 
     function blPersist() {
-        sessionStorage.setItem(BL_STORAGE_KEY, JSON.stringify(bookList));
+        localStorage.setItem(BL_STORAGE_KEY, JSON.stringify(bookList));
     }
 
     function blAdd(title) {

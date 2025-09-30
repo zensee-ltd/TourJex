@@ -20,14 +20,14 @@
     /* ---------- Storage ---------- */
     function load() {
         try {
-            return JSON.parse(sessionStorage.getItem(STORAGE_KEY)) || [];
+            return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
         } catch {
             return [];
         }
     }
 
     function save() {
-        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state.items));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state.items));
         renderIcon();
     }
 

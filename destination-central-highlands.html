@@ -356,8 +356,8 @@
 <!-- Shared Book List (global) -->
 <script>
     const BL_STORAGE_KEY='tripList',BL_FORM_BASE='https://docs.google.com/forms/d/e/1FAIpQLSdY2COR1q8duWEOi4cn2tGKIdbC7SE05rkS64J2jOvBq2lhKQ/viewform?usp=pp_url',BL_ENTRY_DEST='entry.662015136';
-    let bookList=JSON.parse(sessionStorage.getItem(BL_STORAGE_KEY)||'[]');
-    function blPersist(){sessionStorage.setItem(BL_STORAGE_KEY,JSON.stringify(bookList))}
+    let bookList=JSON.parse(localStorage.getItem(BL_STORAGE_KEY)||'[]');
+    function blPersist(){localStorage.setItem(BL_STORAGE_KEY,JSON.stringify(bookList))}
     function blAdd(t){if(!t)return;if(!bookList.includes(t)){bookList.push(t);blPersist()}blSync();blRender();blUpdateBtns()}
     function blRemove(i){bookList.splice(i,1);blPersist();blSync();blRender();blUpdateBtns(true)}
     function blClear(){bookList=[];blPersist();blSync();blRender();blUpdateBtns(true)}
