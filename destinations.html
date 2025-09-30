@@ -1085,15 +1085,15 @@
     }
 </script>
 
-<!-- Shared Book List (localStorage) -->
+<!-- Shared Book List (sessionStorage) -->
 <script>
     const BL_STORAGE_KEY = 'tripList';
     const BL_FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSdY2COR1q8duWEOi4cn2tGKIdbC7SE05rkS64J2jOvBq2lhKQ/viewform?usp=pp_url';
     const BL_ENTRY_DEST = 'entry.662015136';
-    let bookList = JSON.parse(localStorage.getItem(BL_STORAGE_KEY) || '[]');
+    let bookList = JSON.parse(sessionStorage.getItem(BL_STORAGE_KEY) || '[]');
 
     function blPersist() {
-        localStorage.setItem(BL_STORAGE_KEY, JSON.stringify(bookList));
+        sessionStorage.setItem(BL_STORAGE_KEY, JSON.stringify(bookList));
     }
 
     function blAdd(title) {
@@ -1163,8 +1163,8 @@
                 li.innerHTML = `
           <div class="list-destination"><i class="fa-solid fa-location-dot"></i><span>${t}</span></div>
           <div class="d-flex align-items-center gap-2">
-            <button class="btn btn-sm btn-outline-secondary" onclick="blMoveUp(${i})" title="Move up"><i class="fa-solid fa-arrow-up"></i></button>
-            <button class="btn btn-sm btn-outline-secondary" onclick="blMoveDown(${i})" title="Move down"><i class="fa-solid fa-arrow-down"></i></button>
+<!--            <button class="btn btn-sm btn-outline-secondary" onclick="blMoveUp(${i})" title="Move up"><i class="fa-solid fa-arrow-up"></i></button>-->
+<!--            <button class="btn btn-sm btn-outline-secondary" onclick="blMoveDown(${i})" title="Move down"><i class="fa-solid fa-arrow-down"></i></button>-->
             <button class="btn btn-sm btn-outline-danger" onclick="blRemove(${i})" title="Remove"><i class="fa-solid fa-xmark"></i></button>
           </div>`;
                 list.appendChild(li);
@@ -1180,6 +1180,7 @@
     function blProceed() {
         if (bookList.length === 0) return;
         const q = bookList.map(v => `&${BL_ENTRY_DEST}=${encodeURIComponent(v)}`).join('');
+        clearAll();
         window.open(BL_FORM_BASE + q, '_blank');
     }
 
