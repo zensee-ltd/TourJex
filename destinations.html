@@ -474,6 +474,47 @@
                 height: 36px;
             }
         }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 61px;
+            height: 61px;
+            bottom: 100px;
+            right: 20px;
+            background: linear-gradient(135deg, #25D366, #20b955);
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 32px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+            transition: all 0.3s ease-in-out;
+            animation: pulse 2s infinite;
+        }
+
+        /* Hover effect */
+        .whatsapp-float:hover {
+            transform: scale(1.12) rotate(5deg);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.8);
+            color: #fff;
+        }
+
+        /* WhatsApp Icon */
+        .whatsapp-float i {
+            line-height: 1;
+        }
+
+        /* Pulse animation */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
     </style>
 </head>
 <body>
@@ -1063,6 +1104,11 @@
         </div>
     </div>
 </footer>
+
+<a href="https://wa.me/94779961170" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
 
 <!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
