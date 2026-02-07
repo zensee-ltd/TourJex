@@ -5,11 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
-        content="Visit Siyenga - Premium Sri Lanka Tourism Services. Discover the Pearl of the Indian Ocean with our customized tours and exceptional service.">
+        content="Explore our exclusive Sri Lanka tour packages. From hill country to coastal bliss, find the perfect itinerary for your journey with Visit Siyenga.">
     <meta name="keywords"
-        content="Sri Lanka tours, tourism, travel packages, destinations, Sigiriya, Ella, Galle, Kandy">
+        content="Sri Lanka tour packages, travel itineraries, holiday packages, vacation deals, Siyenga tours">
     <meta name="author" content="Visit Siyenga">
-    <title>Visit Siyenga Discover Sri Lanka's Hidden Gems</title>
+    <title>Packages | Visit Siyenga - Custom Sri Lanka Tours</title>
 
     <!-- Bootstrap / Icons / AOS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -596,6 +596,149 @@
             }
         }
     </style>
+    <style>
+        /* Packages CSS */
+        .packages-grid {
+            display: grid;
+            gap: 22px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        .pkg-card {
+            background: var(--card);
+            border: 1px solid #eef2ff;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, .06);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .pkg-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 38px rgba(0, 0, 0, .09)
+        }
+
+        .pkg-media {
+            height: 220px;
+            background: #ddd;
+            overflow: hidden;
+            position: relative
+        }
+
+        .pkg-media .carousel,
+        .pkg-media .carousel-inner,
+        .pkg-media .carousel-item {
+            height: 100%
+        }
+
+        .pkg-media .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .pkg-media .carousel-indicators {
+            bottom: 6px
+        }
+
+        .pkg-media .carousel-indicators [data-bs-target] {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            margin: 0 3px;
+            background: #fff;
+            opacity: .6
+        }
+
+        .pkg-media .carousel-indicators .active {
+            opacity: 1
+        }
+
+        .pkg-media .carousel-control-prev,
+        .pkg-media .carousel-control-next {
+            width: 12%;
+            opacity: 0;
+            transition: opacity .2s
+        }
+
+        .pkg-media:hover .carousel-control-prev,
+        .pkg-media:hover .carousel-control-next {
+            opacity: .85
+        }
+
+        .pkg-body {
+            padding: 20px
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px
+        }
+
+        .badge-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f8faff;
+            border: 1px solid #e9efff;
+            color: #0f172a;
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-size: 13px;
+        }
+
+        .badge-chip i {
+            color: var(--primary)
+        }
+
+        .pkg-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .pkg-subtitle {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        .pkg-list {
+            margin: 0 0 12px;
+            padding-left: 18px
+        }
+
+        .pkg-list li {
+            margin: .25rem 0;
+            color: #55657a;
+            font-weight: 300
+        }
+
+        .pkg-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+            padding: 0 20px 20px
+        }
+
+        .btn-pill {
+            border-radius: 999px;
+            font-weight: 700;
+            padding: .65rem 1rem
+        }
+
+        .pkg-price {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -615,15 +758,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="packages.html">Packages</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
-                        <!--<li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>-->
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         <li class="ms-lg-3 mt-2 mt-lg-0">
-                            <a href="destinations.html" class="btn btn-primary btn-sm">Get Started</a>
+                            <a href="packages.html" class="btn btn-primary btn-sm">Get Started</a>
                         </li>
                     </ul>
                 </div>
@@ -640,13 +782,11 @@
                             <div class="container">
                                 <div class="row justify-content-center text-center">
                                     <div class="col-lg-8">
-                                        <h1 class="hero-title">Discover Sri Lanka the Local Way Choose your region and
-                                            we’ll
-                                            build your personalized itinerary.</h1>
-                                        <p class="hero-subtitle">Experience pristine beaches, misty mountains, ancient
-                                            temples, and exotic wildlife with our authentic travel experiences</p>
-                                        <a href="destinations.html" class="btn btn-primary btn-lg hero-btn">
-                                            <i class="fas fa-map-marked-alt me-2"></i>Explore Now
+                                        <h1 class="hero-title">Exclusive Sri Lanka Packages</h1>
+                                        <p class="hero-subtitle">Choose from our wide range of packages or customize
+                                            your own journey with Visit Siyenga.</p>
+                                        <a href="#featured-packages" class="btn btn-primary btn-lg hero-btn">
+                                            <i class="fas fa-map-marked-alt me-2"></i>Explore Packages
                                         </a>
                                     </div>
                                 </div>
@@ -665,8 +805,8 @@
                                         <p class="hero-subtitle">Explore 2,500 years of history through magnificent
                                             temples,
                                             royal palaces, and UNESCO World Heritage sites</p>
-                                        <a href="destinations.html" class="btn btn-primary btn-lg hero-btn">
-                                            <i class="fas fa-history me-2"></i>Discover Heritage
+                                        <a href="#featured-packages" class="btn btn-primary btn-lg hero-btn">
+                                            <i class="fas fa-history me-2"></i>View Packages
                                         </a>
                                     </div>
                                 </div>
@@ -682,11 +822,11 @@
                             <div class="container">
                                 <div class="row justify-content-center text-center">
                                     <div class="col-lg-8">
-                                        <h1 class="hero-title">Wildlife & Adventure Paradise</h1>
+                                        <h1 class="hero-title">Wildlife & Adventure Packages</h1>
                                         <p class="hero-subtitle">Encounter leopards, elephants, and exotic birds in
                                             pristine
                                             national parks and tropical rainforests</p>
-                                        <a href="services.html" class="btn btn-primary btn-lg hero-btn">
+                                        <a href="#featured-packages" class="btn btn-primary btn-lg hero-btn">
                                             <i class="fas fa-mountain me-2"></i>Start Adventure
                                         </a>
                                     </div>
@@ -704,196 +844,275 @@
             </div>
         </section>
 
-        <section class="py-5">
+        <!-- FEATURED PACKAGES -->
+        <section class="py-5" id="featured-packages">
             <div class="container">
-                <div class="why-wrap">
-
-                    <!-- Left side - features -->
-                    <div class="why-features">
-
-                        <div class="feature-chip">
-                            <div class="chip-icon"><i class="fa-solid fa-calendar-check"></i></div>
-                            <div>
-                                <p class="chip-title mb-1">30+ Years of Experience</p>
-                                <p class="chip-text mb-0">Since 1997, trusted by travelers worldwide.</p>
-                            </div>
-                        </div>
-
-                        <div class="feature-chip">
-                            <div class="chip-icon"><i class="fa-solid fa-compass"></i></div>
-                            <div>
-                                <p class="chip-title mb-1">Tailor-Made Tours</p>
-                                <p class="chip-text mb-0">Custom journeys designed around your style.</p>
-                            </div>
-                        </div>
-
-                        <div class="feature-chip">
-                            <div class="chip-icon"><i class="fa-solid fa-umbrella-beach"></i></div>
-                            <div>
-                                <p class="chip-title mb-1">Local Expertise</p>
-                                <p class="chip-text mb-0">Family-run, passionate about Sri Lanka.</p>
-                            </div>
-                        </div>
-
-                        <div class="feature-chip">
-                            <div class="chip-icon"><i class="fa-solid fa-handshake"></i></div>
-                            <div>
-                                <p class="chip-title mb-1">Authentic Hospitality</p>
-                                <p class="chip-text mb-0">Travel with warmth, care, and personal touch.</p>
-                            </div>
-                        </div>
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="section-title" data-aos="fade-up">Our Featured Packages</h2>
+                        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                            Explore our best-selling itineraries with transparent pricing in LKR.
+                        </p>
                     </div>
+                </div>
 
-                    <!-- Right side - title only -->
-                    <div class="why-text">
-                        <h2 class="why-title">Why Choose Visit Siyenga?</h2>
-                    </div>
+                <div class="packages-grid">
+                    <!-- Down South -->
+                    <article class="pkg-card" data-aos="fade-up">
+                        <div class="pkg-media">
+                            <div id="dsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false"
+                                data-bs-interval="3500">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active"><img src="src/destination/galle1-min.jpg"
+                                            alt="Galle Lighthouse"></div>
+                                    <div class="carousel-item"><img src="src/destination/galle2-min.jpg"
+                                            alt="Mirissa Beach"></div>
+                                    <div class="carousel-item"><img src="src/destination/galle3-min.jpg"
+                                            alt="Unawatuna Beach"></div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#dsCarousel"
+                                    data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#dsCarousel"
+                                    data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                            </div>
+                        </div>
+                        <div class="pkg-body">
+                            <div class="badge-row">
+                                <span class="badge-chip"><i class="fas fa-umbrella-beach"></i> Down South</span>
+                            </div>
+                            <h3 class="pkg-title">Southern Coastal Bliss</h3>
+                            <p class="pkg-subtitle">Galle • Mirissa • Unawatuna • Tangalle</p>
+                            <ul class="pkg-list">
+                                <li>Galle Fort exploration</li>
+                                <li>Whale watching</li>
+                                <li>Beach relaxation</li>
+                            </ul>
+                            <div class="pkg-price mt-3">LKR 65,000 <small class="text-muted fw-normal fs-6">/
+                                    person</small></div>
+                        </div>
+                        <div class="pkg-actions">
+                            <a class="btn btn-outline-primary btn-pill" href="destination-down-south.html">View
+                                Details</a>
+                            <a class="btn btn-primary btn-pill add-btn" data-title="Southern Coastal Bliss"
+                                onclick="addToBookList(this, this.dataset.title)">Book Now</a>
+                        </div>
+                    </article>
 
+                    <!-- Up Country -->
+                    <article class="pkg-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="pkg-media">
+                            <div id="ucCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false"
+                                data-bs-interval="3600">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active"><img src="src/destination/ella1.jpg"
+                                            alt="Nine Arch Bridge"></div>
+                                    <div class="carousel-item"><img src="src/destination/up2-min.jpg"
+                                            alt="Little Adam’s Peak"></div>
+                                    <div class="carousel-item"><img src="src/destination/up3-min.jpg"
+                                            alt="Haputale Hills"></div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#ucCarousel"
+                                    data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#ucCarousel"
+                                    data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                            </div>
+                        </div>
+                        <div class="pkg-body">
+                            <div class="badge-row">
+                                <span class="badge-chip"><i class="fas fa-mountain"></i> Up Country</span>
+                            </div>
+                            <h3 class="pkg-title">Misty Mountains Explorer</h3>
+                            <p class="pkg-subtitle">Nuwara Eliya • Ella • Haputale</p>
+                            <ul class="pkg-list">
+                                <li>Scenic train ride</li>
+                                <li>Tea plantations</li>
+                                <li>Waterfalls & hikes</li>
+                            </ul>
+                            <div class="pkg-price mt-3">LKR 55,000 <small class="text-muted fw-normal fs-6">/
+                                    person</small></div>
+                        </div>
+                        <div class="pkg-actions">
+                            <a class="btn btn-outline-primary btn-pill" href="destination-up-country.html">View
+                                Details</a>
+                            <a class="btn btn-primary btn-pill add-btn" data-title="Misty Mountains Explorer"
+                                onclick="addToBookList(this, this.dataset.title)">Book Now</a>
+                        </div>
+                    </article>
+
+                    <!-- Cultural Triangle -->
+                    <article class="pkg-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="pkg-media">
+                            <div id="ctCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false"
+                                data-bs-interval="3400">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active"><img src="src/destination/si1%20(1).jpg"
+                                            alt="Sigiriya Rock"></div>
+                                    <div class="carousel-item"><img src="src/destination/si2.jpg" alt="Dambulla Caves">
+                                    </div>
+                                    <div class="carousel-item"><img src="src/destination/si22.jpg"
+                                            alt="Anuradhapura Ruins"></div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#ctCarousel"
+                                    data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#ctCarousel"
+                                    data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                            </div>
+                        </div>
+                        <div class="pkg-body">
+                            <div class="badge-row">
+                                <span class="badge-chip"><i class="fas fa-landmark"></i> Heritage</span>
+                            </div>
+                            <h3 class="pkg-title">Ancient Kingdoms Tour</h3>
+                            <p class="pkg-subtitle">Sigiriya • Dambulla • Anuradhapura</p>
+                            <ul class="pkg-list">
+                                <li>Sigiriya Rock Fortress</li>
+                                <li>Ancient ruins</li>
+                                <li>Safari option</li>
+                            </ul>
+                            <div class="pkg-price mt-3">LKR 72,000 <small class="text-muted fw-normal fs-6">/
+                                    person</small></div>
+                        </div>
+                        <div class="pkg-actions">
+                            <a class="btn btn-outline-primary btn-pill" href="destination-cultural-triangle.html">View
+                                Details</a>
+                            <a class="btn btn-primary btn-pill add-btn" data-title="Ancient Kingdoms Tour"
+                                onclick="addToBookList(this, this.dataset.title)">Book Now</a>
+                        </div>
+                    </article>
+
+                    <!-- Wildlife -->
+                    <article class="pkg-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="pkg-media">
+                            <div id="wlCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false"
+                                data-bs-interval="3400">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active"><img src="src/destination/wild1-min.jpg"
+                                            alt="Leopard Yala"></div>
+                                    <div class="carousel-item"><img src="src/destination/wild2.jpg"
+                                            alt="Elephants Udawalawe"></div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#wlCarousel"
+                                    data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#wlCarousel"
+                                    data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                            </div>
+                        </div>
+                        <div class="pkg-body">
+                            <div class="badge-row">
+                                <span class="badge-chip"><i class="fas fa-paw"></i> Wildlife</span>
+                            </div>
+                            <h3 class="pkg-title">Wilderness Safari</h3>
+                            <p class="pkg-subtitle">Yala • Udawalawe • Wilpattu</p>
+                            <ul class="pkg-list">
+                                <li>Leopard spotting</li>
+                                <li>Elephant gatherings</li>
+                                <li>Bird watching</li>
+                            </ul>
+                            <div class="pkg-price mt-3">LKR 50,000 <small class="text-muted fw-normal fs-6">/
+                                    person</small></div>
+                        </div>
+                        <div class="pkg-actions">
+                            <a class="btn btn-outline-primary btn-pill" href="destination-wildlife-nature.html">View
+                                Details</a>
+                            <a class="btn btn-primary btn-pill add-btn" data-title="Wilderness Safari"
+                                onclick="addToBookList(this, this.dataset.title)">Book Now</a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
 
         <!-- SERVICES -->
-        <section class="py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center mb-5">
-                        <h2 class="section-title" data-aos="fade-up">Our Nature‑Focused Services</h2>
-                        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Authentic Sri Lankan
-                            experiences
-                            designed for nature lovers and culture enthusiasts</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="service-card">
-                            <div class="service-icon"><i class="fas fa-paw"></i></div>
-                            <h4>Wildlife Safaris</h4>
-                            <p>Experience Sri Lanka's incredible biodiversity with expert naturalist guides in pristine
-                                national parks.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="service-card">
-                            <div class="service-icon"><i class="fas fa-mountain"></i></div>
-                            <h4>Hill Country Adventures</h4>
-                            <p>Explore misty mountains, tea plantations, and scenic train journeys through Sri Lanka's
-                                highlands.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="service-card">
-                            <div class="service-icon"><i class="fas fa-water"></i></div>
-                            <h4>Beach & Marine Life</h4>
-                            <p>Discover pristine beaches, whale watching, and vibrant coral reefs along our tropical
-                                coastline.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <!-- DESTINATIONS -->
-        <section class="py-5 bg-light destination-container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center mb-5">
-                        <h2 class="section-title" data-aos="fade-up">Natural Wonders of Sri Lanka</h2>
-                        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Discover the island's most
-                            breathtaking natural and cultural treasures</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="destination-card">
-                            <img src="src/assets/images/home/sigiriya.jpg" alt="Sigiriya Rock Fortress"
-                                class="destination-image">
-                            <div class="destination-content">
-                                <h4>Sigiriya</h4>
-                                <p>Ancient sky palace rising from emerald forests with 1,500‑year‑old frescoes</p>
-                                <a href="destinations.html#sigiriya" class="btn btn-outline-primary">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="destination-card">
-                            <img src="src/assets/images/home/ella.jpg" alt="Ella Nine Arch Bridge"
-                                class="destination-image">
-                            <div class="destination-content">
-                                <h4>Ella</h4>
-                                <p>Misty mountain paradise with tea gardens, waterfalls, and scenic train journeys</p>
-                                <a href="destinations.html#ella" class="btn btn-outline-primary">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="destination-card">
-                            <img src="src/assets/images/home/elephants-sri-lanka.jpg" alt="Yala National Park"
-                                class="destination-image">
-                            <div class="destination-content">
-                                <h4>Yala National Park</h4>
-                                <p>Sri Lanka's premier wildlife sanctuary home to leopards, elephants, and exotic birds
-                                </p>
-                                <a href="destinations.html#galle" class="btn btn-outline-primary">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- LOCATION -->
-        <section class="location-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center mb-5">
-                        <h2 class="section-title" data-aos="fade-up">Visit Our Office</h2>
-                        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Located in the heart of
-                            Wadduwa,
-                            we're here to help plan your perfect Sri Lankan adventure</p>
+        <img src="src/assets/images/home/sigiriya.jpg" alt="Sigiriya Rock Fortress" class="destination-image">
+        <div class="destination-content">
+            <h4>Sigiriya</h4>
+            <p>Ancient sky palace rising from emerald forests with 1,500‑year‑old frescoes</p>
+            <a href="destinations.html#sigiriya" class="btn btn-outline-primary">Learn More</a>
+        </div>
+    </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="destination-card">
+            <img src="src/assets/images/home/ella.jpg" alt="Ella Nine Arch Bridge" class="destination-image">
+            <div class="destination-content">
+                <h4>Ella</h4>
+                <p>Misty mountain paradise with tea gardens, waterfalls, and scenic train journeys</p>
+                <a href="destinations.html#ella" class="btn btn-outline-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="destination-card">
+            <img src="src/assets/images/home/elephants-sri-lanka.jpg" alt="Yala National Park"
+                class="destination-image">
+            <div class="destination-content">
+                <h4>Yala National Park</h4>
+                <p>Sri Lanka's premier wildlife sanctuary home to leopards, elephants, and exotic birds
+                </p>
+                <a href="destinations.html#galle" class="btn btn-outline-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="location-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">Visit Our Office</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Located in the heart of
+                        Wadduwa,
+                        we're here to help plan your perfect Sri Lankan adventure</p>
+                </div>
+            </div>
+            <div class="row align-items-stretch">
+                <div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="location-content h-100">
+                        <div class="location-info">
+                            <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="location-details">
+                                <h5>Our Address</h5>
+                                <!--                                <p>352/16C Thalpitiya south<br>Wadduwa, Sri Lanka</p>-->
+                                <a href="https://www.google.com/maps?q=352/16C+Thalpitiya+South+Wadduwa+Sri+Lanka"
+                                    target="_blank">
+                                    352/16C Thalpitiya South<br>Wadduwa, Sri Lanka
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-info">
+                            <div class="location-icon"><i class="fas fa-phone"></i></div>
+                            <div class="location-details">
+                                <h5>Contact Numbers</h5>
+                                <p><a href="tel:+94779961170">(+94) 77-996-1170</a></p>
+                            </div>
+                        </div>
+                        <div class="location-info">
+                            <div class="location-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="location-details">
+                                <h5>Email Address</h5>
+                                <p><a href="mailto:visitsiyenga@gmail.com">visitsiyenga@gmail.com</a></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row align-items-stretch">
-                    <div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-right">
-                        <div class="location-content h-100">
-                            <div class="location-info">
-                                <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
-                                <div class="location-details">
-                                    <h5>Our Address</h5>
-                                    <!--                                <p>352/16C Thalpitiya south<br>Wadduwa, Sri Lanka</p>-->
-                                    <a href="https://www.google.com/maps?q=352/16C+Thalpitiya+South+Wadduwa+Sri+Lanka"
-                                        target="_blank">
-                                        352/16C Thalpitiya South<br>Wadduwa, Sri Lanka
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="location-info">
-                                <div class="location-icon"><i class="fas fa-phone"></i></div>
-                                <div class="location-details">
-                                    <h5>Contact Numbers</h5>
-                                    <p><a href="tel:+94779961170">(+94) 77-996-1170</a></p>
-                                </div>
-                            </div>
-                            <div class="location-info">
-                                <div class="location-icon"><i class="fas fa-envelope"></i></div>
-                                <div class="location-details">
-                                    <h5>Email Address</h5>
-                                    <p><a href="mailto:visitsiyenga@gmail.com">visitsiyenga@gmail.com</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8" data-aos="fade-left">
-                        <div class="map-container h-100">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15506.758890950656!2d79.91864476062015!3d6.6807555009449695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s352%2F16C%20Thalpitiya%20south%20Wadduwa!5e0!3m2!1sen!2slk!4v1753726596146!5m2!1sen!2slk"
-                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
+                <div class="col-lg-8" data-aos="fade-left">
+                    <div class="map-container h-100">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15506.758890950656!2d79.91864476062015!3d6.6807555009449695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s352%2F16C%20Thalpitiya%20south%20Wadduwa!5e0!3m2!1sen!2slk!4v1753726596146!5m2!1sen!2slk"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
     </div><!-- /.page-wrap -->
 
