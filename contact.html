@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Contact Visit Siyenga for your Sri Lankan travel inquiries. Get in touch with our expert team to plan your perfect vacation.">
-    <title>Contact Visit Siyenga Lanka</title>
+    <meta name="description" content="Get a personalised Sri Lanka tour quote from Visit Siyenga. Our local experts reply within 2 hours — tailor-made itineraries since 1997.">
+    <title>Get a Quote | Visit Siyenga Lanka</title>
 
     <!-- Bootstrap / Icons / AOS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -57,86 +57,256 @@
         .btn-primary{background:var(--primary)!important; border:0; border-radius:999px; padding:.75rem 1.15rem; font-weight:700}
         .btn-outline-primary{border-radius:999px}
 
-        /* SUB-HERO (same as Services) */
-        .sub-hero{margin-top:110px}
-        .sub-hero-card{
-            position:relative; overflow:hidden; border-radius:var(--radius-2xl);
-            box-shadow:var(--shadow-lg); background:#000;
+        .btn-quote {
+            background: #10b981 !important;
+            border: 0 !important;
+            border-radius: 999px;
+            font-weight: 700;
+            padding: .55rem 1.1rem;
         }
-        .sub-hero-bg{
-            height:46vh; min-height:360px; max-height:520px;
-            background-size:cover; background-position:center;
+
+        .btn-quote:hover {
+            background: #059669 !important;
         }
-        .sub-hero-overlay{position:absolute; inset:0; background:linear-gradient(180deg,rgba(2,8,23,0) 35%, rgba(2,8,23,.6) 85%)}
-        .sub-hero-content{position:absolute; inset:0; display:grid; align-content:end; padding:28px 32px 32px}
-        .sub-hero-title{font-size: clamp(28px, 4vw, 48px); font-weight:800; color:#fff; letter-spacing:-.02em; margin-bottom:.5rem; text-shadow:0 6px 24px rgba(0,0,0,.28)}
-        .sub-hero-sub{color:#e5e7eb; opacity:.95; max-width:960px; margin:0 auto}
+
+        /* Get a Quote — Olanka-style */
+        .quote-page-header {
+            margin-top: 110px;
+            text-align: center;
+            padding: 12px 0 32px;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .quote-page-header h1 {
+            font-size: clamp(32px, 4vw, 44px);
+            font-weight: 800;
+            letter-spacing: -.02em;
+            margin-bottom: .5rem;
+        }
+
+        .quote-page-header p {
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .quote-box {
+            background: #eef1f5;
+            border-radius: 20px;
+            padding: 28px 24px;
+            box-shadow: 0 8px 28px rgba(15, 23, 42, .06);
+        }
+
+        @media (min-width: 992px) {
+            .quote-box {
+                padding: 32px 36px;
+            }
+        }
+
+        .quote-layout {
+            display: grid;
+            gap: 28px;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .quote-layout {
+                grid-template-columns: 1fr minmax(200px, 280px);
+                gap: 36px;
+            }
+        }
+
+        .quote-grid {
+            display: grid;
+            gap: 22px 24px;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .quote-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .quote-field label {
+            display: block;
+            font-size: .88rem;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 6px;
+        }
+
+        .quote-field input,
+        .quote-field select {
+            width: 100%;
+            border: 0;
+            border-bottom: 1px solid #cbd5e1;
+            background: transparent;
+            padding: 8px 0 10px;
+            font-size: 1rem;
+            color: var(--ink);
+            outline: none;
+            transition: border-color .2s ease;
+        }
+
+        .quote-field input:focus,
+        .quote-field select:focus {
+            border-bottom-color: #2563eb;
+        }
+
+        .quote-field input::placeholder {
+            color: #94a3b8;
+        }
+
+        .phone-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 2px;
+        }
+
+        .phone-wrap:focus-within {
+            border-bottom-color: #2563eb;
+        }
+
+        .phone-prefix {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            color: #334155;
+            white-space: nowrap;
+            padding: 8px 0;
+        }
+
+        .phone-prefix .flag {
+            font-size: 1.15rem;
+            line-height: 1;
+        }
+
+        .phone-wrap input {
+            border: 0 !important;
+            padding-left: 0 !important;
+            flex: 1;
+        }
+
+        .quote-promise {
+            text-align: center;
+            padding: 12px 8px;
+        }
+
+        .quote-promise .quote-mark {
+            display: block;
+            font-size: clamp(64px, 10vw, 96px);
+            line-height: .75;
+            font-weight: 800;
+            color: #7dd3fc;
+            margin-bottom: 8px;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        .quote-promise p {
+            margin: 0;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1e293b;
+            line-height: 1.45;
+        }
+
+        .quote-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px 24px;
+            margin-top: 28px;
+        }
+
+        .btn-submit-quote {
+            background: #10b981;
+            color: #fff;
+            border: 0;
+            border-radius: 10px;
+            padding: .75rem 2.25rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .2s ease;
+        }
+
+        .btn-submit-quote:hover {
+            background: #059669;
+        }
+
+        .coupon-link {
+            color: #334155;
+            font-weight: 600;
+            text-decoration: underline;
+            font-size: .95rem;
+            cursor: pointer;
+            background: none;
+            border: 0;
+            padding: 0;
+        }
+
+        .coupon-link:hover {
+            color: #0f172a;
+        }
+
+        .coupon-field {
+            margin-top: 16px;
+            max-width: 320px;
+        }
+
+        .coupon-field.is-hidden {
+            display: none;
+        }
+
+        .quote-privacy {
+            text-align: center;
+            color: var(--muted);
+            font-size: .88rem;
+            margin: 18px 0 0;
+        }
+
+        .contact-quick {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            margin-top: 40px;
+        }
+
+        .contact-quick a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            background: var(--card);
+            border: 1px solid #e8edff;
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--ink);
+            font-weight: 600;
+            font-size: .92rem;
+            transition: .2s ease;
+        }
+
+        .contact-quick a:hover {
+            background: #f8faff;
+            border-color: #cfe0ff;
+        }
+
+        .contact-quick a i {
+            color: #2563eb;
+            width: 20px;
+            text-align: center;
+        }
 
         /* Section titles */
         .section-title{font-weight:800; letter-spacing:-.02em}
         .section-subtitle{color:var(--muted)}
-
-        /* --- Horizontal Contact Grid --- */
-        .contact-mega{
-            background:var(--card);
-            border:1px solid #e8edff;
-            border-radius:var(--radius-2xl);
-            box-shadow:0 18px 48px rgba(2,8,23,.10);
-            padding:26px;
-        }
-        .contact-head{margin-bottom:12px}
-        .contact-tiles{
-            display:grid;
-            gap:16px;
-            grid-template-columns:1fr;
-        }
-        @media (min-width: 768px){
-            .contact-tiles{grid-template-columns:repeat(2,1fr)}
-        }
-        @media (min-width: 1200px){
-            .contact-tiles{grid-template-columns:repeat(4,1fr)}
-        }
-        .contact-tile{
-            position:relative;
-            background:#f8faff;
-            border:1px solid #e9efff;
-            border-radius:18px;
-            padding:18px;
-            min-height:150px;
-            display:flex;
-            flex-direction:column;
-            gap:8px;
-            transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
-            box-shadow:0 8px 18px rgba(0,0,0,.05);
-        }
-        .contact-tile:hover{
-            transform:translateY(-4px);
-            background:#f2f6ff;
-            box-shadow:0 16px 30px rgba(0,0,0,.08);
-        }
-        .tile-top{display:flex; align-items:center; gap:12px}
-        .tile-icon{
-            width:52px; height:52px; border-radius:14px;
-            display:grid; place-items:center; flex:0 0 auto;
-            background:#eaf1ff; color:#2563ebcc; font-size:20px;
-            box-shadow:inset 0 0 0 1px #dbe6ff;
-        }
-        .tile-title{margin:0; font-weight:800}
-        .tile-text{margin:0; color:#475569; font-weight:300}
-        .tile-actions{margin-top:auto; display:flex; gap:8px; flex-wrap:wrap}
-        .btn-chip{
-            border-radius:999px; padding:.45rem .8rem; font-weight:700; font-size:.9rem;
-            background:#fff; border:1px solid #cfe0ff; color:#1e3a8a;
-        }
-        .btn-chip:hover{background:#eff4ff; border-color:#b7cdfd; color:#1e3a8a}
-
-        /* Social */
-        .social-row{display:flex; gap:10px}
-        .social-pill{
-            width:44px; height:44px; border-radius:999px; display:grid; place-items:center;
-            background:#f8faff; border:1px solid #e9efff; color:#0b1432; transition:.2s ease;
-        }
-        .social-pill:hover{background:#eff4ff; color:#2563eb}
 
         /* Map */
         .map-card{
@@ -162,65 +332,6 @@
         @media (max-width:760px){
             #mainNav{width:calc(100% - 24px)}
         }
-
-        /* Contact strip styles */
-        .contact-mega{
-            /*background:var(--card, #fff);*/
-            border:1px solid var(--card-border, #e8edff);
-            border-radius:40px;
-            box-shadow:0 30px 80px rgba(2,8,23,.12);
-            padding:28px;
-            background:
-                    linear-gradient(180deg, rgba(255,255,255,.88) 0%, rgba(255,255,255,.95) 100%), /* fade overlay */
-                    url('src/assets/images/contact_bg_2.jpg') center/cover no-repeat; /* your image */
-            background-color: #f5f8ff; /* fallback */
-        }
-
-        .contact-head h3{font-weight:800; letter-spacing:-.02em; margin:0}
-        .contact-head p{color:var(--muted, #64748b); margin:.25rem 0 0}
-
-        /* 2 × 2 GRID */
-        .contact-tiles{
-            display:grid; gap:22px; margin-top:18px;
-            grid-template-columns:1fr; /* phones: 1 column */
-        }
-        @media (min-width:768px){
-            .contact-tiles{grid-template-columns:repeat(2,1fr);} /* tablet/desktop: 2 columns */
-        }
-
-        .contact-tile{
-            position:relative; display:flex; flex-direction:column; gap:10px; min-height:180px;
-            background:#f8faff; border:1px solid #e9efff; border-radius:20px; padding:22px;
-            box-shadow:0 10px 24px rgba(0,0,0,.06);
-            transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
-        }
-        .contact-tile.is-accent{background:#eef3ff; border-color:#dfe8ff}
-        .contact-tile:hover{transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,.08); background:#f2f6ff}
-
-        .tile-top{display:flex; align-items:flex-start; gap:14px}
-        .tile-icon{
-            width:54px; height:54px; border-radius:14px; flex:0 0 auto;
-            display:grid; place-items:center; color:#2563ebcc; background:#eaf1ff; font-size:20px;
-            box-shadow:inset 0 0 0 1px #dbe6ff;
-        }
-        .tile-title{margin:0; font-weight:800}
-        .tile-text{margin:0; color:#475569; font-weight:300}
-        .tile-actions{margin-top:auto; display:flex; gap:10px; flex-wrap:wrap}
-
-        .btn-chip{
-            border-radius:999px; padding:.5rem .9rem; font-weight:700; font-size:.92rem;
-            background:#fff; border:1px solid #cfe0ff; color:#1e3a8a; text-decoration:none;
-        }
-        .btn-chip:hover{background:#eff4ff; border-color:#b7cdfd; color:#1e3a8a}
-        .btn-chip i{margin-right:.4rem}
-
-        .social-row{display:flex; gap:10px}
-        .social-pill{
-            width:44px; height:44px; border-radius:999px; display:grid; place-items:center;
-            background:#f8faff; border:1px solid #e9efff; color:#0b1432; text-decoration:none;
-            transition:.2s ease;
-        }
-        .social-pill:hover{background:#eff4ff; color:#2563eb}
 
         /* Brand container */
         #mainNav .navbar-brand {
@@ -307,7 +418,7 @@
     <!-- NAV -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container-fluid px-3">
-            <a class="navbar-brand" href="../../index.html">
+            <a class="navbar-brand" href="index.html">
                 <img src="src/assets/images/siyenga_round_logo.png"
                      alt="Visit Siyenga"
                      class="brand-logo" />
@@ -327,110 +438,90 @@
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
                     <!--<li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>-->
-                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="ms-lg-3 mt-2 mt-lg-0">
-                        <a href="destinations.html" class="btn btn-primary btn-sm">Get Started</a>
+                        <a href="contact.html" class="btn btn-quote btn-sm">Get a Quote</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- SUB-HERO -->
-    <section class="sub-hero">
-        <div class="sub-hero-card">
-            <div class="sub-hero-bg" style="background-image:url('src/assets/images/home/sigiriya.jpg');"></div>
-            <div class="sub-hero-overlay"></div>
-            <div class="sub-hero-content">
-                <div class="container text-center">
-                    <h1 class="sub-hero-title" data-aos="fade-up">Contact Us</h1>
-                    <p class="sub-hero-sub" data-aos="fade-up" data-aos-delay="200">
-                        Get in touch with our travel experts we’ll help plan your perfect Sri Lankan journey.
-                    </p>
+    <!-- GET A QUOTE -->
+    <header class="quote-page-header">
+        <h1 data-aos="fade-up">Get a quote</h1>
+        <p data-aos="fade-up" data-aos-delay="100">Our dedicated team of local experts are available 24/7, ready to
+            provide assistance whenever you need it.</p>
+    </header>
+
+    <section class="pb-4">
+        <div class="container">
+            <div class="quote-box" data-aos="fade-up" data-aos-delay="120">
+                <div class="quote-layout">
+                    <form id="quoteForm" class="quote-form"
+                          action="https://docs.google.com/forms/d/e/1FAIpQLSdU05j3QC3RtPcSBO9dhnT6D9eC_5gw-i-Q3cURSVL4zzCNKw/formResponse"
+                          method="POST" target="_blank">
+                        <div class="quote-grid">
+                            <div class="quote-field">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="entry.2005620554" placeholder="John Jackson"
+                                       required autocomplete="name">
+                            </div>
+                            <div class="quote-field">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="entry.1045781291" placeholder="Hello@outlook.com"
+                                       required autocomplete="email">
+                            </div>
+                            <div class="quote-field">
+                                <label for="destination">Destination</label>
+                                <select id="destination" name="entry.1065046570" required>
+                                    <option value="" disabled selected>Select a Destination</option>
+                                    <option value="Down South (Galle, Mirissa, Unawatuna)">Down South</option>
+                                    <option value="Up Country (Ella, Nuwara Eliya)">Up Country</option>
+                                    <option value="Cultural Triangle (Sigiriya, Anuradhapura)">Cultural Triangle</option>
+                                    <option value="East Coast (Trincomalee, Arugam Bay)">East Coast</option>
+                                    <option value="Colombo & Surroundings">Colombo &amp; Surroundings</option>
+                                    <option value="Central Highlands (Kandy)">Central Highlands</option>
+                                    <option value="Wildlife & Nature (Yala, Udawalawe)">Wildlife &amp; Nature</option>
+                                    <option value="Full island tour — tailor-made">Full island tour — tailor-made</option>
+                                </select>
+                            </div>
+                            <div class="quote-field">
+                                <label for="phone">Phone Number</label>
+                                <div class="phone-wrap">
+                                    <span class="phone-prefix"><span class="flag" aria-hidden="true">🇱🇰</span> +94</span>
+                                    <input type="tel" id="phone" name="entry.1166974658" placeholder="77 996 1170"
+                                           required autocomplete="tel" inputmode="tel">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="couponField" class="quote-field coupon-field is-hidden">
+                            <label for="coupon">Coupon code</label>
+                            <input type="text" id="coupon" name="entry.839337160" placeholder="Enter your coupon">
+                        </div>
+
+                        <div class="quote-actions">
+                            <button type="submit" class="btn-submit-quote">Submit</button>
+                            <button type="button" class="coupon-link" id="couponToggle">Have a coupon?</button>
+                        </div>
+                    </form>
+
+                    <aside class="quote-promise" aria-hidden="false">
+                        <span class="quote-mark">“</span>
+                        <p>Get a personalised quote in 2 hours.</p>
+                    </aside>
                 </div>
             </div>
-        </div>
-    </section>
+            <p class="quote-privacy">We guarantee that your information will not be shared with any third parties.</p>
 
-    <!-- CONTACT Horizontal Grid -->
-    <section class="py-4">
-        <div class="container">
-            <div class="contact-mega" data-aos="fade-up">
-                <div class="contact-head">
-                    <h3>Get in Touch</h3>
-                    <p>Quick ways to reach us</p>
-                </div>
-
-                <div class="contact-tiles">
-                    <!-- Address -->
-                    <article class="contact-tile" data-aos="fade-up" data-aos-delay="50">
-                        <div class="tile-top">
-                            <div class="tile-icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div>
-                                <h5 class="tile-title">Office Address</h5>
-                                <p class="tile-text mb-0">352/16C<br>Thalpitiya South<br>Wadduwa, Sri Lanka</p>
-                            </div>
-                        </div>
-                        <div class="tile-actions">
-                            <a class="btn-chip" target="_blank" href="https://maps.app.goo.gl/"><i class="fa-solid fa-map-location-dot"></i>Open in Maps</a>
-                        </div>
-                    </article>
-
-                    <!-- Phone -->
-                    <article class="contact-tile" data-aos="fade-up" data-aos-delay="100">
-                        <div class="tile-top">
-                            <div class="tile-icon"><i class="fa-solid fa-phone"></i></div>
-                            <div>
-                                <h5 class="tile-title">Phone Numbers</h5>
-                                <p class="tile-text mb-0">Mobile: +94 77 996 1170<br>WhatsApp: +94 77 996 1170</p>
-                            </div>
-                        </div>
-                        <div class="tile-actions">
-                            <a class="btn-chip" href="tel:+94779961170"><i class="fa-solid fa-phone"></i>Call Now</a>
-                            <a class="btn-chip" target="_blank" href="https://wa.me/94779961170"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
-                        </div>
-                    </article>
-
-                    <!-- Email (accent) -->
-                    <article class="contact-tile" data-aos="fade-up" data-aos-delay="150">
-                        <div class="tile-top">
-                            <div class="tile-icon"><i class="fa-solid fa-envelope"></i></div>
-                            <div>
-                                <h5 class="tile-title">Email Address</h5>
-                                <p class="tile-text mb-0">visitsiyenga@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="tile-actions">
-                            <a class="btn-chip" href="mailto:visitsiyenga@gmail.com"><i class="fa-solid fa-paper-plane"></i>Email Us</a>
-                        </div>
-                    </article>
-
-                    <!-- Hours -->
-                    <article class="contact-tile" data-aos="fade-up" data-aos-delay="200">
-                        <div class="tile-top">
-                            <div class="tile-icon"><i class="fa-regular fa-clock"></i></div>
-                            <div>
-                                <h5 class="tile-title">Business Hours</h5>
-                                <p class="tile-text mb-0">
-                                    Mon–Fri: 8:00 AM – 6:00 PM<br>
-                                    Sat: 9:00 AM – 4:00 PM · Sun: 10:00 AM – 2:00 PM
-                                </p>
-                            </div>
-                        </div>
-                        <div class="tile-actions">
-                            <a class="btn-chip" href="#faq"><i class="fa-regular fa-circle-question"></i>See FAQs</a>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Social -->
-                <div class="mt-4">
-                    <h6 class="mb-2">Follow Us</h6>
-                    <div class="social-row">
-                        <a class="social-pill" target="_blank" href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
-                        <a class="social-pill" target="_blank" href="https://wa.me/94779961170"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
+            <div class="contact-quick" data-aos="fade-up" data-aos-delay="180">
+                <a href="tel:+94779961170"><i class="fas fa-phone"></i> +94 77 996 1170</a>
+                <a href="https://wa.me/94779961170" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+                <a href="mailto:visitsiyenga@gmail.com"><i class="fas fa-envelope"></i> visitsiyenga@gmail.com</a>
+                <a href="https://www.google.com/maps?q=352/16C+Thalpitiya+South+Wadduwa+Sri+Lanka" target="_blank"
+                   rel="noopener noreferrer"><i class="fas fa-map-marker-alt"></i> Wadduwa office</a>
             </div>
         </div>
     </section>
@@ -441,7 +532,7 @@
             <div class="row">
                 <div class="col-12 text-center mb-3">
                     <h3 class="section-title" data-aos="fade-up">Find Us</h3>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">Visit our office in the heart of Colombo</p>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">Visit our office in Wadduwa</p>
                 </div>
                 <div class="col-12" data-aos="fade-up" data-aos-delay="250">
                     <div class="map-card">
@@ -581,6 +672,28 @@
     AOS.init({ once:true, duration:700, easing:'ease-out-cubic' });
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const couponToggle = document.getElementById('couponToggle');
+    const couponField = document.getElementById('couponField');
+    if (couponToggle && couponField) {
+        couponToggle.addEventListener('click', () => {
+            couponField.classList.toggle('is-hidden');
+            if (!couponField.classList.contains('is-hidden')) {
+                document.getElementById('coupon')?.focus();
+            }
+        });
+    }
+
+    const quoteForm = document.getElementById('quoteForm');
+    if (quoteForm) {
+        quoteForm.addEventListener('submit', () => {
+            const phone = document.getElementById('phone');
+            if (phone && phone.value.trim() && !phone.value.trim().startsWith('+')) {
+                phone.value = '+94' + phone.value.replace(/\D/g, '');
+            }
+            setTimeout(() => quoteForm.reset(), 800);
+        });
+    }
 </script>
 </body>
 </html>
