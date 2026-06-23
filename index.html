@@ -14,6 +14,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link href="css/footer.css" rel="stylesheet">
+<link href="css/whatsapp.css" rel="stylesheet">
     <!-- NEW FONT -->
     <!--    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">-->
     <!--    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">-->
@@ -455,20 +457,6 @@
             font-weight: 300;
         }
 
-        /* Footer */
-        footer {
-            border-top-left-radius: 28px;
-            border-top-right-radius: 28px
-        }
-
-        footer .input-group .form-control {
-            border-radius: 999px 0 0 999px
-        }
-
-        footer .input-group .btn {
-            border-radius: 0 999px 999px 0
-        }
-
         /* Mobile */
         @media (max-width: 992px) {
             .why-wrap {
@@ -534,46 +522,6 @@
             }
         }
 
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            width: 61px;
-            height: 61px;
-            bottom: 100px;
-            right: 20px;
-            background: linear-gradient(135deg, #25D366, #20b955);
-            color: #fff;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 32px;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
-            transition: all 0.3s ease-in-out;
-            animation: pulse 2s infinite;
-        }
-
-        /* Hover effect */
-        .whatsapp-float:hover {
-            transform: scale(1.12) rotate(5deg);
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.8);
-            color: #fff;
-        }
-
-        /* WhatsApp Icon */
-        .whatsapp-float i {
-            line-height: 1;
-        }
-
-        /* Pulse animation */
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
         /* Blended hero (Sigiriya + hills + coast) */
         .hero-blend-card {
             position: relative;
@@ -620,23 +568,7 @@
             justify-content: center;
             margin-top: 1.35rem;
         }
-
-        .btn-whatsapp-hero {
-            background: #25d366 !important;
-            color: #fff !important;
-            border: 0 !important;
-            border-radius: 999px;
-            font-weight: 700;
-            padding: .75rem 1.2rem;
-            box-shadow: 0 12px 28px rgba(37, 211, 102, .35);
-        }
-
-        .btn-whatsapp-hero:hover {
-            filter: brightness(1.05);
-            color: #fff !important;
-        }
-
-        @media (max-width: 768px) {
+@media (max-width: 768px) {
             .hero-bg-blend {
                 flex-direction: column;
             }
@@ -709,6 +641,8 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+            opacity: 1;
+            transform: none;
         }
 
         .tour-card-img {
@@ -728,6 +662,18 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 14px;
+        }
+
+        .experience-grid,
+        .experience-grid.aos-init {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        .featured-tours .tour-card,
+        .featured-tours .col-lg-4 {
+            opacity: 1 !important;
+            transform: none !important;
         }
 
         @media (max-width: 992px) {
@@ -975,7 +921,7 @@
     </section>
 
     <!-- FEATURED TOURS -->
-    <section class="py-5 bg-light destination-container">
+    <section class="py-5 bg-light destination-container featured-tours">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="section-title" data-aos="fade-up">Featured Tours</h2>
@@ -983,7 +929,7 @@
                     be adjusted to your pace and interests.</p>
             </div>
             <div class="row g-4">
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                <div class="col-lg-4">
                     <article class="tour-card">
                         <img src="src/assets/images/home/sigiriya.jpg" alt="10-Day Sri Lanka Tour" class="tour-card-img">
                         <div class="tour-card-body">
@@ -995,7 +941,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="160">
+                <div class="col-lg-4">
                     <article class="tour-card">
                         <img src="src/assets/images/home/ninearch.jpg" alt="8-Day Classic Tour" class="tour-card-img">
                         <div class="tour-card-body">
@@ -1006,7 +952,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="240">
+                <div class="col-lg-4">
                     <article class="tour-card">
                         <img src="src/assets/images/home/ella.jpg" alt="Tailor-Made Tour" class="tour-card-img">
                         <div class="tour-card-body">
@@ -1016,7 +962,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                <div class="col-lg-4">
                     <article class="tour-card">
                         <img src="src/destination/wild1-min.jpg" alt="Wildlife Safari Adventure" class="tour-card-img">
                         <div class="tour-card-body">
@@ -1026,7 +972,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="160">
+                <div class="col-lg-4">
                     <article class="tour-card">
                         <img src="src/destination/colombo3-min.jpg" alt="Colombo City Tour" class="tour-card-img">
                         <div class="tour-card-body">
@@ -1050,7 +996,7 @@
                 <h2 class="section-title" data-aos="fade-up">Experience Sri Lanka</h2>
                 <p class="section-subtitle mb-0" data-aos="fade-up" data-aos-delay="120">Every day, a new experience.</p>
             </div>
-            <div class="experience-grid" data-aos="fade-up" data-aos-delay="100">
+            <div class="experience-grid">
                 <div class="exp-tile" style="background-image:url('src/assets/images/home/sigiriya.jpg');"><span>Sigiriya</span>
                 </div>
                 <div class="exp-tile" style="background-image:url('src/assets/images/home/ninearch.jpg');"><span>Train ride</span>
@@ -1072,7 +1018,7 @@
                     Sri Lanka with us.</p>
             </div>
             <div class="row g-4">
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                <div class="col-lg-4">
                     <div class="review-card">
                         <div class="review-stars">★★★★★</div>
                         <p class="review-quote mb-0">“Everything was organized perfectly — hotels, drivers, and timing. We felt
@@ -1080,7 +1026,7 @@
                         <p class="review-by">— Marion K., Germany</p>
                     </div>
                 </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="160">
+                <div class="col-lg-4">
                     <div class="review-card">
                         <div class="review-stars">★★★★★</div>
                         <p class="review-quote mb-0">“Friendly, responsive, and honest recommendations. Our route combined
@@ -1088,7 +1034,7 @@
                         <p class="review-by">— James &amp; Helen, United Kingdom</p>
                     </div>
                 </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="240">
+                <div class="col-lg-4">
                     <div class="review-card">
                         <div class="review-stars">★★★★★</div>
                         <p class="review-quote mb-0">“Communication on WhatsApp was quick and clear. No stress, no surprises
@@ -1117,72 +1063,101 @@
 
 </div><!-- /.page-wrap -->
 
-<!-- FOOTER (identical to index) -->
-<footer class="bg-dark text-white py-5 mt-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 mb-4">
-                <h5><i class="fas fa-compass me-2"></i>Visit Siyenga</h5>
-                <p>Your trusted local partner for authentic Sri Lankan adventures. We specialize in eco friendly tours
-                    that showcase our island's incredible natural beauty and rich cultural heritage.</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank"
-                       class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/94779961170" target="_blank" class="text-white me-3"><i
-                            class="fab fa-whatsapp"></i></a>
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container footer-main">
+        <div class="row g-4 g-lg-5">
+            <div class="col-lg-4 mb-2 mb-lg-0">
+                <div class="footer-brand">
+                    <div class="footer-brand-row">
+                        <img src="src/assets/images/siyenga_round_logo.png" alt="" class="footer-logo" width="52" height="52">
+                        <img src="src/assets/images/siyenga_name_logo.png" alt="Visit Siyenga" class="footer-name">
+                    </div>
+                    <p class="footer-tagline">Your trusted local partner for tailor-made Sri Lankan adventures — beaches, wildlife, tea country, and culture since 1997.</p>
+                    <span class="footer-badge"><i class="fas fa-award"></i> Local experts since 1997</span>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/94779961170" target="_blank" rel="noopener noreferrer" class="social-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:visitsiyenga@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-4 mb-4">
-                <h6>Quick Links</h6>
-                <ul class="list-unstyled">
-                    <li><a href="index.html" class="text-white-50">Home</a></li>
-                    <li><a href="about.html" class="text-white-50">About</a></li>
-                    <li><a href="services.html" class="text-white-50">Services</a></li>
-                    <li><a href="destinations.html" class="text-white-50">Destinations</a></li>
+            <div class="col-6 col-lg-2">
+                <h6 class="footer-heading">Explore</h6>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="destinations.html">Tour Packages</a></li>
+                    <li><a href="contact.html">Get a Quote</a></li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-md-4 mb-4">
-                <h6>Contact Info</h6>
-                <ul class="list-unstyled">
-                    <li class="text-white-50"><i class="fas fa-globe me-2"></i><a href="https://visitsiyenga.com"
-                                                                                    target="_blank" rel="noopener noreferrer"
-                                                                                    class="text-white-50">visitsiyenga.com</a>
+            <div class="col-6 col-lg-2">
+                <h6 class="footer-heading">Destinations</h6>
+                <ul class="footer-links">
+                    <li><a href="destination-down-south.html">Down South</a></li>
+                    <li><a href="destination-up-country.html">Hill Country</a></li>
+                    <li><a href="destination-wildlife-nature.html">Wildlife</a></li>
+                    <li><a href="destination-colombo.html">Colombo</a></li>
+                    <li><a href="destination-cultural-triangle.html">Culture</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h6 class="footer-heading">Contact</h6>
+                <ul class="footer-contact">
+                    <li>
+                        <span class="footer-contact-icon"><i class="fas fa-globe"></i></span>
+                        <span><a href="https://visitsiyenga.com" target="_blank" rel="noopener noreferrer">visitsiyenga.com</a></span>
                     </li>
-                    <li class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i>352/16C Thalpitiya South,
-                        Wadduwa</li>
-                    <li class="text-white-50"><i class="fas fa-phone me-2"></i><a href="tel:+94779961170"
-                                                                                   class="text-white-50">+94 77 996
-                        1170</a></li>
-                    <li class="text-white-50"><i class="fas fa-envelope me-2"></i><a href="mailto:visitsiyenga@gmail.com"
-                                                                                      class="text-white-50">visitsiyenga@gmail.com</a>
+                    <li>
+                        <span class="footer-contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <span>352/16C Thalpitiya South, Wadduwa, Sri Lanka</span>
+                    </li>
+                    <li>
+                        <span class="footer-contact-icon"><i class="fas fa-phone"></i></span>
+                        <span><a href="tel:+94779961170">+94 77 996 1170</a></span>
+                    </li>
+                    <li>
+                        <span class="footer-contact-icon"><i class="fas fa-envelope"></i></span>
+                        <span><a href="mailto:visitsiyenga@gmail.com">visitsiyenga@gmail.com</a></span>
                     </li>
                 </ul>
+                <div class="footer-cta">
+                    <a href="contact.html" class="footer-cta-btn"><i class="fas fa-paper-plane"></i> Get a Quote</a>
+                </div>
             </div>
         </div>
-        <hr class="my-4">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <p class="text-white-50 mb-0">&copy; <span id="year"></span> Visit Siyenga. All rights reserved.</p>
-            </div>
-            <div class="col-md-6 text-md-end">
-                <a href="#" class="text-white-50 me-3">Privacy Policy</a>
-                <a href="#" class="text-white-50">Terms of Service</a>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-inner">
+                <p>&copy; <span id="year"></span> Visit Siyenga. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </div>
 </footer>
 
 
-<a href="https://wa.me/94779961170" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
+<a href="https://wa.me/94779961170?text=Hi%2C%20I%20would%20like%20to%20plan%20a%20trip" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg class="whatsapp-float__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="whatsapp-float__tooltip">Chat on WhatsApp</span>
 </a>
 
 <!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
-    // Init AOS
-    AOS.init({once: true, duration: 700, easing: 'ease-out-cubic'});
+    // Init AOS (section headings only — tour cards are always visible)
+    AOS.init({once: true, duration: 700, easing: 'ease-out-cubic', offset: 40});
+    window.addEventListener('load', () => {
+        if (typeof AOS !== 'undefined') AOS.refresh();
+    });
 
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();

@@ -1,442 +1,3 @@
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="About Visit Siyenga Lanka authentic, eco-friendly, locally guided journeys across Sri Lanka." />
-    <title>About Visit Siyenga Lanka</title>
-
-    &lt;!&ndash; Bootstrap / Icons / AOS &ndash;&gt;
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    &lt;!&ndash; Font (same as index) &ndash;&gt;
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root{
-            &#45;&#45;bg:#ecedf4;
-            &#45;&#45;card:#ffffff;
-            &#45;&#45;ink:#0f172a;
-            &#45;&#45;muted:#64748b;
-            &#45;&#45;primary:#2563eb;
-            &#45;&#45;primary-ink:#ffffff;
-            &#45;&#45;shadow-lg:0 24px 60px rgba(0,0,0,.16);
-            &#45;&#45;shadow-md:0 12px 32px rgba(0,0,0,.10);
-            &#45;&#45;radius-xl:28px;
-            &#45;&#45;radius-2xl:40px;
-        }
-        *{box-sizing:border-box}
-        body{
-            margin:0;
-            font-family: 'DM Sans', sans-serif;
-            color:var(&#45;&#45;ink);
-            background: radial-gradient(1500px 700px at -10% -20%, #c9d8ff 60%, rgba(201,216,255,0) 100%), var(&#45;&#45;bg);
-        }
-        .page-wrap{max-width:1280px;margin:34px auto;padding:0 20px}
-
-        /* NAV (identical to index) */
-        #mainNav{
-            background:var(&#45;&#45;card)!important;
-            border-radius:22px;
-            box-shadow:var(&#45;&#45;shadow-md);
-            top:18px; left:0; right:0;
-            width:calc(100% - 40px);
-            margin:0 auto;
-            padding:10px 16px;
-            backdrop-filter:saturate(120%) blur(6px);
-        }
-        #mainNav .navbar-brand{
-            font-weight:800; letter-spacing:.2px; color:#0b1432!important;
-            display:flex; align-items:center; gap:10px;
-        }
-        #mainNav .navbar-nav .nav-link{
-            color:#334155!important; font-weight:600; margin:0 .2rem; border-radius:10px; padding:.55rem .9rem;
-        }
-        #mainNav .navbar-nav .nav-link:hover{color:var(&#45;&#45;primary)!important; background:#eff4ff}
-        .btn-primary{background:var(&#45;&#45;primary)!important; border:0; border-radius:999px; padding:.75rem 1.15rem; font-weight:700}
-        .btn-outline-primary{border-radius:999px}
-
-        /* SUB-HERO (same as services) */
-        .sub-hero{margin-top:110px}
-        .sub-hero-card{
-            position:relative; overflow:hidden; border-radius:var(&#45;&#45;radius-2xl);
-            box-shadow:var(&#45;&#45;shadow-lg); background:#000;
-        }
-        .sub-hero-bg{
-            height:46vh; min-height:360px; max-height:520px;
-            background-size:cover; background-position:center;
-        }
-        .sub-hero-overlay{position:absolute; inset:0; background:linear-gradient(180deg,rgba(2,8,23,0) 35%, rgba(2,8,23,.6) 85%)}
-        .sub-hero-content{position:absolute; inset:0; display:grid; align-content:end; padding:28px 32px 32px}
-        .sub-hero-title{font-size: clamp(28px, 4vw, 48px); font-weight:800; color:#fff; letter-spacing:-.02em; margin-bottom:.5rem; text-shadow:0 6px 24px rgba(0,0,0,.28)}
-        .sub-hero-sub{color:#e5e7eb; opacity:.95; max-width:960px; margin:0 auto}
-
-        /* Sections */
-        .section-title{font-weight:800; letter-spacing:-.02em}
-        .section-subtitle{color:var(&#45;&#45;muted)}
-        .lead{color:#334155}
-
-        /* About blocks */
-        .info-card{
-            background:var(&#45;&#45;card);
-            border:1px solid #e8edff;
-            border-radius: var(&#45;&#45;radius-xl);
-            box-shadow:0 10px 28px rgba(0,0,0,.06);
-            overflow:hidden;
-        }
-        .info-media{height:100%; min-height:280px; background:#eaf1ff; border-radius:18px; overflow:hidden}
-        .info-media img{width:100%; height:100%; object-fit:cover}
-
-        .chip{
-            display:inline-flex; align-items:center; gap:10px;
-            background:#f8faff; border:1px solid #e9efff; padding:8px 12px; border-radius:999px; color:#0b1432; margin-right:8px; margin-bottom:8px;
-        }
-        .chip i{color:var(&#45;&#45;primary)}
-
-        /* Why Choose (reuse index layout) */
-        .why-wrap {
-            background: #fff;
-            border: 1px solid #e8edff;
-            border-radius: 30px;
-            padding: 40px 28px;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, .08);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        .why-text { text-align:center; }
-        .why-title { font-size: clamp(28px, 3.2vw, 40px); margin-bottom: 16px; }
-        .why-desc { color:#475569; max-width: 560px; margin: 0 auto 18px; }
-        .why-features { display:grid; gap:14px; }
-        .feature-chip{
-            display:flex; align-items:flex-start; gap:14px;
-            background:#f8faff; border:1px solid #e9efff; padding:14px 16px; border-radius:16px; transition:.2s ease; box-shadow:0 4px 10px rgba(0,0,0,.04);
-        }
-        .feature-chip:hover{transform:translateY(-2px); background:#f2f6ff}
-        .chip-icon{
-            width:40px;height:40px;border-radius:12px;background:#eaf1ff; color:#2563ebcc; display:grid; place-items:center; font-size:18px; flex:0 0 auto;
-        }
-        .chip-title{font-weight:400;}
-        .chip-text{font-weight:300;color:#55657a}
-
-        /* Stats */
-        .stats-wrap{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
-        .stat{
-            background:var(&#45;&#45;card); border:1px solid #e8edff; border-radius:22px; padding:24px; text-align:center;
-            box-shadow:0 10px 28px rgba(0,0,0,.06);
-        }
-        .stat h3{font-weight:800; margin:10px 0 4px}
-        .stat p{color:#64748b; margin:0}
-        .stat i{color:var(&#45;&#45;primary)}
-
-        /* Footer */
-        footer{border-top-left-radius:28px;border-top-right-radius:28px}
-        footer .input-group .form-control{border-radius:999px 0 0 999px}
-        footer .input-group .btn{border-radius:0 999px 999px 0}
-
-        /* Responsive tweaks */
-        @media (max-width: 992px){
-            .why-wrap{grid-template-columns:1fr; gap:24px; padding:28px 20px}
-            .stats-wrap{grid-template-columns:repeat(2,1fr)}
-        }
-        @media (max-width: 760px){
-            #mainNav{width:calc(100% - 24px)}
-            .stats-wrap{grid-template-columns:1fr}
-        }
-
-        /* Brand container */
-        #mainNav .navbar-brand {
-            display: flex;
-            align-items: center;
-            gap: 8px; /* spacing between icon + name */
-            padding: 0; /* no extra padding inside */
-        }
-
-        /* Round icon */
-        #mainNav .navbar-brand .brand-logo {
-            /*height: 42px;   !* matches navbar height *!*/
-            height: 42px;   /* matches navbar height */
-            width: auto;
-            display: block;
-        }
-
-        /* Siyenga name image */
-        #mainNav .navbar-brand .siyenga-name img {
-            /*height: 32px;   !* a bit smaller than icon for balance *!*/
-            height: 32px;   /* a bit smaller than icon for balance */
-            width: auto;
-            display: block;
-            margin-top: 2px; /* fine-tune vertical alignment */
-        }
-
-        /* On desktop: increase both slightly */
-        @media (min-width: 992px) {
-            #mainNav .navbar-brand .brand-logo {
-                /*height: 48px;*/
-                height: 32px;
-            }
-            #mainNav .navbar-brand .siyenga-name img {
-                height: 36px;
-            }
-        }
-    </style>
-</head>
-<body>
-<div class="page-wrap">
-
-    &lt;!&ndash; NAV &ndash;&gt;
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container-fluid px-3">
-           &lt;!&ndash; <a class="navbar-brand" href="../../index.html">
-                <img src="src/assets/images/siyenga_round_logo.png"
-                     alt="Visit Siyenga"
-                     class="brand-logo" />
-                <span class="siyenga-name">
-                    <img src="src/assets/images/siyenga_name_logo.png"
-                         alt="Visit Siyenga"
-                         />
-                </span>
-            </a>&ndash;&gt;
-            <a class="navbar-brand" href="../../index.html">
-                <img src="src/assets/images/siyenga_round_logo.png"
-                     alt="Visit Siyenga"
-                     class="brand-logo" />
-                <span class="siyenga-name">
-                    <img src="src/assets/images/siyenga_name_logo.png"
-                         alt="Visit Siyenga"
-                         />
-                </span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
-                    &lt;!&ndash;<li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>&ndash;&gt;
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="ms-lg-3 mt-2 mt-lg-0">
-                        <a href="destinations.html" class="btn btn-primary btn-sm">Get Started</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    &lt;!&ndash; BANNER (identical structure & image to services) &ndash;&gt;
-    <section class="sub-hero">
-        <div class="sub-hero-card">
-            <div class="sub-hero-bg" style="background-image:url('src/assets/images/home/sigiriya.jpg');"></div>
-            <div class="sub-hero-overlay"></div>
-            <div class="sub-hero-content">
-                <div class="container text-center">
-                    <h1 class="sub-hero-title" data-aos="fade-up">About Visit Siyenga Lanka</h1>
-                    <p class="sub-hero-sub" data-aos="fade-up" data-aos-delay="200">
-                        We craft nature-first journeys that connect you with Sri Lanka’s landscapes, heritage, and warmhearted people.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    &lt;!&ndash; OUR STORY / MISSION &ndash;&gt;
-    <section class="py-5">
-        <div class="container">
-            <div class="row g-4 align-items-stretch">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="info-card h-100 p-4">
-                        <div class="d-flex flex-wrap gap-2 mb-2">
-                            <span class="chip"><i class="fa-solid fa-leaf"></i>Sustainable</span>
-                            <span class="chip"><i class="fa-solid fa-users"></i>Local-led</span>
-                            <span class="chip"><i class="fa-solid fa-camera"></i>Photo-friendly</span>
-                        </div>
-                        <h2 class="section-title mb-2">Our Story</h2>
-                        <p class="lead">We started as a small crew of naturalists and guides who wanted travelers to feel Sri Lanka’s raw beauty responsibly.</p>
-                        <p>From misty highlands to sunlit coasts, we design trips that protect habitats, celebrate living heritage, and create genuine moments with communities. Every itinerary is handcrafted with care, knowledge, and love for our island.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="info-card h-100 p-4">
-                        <div class="d-flex flex-wrap gap-2 mb-2">
-                            <span class="chip"><i class="fa-solid fa-seedling"></i>Eco-tourism</span>
-                            <span class="chip"><i class="fa-solid fa-paw"></i>Wildlife care</span>
-                            <span class="chip"><i class="fa-solid fa-handshake-angle"></i>Community</span>
-                        </div>
-                        <h2 class="section-title mb-2">Our Mission</h2>
-                        <p class="lead">To deliver authentic, low-impact adventures that preserve nature and uplift local lives.</p>
-                        <ul class="mb-3">
-                            <li class="mb-2">Promote responsible travel across sensitive habitats</li>
-                            <li class="mb-2">Support conservation with ethical wildlife encounters</li>
-                            <li class="mb-2">Create opportunities with community-based tourism</li>
-                            <li class="mb-2">Curate meaningful cultural exchanges, not checklists</li>
-                        </ul>
-                        <a href="destinations.html" class="btn btn-primary"><i class="fa-solid fa-map-marked-alt me-2"></i>Explore Destinations</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    &lt;!&ndash; STATS &ndash;&gt;
-    <section class="py-2">
-        <div class="container">
-            <div class="stats-wrap" data-aos="fade-up">
-                <div class="stat">
-                    <i class="fa-solid fa-users fa-2x"></i>
-                    <h3><span class="count" data-target="15000">0</span>+</h3>
-                    <p>Happy Travelers</p>
-                </div>
-                <div class="stat">
-                    <i class="fa-solid fa-map-marked-alt fa-2x"></i>
-                    <h3><span class="count" data-target="500">0</span>+</h3>
-                    <p>Tours Completed</p>
-                </div>
-                <div class="stat">
-                    <i class="fa-solid fa-award fa-2x"></i>
-                    <h3><span class="count" data-target="25">0</span></h3>
-                    <p>Awards & Mentions</p>
-                </div>
-                <div class="stat">
-                    <i class="fa-solid fa-calendar-check fa-2x"></i>
-                    <h3><span class="count" data-target="30">0</span>+</h3>
-                    <p>Years Experience</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    &lt;!&ndash; WHY CHOOSE &ndash;&gt;
-    <section class="py-5">
-        <div class="container">
-            <div class="why-wrap">
-                <div class="why-features">
-                    <div class="feature-chip">
-                        <div class="chip-icon"><i class="fa-solid fa-leaf"></i></div>
-                        <div>
-                            <p class="chip-title mb-1">Eco-Friendly Approach</p>
-                            <p class="chip-text mb-0">Low-impact routes, ethical wildlife viewing, and plastic-smart logistics.</p>
-                        </div>
-                    </div>
-                    <div class="feature-chip">
-                        <div class="chip-icon"><i class="fa-solid fa-users-line"></i></div>
-                        <div>
-                            <p class="chip-title mb-1">Community Powered</p>
-                            <p class="chip-text mb-0">Local homestays, village lunches, and fair income for hosts.</p>
-                        </div>
-                    </div>
-                    <div class="feature-chip">
-                        <div class="chip-icon"><i class="fa-solid fa-compass"></i></div>
-                        <div>
-                            <p class="chip-title mb-1">Expert Naturalists</p>
-                            <p class="chip-text mb-0">Season-savvy guides who know trails, tides, and rare sightings.</p>
-                        </div>
-                    </div>
-                    <div class="feature-chip">
-                        <div class="chip-icon"><i class="fa-solid fa-camera"></i></div>
-                        <div>
-                            <p class="chip-title mb-1">Photographer’s Eye</p>
-                            <p class="chip-text mb-0">Golden-hour stops and secret vantage points baked into plans.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="why-text">
-                    <h2 class="why-title">Why Travel With Us?</h2>
-                    <p class="lead why-desc">Because we’re locals who care. Expect smart itineraries, warm hosts, and the kind of detail that turns a trip into a story you’ll tell for years.</p>
-                    <a href="services.html" class="btn btn-primary"><i class="fa-solid fa-mountain me-2"></i>See Our Services</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</div>&lt;!&ndash; /.page-wrap &ndash;&gt;
-
-&lt;!&ndash; FOOTER (identical to index) &ndash;&gt;
-<footer class="bg-dark text-white py-5 mt-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 mb-4">
-                <h5><i class="fas fa-compass me-2"></i>Visit Siyenga</h5>
-                <p>Your trusted local partner for authentic Sri Lankan adventures. We specialize in eco friendly tours that showcase our island's incredible natural beauty and rich cultural heritage.</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/94779961170" target="_blank" class="text-white me-3"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 mb-4">
-                <h6>Quick Links</h6>
-                <ul class="list-unstyled">
-                    <li><a href="index.html" class="text-white-50">Home</a></li>
-                    <li><a href="about.html" class="text-white-50">About</a></li>
-                    <li><a href="services.html" class="text-white-50">Services</a></li>
-                    <li><a href="destinations.html" class="text-white-50">Destinations</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-4 mb-4">
-                <h6>Contact Info</h6>
-                <ul class="list-unstyled">
-                    <li class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i>352/16C Thalpitiya south Wadduwa</li>
-                    <li class="text-white-50"><i class="fas fa-phone me-2"></i>+94 77 996 1170</li>
-                    <li class="text-white-50"><i class="fas fa-envelope me-2"></i>visitsiyenga@gmail.com</li>
-                </ul>
-            </div>
-        </div>
-        <hr class="my-4">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <p class="text-white-50 mb-0">&copy; <span id="year"></span> Visit Siyenga. All rights reserved.</p>
-            </div>
-            <div class="col-md-6 text-md-end">
-                <a href="#" class="text-white-50 me-3">Privacy Policy</a>
-                <a href="#" class="text-white-50">Terms of Service</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-&lt;!&ndash; SCRIPTS &ndash;&gt;
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-    // AOS (same as services)
-    AOS.init({ once:true, duration:700, easing:'ease-out-cubic' });
-
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Simple counter animation
-    const counters = document.querySelectorAll('.count');
-    const speed = 5; // higher = slower
-    const runCounter = entry => {
-        const el = entry.target;
-        const target = +el.getAttribute('data-target');
-        const update = () => {
-            const val = +el.innerText;
-            const inc = Math.ceil(target / (60 * speed));
-            if (val < target) {
-                el.innerText = Math.min(val + inc, target);
-                requestAnimationFrame(update);
-            } else {
-                el.innerText = target;
-            }
-        };
-        update();
-    };
-    const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e => { if(e.isIntersecting){ runCounter(e); io.unobserve(e.target); } });
-    }, {threshold: 0.4});
-    counters.forEach(c=> io.observe(c));
-</script>
-</body>
-</html>
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -450,6 +11,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+<link href="css/whatsapp.css" rel="stylesheet">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
@@ -778,20 +341,6 @@
             color: var(--primary)
         }
 
-        /* Footer */
-        footer {
-            border-top-left-radius: 28px;
-            border-top-right-radius: 28px
-        }
-
-        footer .input-group .form-control {
-            border-radius: 999px 0 0 999px
-        }
-
-        footer .input-group .btn {
-            border-radius: 0 999px 999px 0
-        }
-
         /* Responsive */
         @media (max-width: 992px) {
             .why-wrap {
@@ -813,46 +362,6 @@
             .stats-wrap {
                 grid-template-columns:1fr
             }
-        }
-
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            width: 65px;
-            height: 65px;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #25D366, #20b955);
-            color: #fff;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 32px;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
-            transition: all 0.3s ease-in-out;
-            animation: pulse 2s infinite;
-        }
-
-        /* Hover effect */
-        .whatsapp-float:hover {
-            transform: scale(1.12) rotate(5deg);
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.8);
-            color: #fff;
-        }
-
-        /* WhatsApp Icon */
-        .whatsapp-float i {
-            line-height: 1;
-        }
-
-        /* Pulse animation */
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
     </style>
 </head>
@@ -1009,54 +518,89 @@
 </div><!-- /.page-wrap -->
 
 <!-- FOOTER -->
-<footer class="bg-dark text-white py-5 mt-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 mb-4">
-                <h5><i class="fas fa-compass me-2"></i>Visit Siyenga</h5>
-                <p>Your trusted local partner for authentic Sri Lankan adventures. We specialize in eco friendly tours
-                    that showcase our island's incredible natural beauty and rich cultural heritage.</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank"
-                       class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/94779961170" target="_blank" class="text-white me-3"><i
-                            class="fab fa-whatsapp"></i></a>
+<footer class="site-footer">
+    <div class="container footer-main">
+        <div class="row g-4 g-lg-5">
+            <div class="col-lg-4 mb-2 mb-lg-0">
+                <div class="footer-brand">
+                    <div class="footer-brand-row">
+                        <img src="src/assets/images/siyenga_round_logo.png" alt="" class="footer-logo" width="52" height="52">
+                        <img src="src/assets/images/siyenga_name_logo.png" alt="Visit Siyenga" class="footer-name">
+                    </div>
+                    <p class="footer-tagline">Your trusted local partner for tailor-made Sri Lankan adventures — beaches, wildlife, tea country, and culture since 1997.</p>
+                    <span class="footer-badge"><i class="fas fa-award"></i> Local experts since 1997</span>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/94779961170" target="_blank" rel="noopener noreferrer" class="social-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:visitsiyenga@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-4 mb-4">
-                <h6>Quick Links</h6>
-                <ul class="list-unstyled">
-                    <li><a href="index.html" class="text-white-50">Home</a></li>
-                    <li><a href="about.html" class="text-white-50">About</a></li>
-                    <li><a href="services.html" class="text-white-50">Services</a></li>
-                    <li><a href="destinations.html" class="text-white-50">Destinations</a></li>
+            <div class="col-6 col-lg-2">
+                <h6 class="footer-heading">Explore</h6>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="destinations.html">Tour Packages</a></li>
+                    <li><a href="contact.html">Get a Quote</a></li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-md-4 mb-4">
-                <h6>Contact Info</h6>
-                <ul class="list-unstyled">
-                    <li class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i>352/16C Thalpitiya south Wadduwa
-                    </li>
-                    <li class="text-white-50"><i class="fas fa-phone me-2"></i>+94 77 996 1170</li>
-                    <li class="text-white-50"><i class="fas fa-envelope me-2"></i>visitsiyenga@gmail.com</li>
+            <div class="col-6 col-lg-2">
+                <h6 class="footer-heading">Destinations</h6>
+                <ul class="footer-links">
+                    <li><a href="destination-down-south.html">Down South</a></li>
+                    <li><a href="destination-up-country.html">Hill Country</a></li>
+                    <li><a href="destination-wildlife-nature.html">Wildlife</a></li>
+                    <li><a href="destination-colombo.html">Colombo</a></li>
+                    <li><a href="destination-cultural-triangle.html">Culture</a></li>
                 </ul>
+            </div>
+            <div class="col-lg-4">
+                <h6 class="footer-heading">Contact</h6>
+                <ul class="footer-contact">
+                    <li>
+                        <span class="footer-contact-icon"><i class="fas fa-globe"></i></span>
+                        <span><a href="https://visitsiyenga.com" target="_blank" rel="noopener noreferrer">visitsiyenga.com</a></span>
+                    </li>
+                    <li>
+                        <span class="footer-contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <span>352/16C Thalpitiya South, Wadduwa, Sri Lanka</span>
+                    </li>
+                    <li>
+                        <span class="footer-contact-icon"><i class="fas fa-phone"></i></span>
+                        <span><a href="tel:+94779961170">+94 77 996 1170</a></span>
+                    </li>
+                    <li>
+                        <span class="footer-contact-icon"><i class="fas fa-envelope"></i></span>
+                        <span><a href="mailto:visitsiyenga@gmail.com">visitsiyenga@gmail.com</a></span>
+                    </li>
+                </ul>
+                <div class="footer-cta">
+                    <a href="contact.html" class="footer-cta-btn"><i class="fas fa-paper-plane"></i> Get a Quote</a>
+                </div>
             </div>
         </div>
-        <hr class="my-4">
-        <div class="row align-items-center">
-            <div class="col-md-6"><p class="text-white-50 mb-0">&copy; <span id="year"></span> Visit Siyenga. All rights
-                reserved.</p></div>
-            <div class="col-md-6 text-md-end">
-                <a href="#" class="text-white-50 me-3">Privacy Policy</a>
-                <a href="#" class="text-white-50">Terms of Service</a>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-inner">
+                <p>&copy; <span id="year"></span> Visit Siyenga. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </div>
 </footer>
 
 
-<a href="https://wa.me/94779961170" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
+<a href="https://wa.me/94779961170?text=Hi%2C%20I%20would%20like%20to%20plan%20a%20trip" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg class="whatsapp-float__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="whatsapp-float__tooltip">Chat on WhatsApp</span>
 </a>
 
 <!-- SCRIPTS -->
