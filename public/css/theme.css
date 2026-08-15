@@ -1,0 +1,372 @@
+/* Visit Siyenga — light / dark theme */
+
+:root {
+    color-scheme: light;
+    --theme-toggle-bg: #f1f5f9;
+    --theme-toggle-border: #e2e8f0;
+    --theme-toggle-icon: #334155;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0b1220;
+    --card: #151d2e;
+    --ink: #e8eef8;
+    --muted: #94a3b8;
+    --primary: #3b82f6;
+    --primary-ink: #ffffff;
+    --shadow-lg: 0 24px 60px rgba(0, 0, 0, .45);
+    --shadow-md: 0 12px 32px rgba(0, 0, 0, .35);
+    --theme-toggle-bg: #1e293b;
+    --theme-toggle-border: #334155;
+    --theme-toggle-icon: #e2e8f0;
+}
+
+/* Smooth theme switch (surfaces only — avoid fighting motion libraries) */
+html.theme-ready body,
+html.theme-ready #mainNav,
+html.theme-ready .theme-toggle {
+    transition: background-color .25s ease, color .2s ease, border-color .2s ease, box-shadow .25s ease;
+}
+
+/* ── Body ── */
+html[data-theme="dark"] body {
+    background:
+        radial-gradient(1500px 700px at -10% -20%, #1e3a5f 0%, rgba(30, 58, 95, 0) 55%),
+        var(--bg) !important;
+    color: var(--ink) !important;
+}
+
+/* ── Navbar ── */
+html[data-theme="dark"] #mainNav {
+    background: rgba(21, 29, 46, 0.92) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .35) !important;
+}
+
+html[data-theme="dark"] #mainNav .navbar-brand {
+    color: #f1f5f9 !important;
+}
+
+html[data-theme="dark"] #mainNav .navbar-brand .siyenga-name img {
+    filter: brightness(0) invert(1);
+}
+
+html[data-theme="dark"] #mainNav .navbar-nav .nav-link,
+html[data-theme="dark"] #mainNav .nav-link {
+    color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] #mainNav .navbar-nav .nav-link:hover,
+html[data-theme="dark"] #mainNav .nav-link:hover,
+html[data-theme="dark"] #mainNav .navbar-nav .nav-link.active,
+html[data-theme="dark"] #mainNav .nav-link.active {
+    color: #93c5fd !important;
+    background: rgba(59, 130, 246, 0.16) !important;
+}
+
+html[data-theme="dark"] #mainNav .navbar-toggler {
+    border-color: #475569;
+}
+
+html[data-theme="dark"] #mainNav .navbar-toggler-icon {
+    filter: invert(1) grayscale(100%) brightness(1.4);
+}
+
+/* ── Theme toggle ── */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid var(--theme-toggle-border);
+    background: var(--theme-toggle-bg);
+    color: var(--theme-toggle-icon);
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+    transform: translateY(-1px);
+    outline: none;
+    border-color: var(--primary, #2563eb);
+    color: var(--primary, #2563eb);
+}
+
+.theme-toggle i {
+    font-size: 1rem;
+}
+
+.theme-toggle .icon-sun {
+    display: none;
+}
+
+.theme-toggle .icon-moon {
+    display: inline-block;
+}
+
+html[data-theme="dark"] .theme-toggle .icon-sun {
+    display: inline-block;
+}
+
+html[data-theme="dark"] .theme-toggle .icon-moon {
+    display: none;
+}
+
+/* ── Shared surfaces ── */
+html[data-theme="dark"] .tour-card,
+html[data-theme="dark"] .service-card,
+html[data-theme="dark"] .process-wrap,
+html[data-theme="dark"] .process-card,
+html[data-theme="dark"] .info-card,
+html[data-theme="dark"] .why-wrap,
+html[data-theme="dark"] .feature-chip,
+html[data-theme="dark"] .chip,
+html[data-theme="dark"] .quote-box,
+html[data-theme="dark"] .accordion-item,
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .book-panel,
+html[data-theme="dark"] .bl-panel,
+html[data-theme="dark"] .filter-pill,
+html[data-theme="dark"] .gallery-item,
+html[data-theme="dark"] .place-card,
+html[data-theme="dark"] .pkg-card,
+html[data-theme="dark"] .region-card,
+html[data-theme="dark"] .highlight-card,
+html[data-theme="dark"] .stat-card,
+html[data-theme="dark"] .value-card,
+html[data-theme="dark"] .team-card,
+html[data-theme="dark"] .faq-card,
+html[data-theme="dark"] .sl-card,
+html[data-theme="dark"] .climate-card,
+html[data-theme="dark"] .zone-card,
+html[data-theme="dark"] .contact-quick,
+html[data-theme="dark"] .contact-info,
+html[data-theme="dark"] .contact-form-wrapper {
+    background: var(--card) !important;
+    border-color: #243044 !important;
+    color: var(--ink);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .28) !important;
+}
+
+html[data-theme="dark"] .tours-listing,
+html[data-theme="dark"] .info-media,
+html[data-theme="dark"] .service-icon,
+html[data-theme="dark"] .process-number,
+html[data-theme="dark"] .chip-icon,
+html[data-theme="dark"] .tour-card-img,
+html[data-theme="dark"] .sl-icon,
+html[data-theme="dark"] .filter-btn {
+    background: #1a2438 !important;
+    border-color: #334155 !important;
+    color: var(--ink) !important;
+}
+
+html[data-theme="dark"] .hl-card,
+html[data-theme="dark"] .g-item,
+html[data-theme="dark"] .place-box,
+html[data-theme="dark"] .inc-card,
+html[data-theme="dark"] .tip-card {
+    background: var(--card) !important;
+    border-color: #243044 !important;
+    color: var(--ink);
+}
+
+html[data-theme="dark"] .why-srilanka-highlight {
+    background: rgba(59, 130, 246, 0.14) !important;
+    border-color: rgba(96, 165, 250, 0.35) !important;
+    color: #bfdbfe !important;
+}
+
+html[data-theme="dark"] .chip-text,
+html[data-theme="dark"] .chip-title,
+html[data-theme="dark"] .sl-card p,
+html[data-theme="dark"] .hl-card p {
+    color: var(--muted) !important;
+}
+
+html[data-theme="dark"] .chip-title,
+html[data-theme="dark"] .sl-card h3,
+html[data-theme="dark"] .sl-card h4,
+html[data-theme="dark"] .hl-card h3,
+html[data-theme="dark"] .hl-card h4 {
+    color: var(--ink) !important;
+}
+
+html[data-theme="dark"] .filter-pill {
+    color: #cbd5e1 !important;
+    border-color: #334155 !important;
+}
+
+html[data-theme="dark"] .filter-pill:hover,
+html[data-theme="dark"] .filter-pill.active,
+html[data-theme="dark"] .filter-btn.active {
+    background: #2563eb !important;
+    border-color: #2563eb !important;
+    color: #fff !important;
+}
+
+html[data-theme="dark"] .tour-card-body,
+html[data-theme="dark"] .tour-card-content,
+html[data-theme="dark"] .pkg-body,
+html[data-theme="dark"] .service-card p,
+html[data-theme="dark"] .why-desc,
+html[data-theme="dark"] .lead,
+html[data-theme="dark"] .section-subtitle,
+html[data-theme="dark"] .quote-privacy,
+html[data-theme="dark"] .quote-field-hint {
+    color: var(--muted) !important;
+}
+
+html[data-theme="dark"] .tour-card .pkg-title,
+html[data-theme="dark"] .tour-title,
+html[data-theme="dark"] .section-title,
+html[data-theme="dark"] .why-title,
+html[data-theme="dark"] .quote-page-header h1,
+html[data-theme="dark"] .tours-page-header h1,
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6 {
+    color: var(--ink);
+}
+
+html[data-theme="dark"] .price-value,
+html[data-theme="dark"] .pkg-title,
+html[data-theme="dark"] .chip,
+html[data-theme="dark"] .feature-chip,
+html[data-theme="dark"] .process-card,
+html[data-theme="dark"] .quote-field label {
+    color: var(--ink) !important;
+}
+
+html[data-theme="dark"] .quote-field input,
+html[data-theme="dark"] .quote-field select,
+html[data-theme="dark"] .phone-prefix,
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] .form-select {
+    color: var(--ink) !important;
+    border-bottom-color: #475569 !important;
+    background-color: transparent !important;
+}
+
+html[data-theme="dark"] .quote-field input::placeholder,
+html[data-theme="dark"] .form-control::placeholder {
+    color: #64748b !important;
+}
+
+html[data-theme="dark"] .phone-wrap,
+html[data-theme="dark"] .quote-field input,
+html[data-theme="dark"] .quote-field select {
+    border-color: #475569 !important;
+}
+
+html[data-theme="dark"] .quote-alert--success {
+    background: #064e3b !important;
+    color: #a7f3d0 !important;
+    border-color: #047857 !important;
+}
+
+html[data-theme="dark"] .quote-alert--error {
+    background: #450a0a !important;
+    color: #fecaca !important;
+    border-color: #991b1b !important;
+}
+
+html[data-theme="dark"] .accordion-button {
+    background: var(--card) !important;
+    color: var(--ink) !important;
+}
+
+html[data-theme="dark"] .accordion-button:not(.collapsed) {
+    background: #1a2438 !important;
+    color: #93c5fd !important;
+    box-shadow: none !important;
+}
+
+html[data-theme="dark"] .accordion-button::after {
+    filter: invert(1);
+}
+
+html[data-theme="dark"] .accordion-body {
+    background: #121a2a !important;
+    color: var(--muted) !important;
+}
+
+html[data-theme="dark"] .modal-content {
+    background: #151d2e !important;
+    color: var(--ink) !important;
+}
+
+html[data-theme="dark"] .modal-header,
+html[data-theme="dark"] .modal-footer {
+    border-color: #243044 !important;
+}
+
+html[data-theme="dark"] .btn-close {
+    filter: invert(1);
+}
+
+html[data-theme="dark"] .text-muted,
+html[data-theme="dark"] .text-secondary {
+    color: var(--muted) !important;
+}
+
+html[data-theme="dark"] .bg-white,
+html[data-theme="dark"] .bg-light {
+    background-color: var(--card) !important;
+}
+
+html[data-theme="dark"] .border,
+html[data-theme="dark"] .border-top,
+html[data-theme="dark"] .border-bottom,
+html[data-theme="dark"] .border-start,
+html[data-theme="dark"] .border-end {
+    border-color: #243044 !important;
+}
+
+/* Index chips / highlights */
+html[data-theme="dark"] .why-srilanka,
+html[data-theme="dark"] .climate-chip,
+html[data-theme="dark"] .feature-row,
+html[data-theme="dark"] .home-card,
+html[data-theme="dark"] .dest-preview,
+html[data-theme="dark"] .testimonial-card {
+    background: var(--card) !important;
+    border-color: #243044 !important;
+    color: var(--ink);
+}
+
+/* Book list floating panel */
+html[data-theme="dark"] #bookListPanel,
+html[data-theme="dark"] .booklist-panel,
+html[data-theme="dark"] .bl-drawer,
+html[data-theme="dark"] .list-item {
+    background: #151d2e !important;
+    color: var(--ink) !important;
+    border-color: #243044 !important;
+}
+
+html[data-theme="dark"] .list-group-item {
+    background: #151d2e !important;
+    color: var(--ink) !important;
+    border-color: #243044 !important;
+}
+
+html[data-theme="dark"] .floating-icon {
+    background: #1e293b !important;
+    color: #e2e8f0 !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .4) !important;
+}
+
+html[data-theme="dark"] .booklist-empty,
+html[data-theme="dark"] .modal-body {
+    color: var(--muted);
+}
+
