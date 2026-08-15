@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('vs-theme');
+                if (t !== 'light' && t !== 'dark') {
+                    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description"
@@ -613,6 +626,7 @@
         }
 
     </style>
+    <link href="css/theme.css" rel="stylesheet">
 </head>
 <body>
 <div class="page-wrap">
@@ -642,6 +656,12 @@
                     <li class="nav-item"><a class="nav-link active" href="./destinations.html">Destinations</a></li>
                     <!--<li class="nav-item"><a class="nav-link" href="../../gallery.html">Gallery</a></li>-->
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0 d-flex align-items-center">
+                        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch theme" title="Dark mode">
+                            <i class="fas fa-moon icon-moon" aria-hidden="true"></i>
+                            <i class="fas fa-sun icon-sun" aria-hidden="true"></i>
+                        </button>
+                    </li>
                     <li class="ms-lg-3 mt-2 mt-lg-0">
                         <a href="contact.html" class="btn btn-quote btn-sm">Get a Quote</a>
                     </li>
@@ -1206,5 +1226,6 @@
     });
 </script>
 
+<script src="js/theme.js"></script>
 </body>
 </html>
