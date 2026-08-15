@@ -14,6 +14,15 @@
             }
         })();
     </script>
+    <script>
+        (function () {
+            try {
+                var l = localStorage.getItem('vs-lang');
+                if (l === 'de' || l === 'en') document.documentElement.setAttribute('lang', l);
+            } catch (e) {}
+        })();
+    </script>
+
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description"
@@ -409,6 +418,7 @@
         }
     </style>
     <link href="css/theme.css" rel="stylesheet">
+    <link href="css/i18n.css" rel="stylesheet">
 </head>
 <body>
 <div class="page-wrap">
@@ -429,12 +439,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html"><span data-i18n="nav.home">Home</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><span data-i18n="nav.about">About</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html"><span data-i18n="nav.services">Services</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="destinations.html"><span data-i18n="nav.destinations">Destinations</span></a></li>
                     <!--<li class="nav-item"><a class="nav-link" href="../../../gallery.html">Gallery</a></li>-->
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html"><span data-i18n="nav.contact">Contact</span></a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0 d-flex align-items-center">
+                        <label class="lang-switch">
+                            <span class="visually-hidden" data-i18n="nav.lang">Language</span>
+                            <select data-lang-select aria-label="Language">
+                                <option value="en">EN</option>
+                                <option value="de">DE</option>
+                            </select>
+                        </label>
+                    </li>
                     <li class="nav-item ms-lg-2 mt-2 mt-lg-0 d-flex align-items-center">
                         <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch theme" title="Dark mode">
                             <i class="fas fa-moon icon-moon" aria-hidden="true"></i>
@@ -686,11 +705,11 @@
         <hr class="my-4">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <p class="text-white-50 mb-0">&copy; <span id="year"></span> Visit Siyenga. All rights reserved.</p>
+                <p class="text-white-50 mb-0">&copy; <span id="year"></span> <span data-i18n="footer.rights">Visit Siyenga. All rights reserved.</span></p>
             </div>
             <div class="col-md-6 text-md-end">
-                <a href="#" class="text-white-50 me-3">Privacy Policy</a>
-                <a href="#" class="text-white-50">Terms of Service</a>
+                <a href="#" class="text-white-50 me-3"><span data-i18n="footer.privacy">Privacy Policy</span></a>
+                <a href="#" class="text-white-50"><span data-i18n="footer.terms">Terms of Service</span></a>
             </div>
         </div>
     </div>
@@ -706,8 +725,8 @@
                         <img src="src/assets/images/siyenga_round_logo.png" alt="" class="footer-logo" width="52" height="52">
                         <img src="src/assets/images/siyenga_name_logo.png" alt="Visit Siyenga" class="footer-name">
                     </div>
-                    <p class="footer-tagline">Your trusted local partner for tailor-made Sri Lankan adventures — beaches, wildlife, tea country, and culture since 1997.</p>
-                    <span class="footer-badge"><i class="fas fa-award"></i> Local experts since 1997</span>
+                    <p class="footer-tagline"><span data-i18n="footer.tagline">Your trusted local partner for tailor-made Sri Lankan adventures — beaches, wildlife, tea country, and culture since 1997.</span></p>
+                    <span class="footer-badge"><i class="fas fa-award"></i> <span data-i18n="footer.badge">Local experts since 1997</span></span>
                     <div class="footer-social">
                         <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://wa.me/94779961170" target="_blank" rel="noopener noreferrer" class="social-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -716,27 +735,27 @@
                 </div>
             </div>
             <div class="col-6 col-lg-2">
-                <h6 class="footer-heading">Explore</h6>
+                <h6 class="footer-heading"><span data-i18n="footer.explore">Explore</span></h6>
                 <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="destinations.html">Tour Packages</a></li>
-                    <li><a href="contact.html">Get a Quote</a></li>
+                    <li><a href="index.html"><span data-i18n="nav.home">Home</span></a></li>
+                    <li><a href="about.html"><span data-i18n="nav.about">About</span></a></li>
+                    <li><a href="services.html"><span data-i18n="nav.services">Services</span></a></li>
+                    <li><a href="destinations.html"><span data-i18n="footer.tourPackages">Tour Packages</span></a></li>
+                    <li><a href="contact.html"><span data-i18n="footer.getQuote">Get a Quote</span></a></li>
                 </ul>
             </div>
             <div class="col-6 col-lg-2">
-                <h6 class="footer-heading">Destinations</h6>
+                <h6 class="footer-heading"><span data-i18n="footer.destinations">Destinations</span></h6>
                 <ul class="footer-links">
-                    <li><a href="destination-down-south.html">Down South</a></li>
-                    <li><a href="destination-up-country.html">Hill Country</a></li>
-                    <li><a href="destination-wildlife-nature.html">Wildlife</a></li>
-                    <li><a href="destination-colombo.html">Colombo</a></li>
-                    <li><a href="destination-cultural-triangle.html">Culture</a></li>
+                    <li><a href="destination-down-south.html"><span data-i18n="footer.downSouth">Down South</span></a></li>
+                    <li><a href="destination-up-country.html"><span data-i18n="footer.hillCountry">Hill Country</span></a></li>
+                    <li><a href="destination-wildlife-nature.html"><span data-i18n="footer.wildlife">Wildlife</span></a></li>
+                    <li><a href="destination-colombo.html"><span data-i18n="footer.colombo">Colombo</span></a></li>
+                    <li><a href="destination-cultural-triangle.html"><span data-i18n="footer.culture">Culture</span></a></li>
                 </ul>
             </div>
             <div class="col-lg-4">
-                <h6 class="footer-heading">Contact</h6>
+                <h6 class="footer-heading"><span data-i18n="footer.contact">Contact</span></h6>
                 <ul class="footer-contact">
                     <li>
                         <span class="footer-contact-icon"><i class="fas fa-globe"></i></span>
@@ -756,7 +775,7 @@
                     </li>
                 </ul>
                 <div class="footer-cta">
-                    <a href="contact.html" class="footer-cta-btn"><i class="fas fa-paper-plane"></i> Get a Quote</a>
+                    <a href="contact.html" class="footer-cta-btn" data-i18n-keep-icon="footer.getQuote"><i class="fas fa-paper-plane"></i> Get a Quote</a>
                 </div>
             </div>
         </div>
@@ -937,5 +956,6 @@
     });
 </script>
 <script src="js/theme.js"></script>
+<script src="js/i18n.js"></script>
 </body>
 </html>
