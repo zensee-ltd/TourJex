@@ -14,6 +14,15 @@
             }
         })();
     </script>
+    <script>
+        (function () {
+            try {
+                var l = localStorage.getItem('vs-lang');
+                if (l === 'de' || l === 'en') document.documentElement.setAttribute('lang', l);
+            } catch (e) {}
+        })();
+    </script>
+
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description"
@@ -627,6 +636,7 @@
 
     </style>
     <link href="css/theme.css" rel="stylesheet">
+    <link href="css/i18n.css" rel="stylesheet">
 </head>
 <body>
 <div class="page-wrap">
@@ -650,12 +660,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="./destinations.html">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html"><span data-i18n="nav.home">Home</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><span data-i18n="nav.about">About</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html"><span data-i18n="nav.services">Services</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./destinations.html"><span data-i18n="nav.destinations">Destinations</span></a></li>
                     <!--<li class="nav-item"><a class="nav-link" href="../../gallery.html">Gallery</a></li>-->
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html"><span data-i18n="nav.contact">Contact</span></a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0 d-flex align-items-center">
+                        <label class="lang-switch">
+                            <span class="visually-hidden" data-i18n="nav.lang">Language</span>
+                            <select data-lang-select aria-label="Language">
+                                <option value="en">EN</option>
+                                <option value="de">DE</option>
+                            </select>
+                        </label>
+                    </li>
                     <li class="nav-item ms-lg-2 mt-2 mt-lg-0 d-flex align-items-center">
                         <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch theme" title="Dark mode">
                             <i class="fas fa-moon icon-moon" aria-hidden="true"></i>
@@ -663,7 +682,7 @@
                         </button>
                     </li>
                     <li class="ms-lg-3 mt-2 mt-lg-0">
-                        <a href="contact.html" class="btn btn-quote btn-sm">Get a Quote</a>
+                        <a href="contact.html" class="btn btn-quote btn-sm"><span data-i18n="nav.getQuote">Get a Quote</span></a>
                     </li>
                 </ul>
             </div>
@@ -672,21 +691,20 @@
 
     <!-- PAGE HEADER -->
     <header class="tours-page-header">
-        <h1 data-aos="fade-up">Tour Packages</h1>
-        <p data-aos="fade-up" data-aos-delay="100">Tailor-made Sri Lanka journeys — pick a region and we’ll build your
-            perfect itinerary.</p>
+        <h1 data-aos="fade-up" data-i18n="tours.title">Tour Packages</h1>
+        <p data-aos="fade-up" data-aos-delay="100"><span data-i18n="tours.subtitle">Tailor-made Sri Lanka journeys — pick a region and we’ll build your perfect itinerary.</span></p>
     </header>
 
     <!-- PACKAGES -->
     <section class="pb-5 tours-listing">
         <div class="container">
             <div class="tour-filters" data-aos="fade-up" data-aos-delay="120">
-                <button type="button" class="filter-pill active" data-filter="all">All Tours</button>
-                <button type="button" class="filter-pill" data-filter="beach">Beach &amp; Coast</button>
-                <button type="button" class="filter-pill" data-filter="hills">Hill Country</button>
-                <button type="button" class="filter-pill" data-filter="culture">Culture</button>
-                <button type="button" class="filter-pill" data-filter="wildlife">Wildlife</button>
-                <button type="button" class="filter-pill" data-filter="city">City</button>
+                <button type="button" class="filter-pill active" data-filter="all" data-i18n="tours.all">All Tours</button>
+                <button type="button" class="filter-pill" data-filter="beach" data-i18n="tours.beach">Beach &amp; Coast</button>
+                <button type="button" class="filter-pill" data-filter="hills" data-i18n="tours.hills">Hill Country</button>
+                <button type="button" class="filter-pill" data-filter="culture" data-i18n="tours.culture">Culture</button>
+                <button type="button" class="filter-pill" data-filter="wildlife" data-i18n="tours.wildlife">Wildlife</button>
+                <button type="button" class="filter-pill" data-filter="city" data-i18n="tours.city">City</button>
             </div>
 
             <!-- Booking Modal -->
@@ -714,7 +732,7 @@
 
                 <!-- Down South -->
                 <article class="tour-card" data-category="beach">
-                    <button type="button" class="tour-add-btn add-btn" title="Add to trip"
+                    <button type="button" class="tour-add-btn add-btn" title="Add to trip" data-i18n-title="tours.addToTrip"
                             data-title="Down South (Galle • Mirissa • Unawatuna • Tangalle • Hiriketiya)"
                             onclick="event.preventDefault(); event.stopPropagation(); addToBookList(this, this.dataset.title);">+</button>
                     <a class="tour-card-link" href="destination-down-south.html">
@@ -724,12 +742,12 @@
                         <div class="tour-card-body">
                             <div class="tour-card-meta">
                                 <span class="tour-location"><i class="fas fa-map-marker-alt"></i> Down South</span>
-                                <span class="tour-badge">Tailor Made</span>
+                                <span class="tour-badge" data-i18n="tours.tailorMade">Tailor Made</span>
                             </div>
                             <h3 class="tour-card-title">6 Days Southern Coast &amp; Galle Heritage</h3>
                             <div class="tour-card-price">
-                                <span class="price-label">Starting From</span>
-                                <span class="price-value">On request</span>
+                                <span class="price-label" data-i18n="tours.startingFrom">Starting From</span>
+                                <span class="price-value" data-i18n="tours.onRequest">On request</span>
                             </div>
                         </div>
                     </a>
@@ -737,7 +755,7 @@
 
                 <!-- Up Country -->
                 <article class="tour-card" data-category="hills">
-                    <button type="button" class="tour-add-btn add-btn" title="Add to trip"
+                    <button type="button" class="tour-add-btn add-btn" title="Add to trip" data-i18n-title="tours.addToTrip"
                             data-title="Up Country (Nuwara Eliya • Ella • Haputale • Bandarawela)"
                             onclick="event.preventDefault(); event.stopPropagation(); addToBookList(this, this.dataset.title);">+</button>
                     <a class="tour-card-link" href="destination-up-country.html">
@@ -747,12 +765,12 @@
                         <div class="tour-card-body">
                             <div class="tour-card-meta">
                                 <span class="tour-location"><i class="fas fa-map-marker-alt"></i> Up Country</span>
-                                <span class="tour-badge">Tailor Made</span>
+                                <span class="tour-badge" data-i18n="tours.tailorMade">Tailor Made</span>
                             </div>
                             <h3 class="tour-card-title">5 Days Hill Country &amp; Tea Trails</h3>
                             <div class="tour-card-price">
-                                <span class="price-label">Starting From</span>
-                                <span class="price-value">On request</span>
+                                <span class="price-label" data-i18n="tours.startingFrom">Starting From</span>
+                                <span class="price-value" data-i18n="tours.onRequest">On request</span>
                             </div>
                         </div>
                     </a>
@@ -760,7 +778,7 @@
 
                 <!-- Cultural Triangle -->
                 <article class="tour-card" data-category="culture">
-                    <button type="button" class="tour-add-btn add-btn" title="Add to trip"
+                    <button type="button" class="tour-add-btn add-btn" title="Add to trip" data-i18n-title="tours.addToTrip"
                             data-title="Cultural Triangle (Sigiriya • Dambulla • Anuradhapura • Polonnaruwa • Mihintale)"
                             onclick="event.preventDefault(); event.stopPropagation(); addToBookList(this, this.dataset.title);">+</button>
                     <a class="tour-card-link" href="destination-cultural-triangle.html">
@@ -770,12 +788,12 @@
                         <div class="tour-card-body">
                             <div class="tour-card-meta">
                                 <span class="tour-location"><i class="fas fa-map-marker-alt"></i> Cultural Triangle</span>
-                                <span class="tour-badge">Tailor Made</span>
+                                <span class="tour-badge" data-i18n="tours.tailorMade">Tailor Made</span>
                             </div>
                             <h3 class="tour-card-title">5 Days Ancient Heritage &amp; Sigiriya</h3>
                             <div class="tour-card-price">
-                                <span class="price-label">Starting From</span>
-                                <span class="price-value">On request</span>
+                                <span class="price-label" data-i18n="tours.startingFrom">Starting From</span>
+                                <span class="price-value" data-i18n="tours.onRequest">On request</span>
                             </div>
                         </div>
                     </a>
@@ -783,7 +801,7 @@
 
                 <!-- East Coast -->
                 <article class="tour-card" data-category="beach">
-                    <button type="button" class="tour-add-btn add-btn" title="Add to trip"
+                    <button type="button" class="tour-add-btn add-btn" title="Add to trip" data-i18n-title="tours.addToTrip"
                             data-title="East Coast (Trincomalee • Arugam Bay • Pasikuda • Nilaveli)"
                             onclick="event.preventDefault(); event.stopPropagation(); addToBookList(this, this.dataset.title);">+</button>
                     <a class="tour-card-link" href="destination-east-coast.html">
@@ -793,12 +811,12 @@
                         <div class="tour-card-body">
                             <div class="tour-card-meta">
                                 <span class="tour-location"><i class="fas fa-map-marker-alt"></i> East Coast</span>
-                                <span class="tour-badge">Tailor Made</span>
+                                <span class="tour-badge" data-i18n="tours.tailorMade">Tailor Made</span>
                             </div>
                             <h3 class="tour-card-title">6 Days East Coast Beaches &amp; Surf</h3>
                             <div class="tour-card-price">
-                                <span class="price-label">Starting From</span>
-                                <span class="price-value">On request</span>
+                                <span class="price-label" data-i18n="tours.startingFrom">Starting From</span>
+                                <span class="price-value" data-i18n="tours.onRequest">On request</span>
                             </div>
                         </div>
                     </a>
@@ -806,7 +824,7 @@
 
                 <!-- Colombo Area -->
                 <article class="tour-card" data-category="city">
-                    <button type="button" class="tour-add-btn add-btn" title="Add to trip"
+                    <button type="button" class="tour-add-btn add-btn" title="Add to trip" data-i18n-title="tours.addToTrip"
                             data-title="Colombo & Surroundings (Colombo • Negombo • Kalutara)"
                             onclick="event.preventDefault(); event.stopPropagation(); addToBookList(this, this.dataset.title);">+</button>
                     <a class="tour-card-link" href="destination-colombo.html">
@@ -816,12 +834,12 @@
                         <div class="tour-card-body">
                             <div class="tour-card-meta">
                                 <span class="tour-location"><i class="fas fa-map-marker-alt"></i> Colombo</span>
-                                <span class="tour-badge">Tailor Made</span>
+                                <span class="tour-badge" data-i18n="tours.tailorMade">Tailor Made</span>
                             </div>
                             <h3 class="tour-card-title">3 Days Colombo &amp; West Coast Gateway</h3>
                             <div class="tour-card-price">
-                                <span class="price-label">Starting From</span>
-                                <span class="price-value">On request</span>
+                                <span class="price-label" data-i18n="tours.startingFrom">Starting From</span>
+                                <span class="price-value" data-i18n="tours.onRequest">On request</span>
                             </div>
                         </div>
                     </a>
@@ -829,7 +847,7 @@
 
                 <!-- Central Highlands -->
                 <article class="tour-card" data-category="hills culture">
-                    <button type="button" class="tour-add-btn add-btn" title="Add to trip"
+                    <button type="button" class="tour-add-btn add-btn" title="Add to trip" data-i18n-title="tours.addToTrip"
                             data-title="Central Highlands (Kandy • Knuckles Range • Matale)"
                             onclick="event.preventDefault(); event.stopPropagation(); addToBookList(this, this.dataset.title);">+</button>
                     <a class="tour-card-link" href="destination-central-highlands.html">
@@ -839,12 +857,12 @@
                         <div class="tour-card-body">
                             <div class="tour-card-meta">
                                 <span class="tour-location"><i class="fas fa-map-marker-alt"></i> Central Highlands</span>
-                                <span class="tour-badge">Tailor Made</span>
+                                <span class="tour-badge" data-i18n="tours.tailorMade">Tailor Made</span>
                             </div>
                             <h3 class="tour-card-title">4 Days Kandy &amp; Highland Culture</h3>
                             <div class="tour-card-price">
-                                <span class="price-label">Starting From</span>
-                                <span class="price-value">On request</span>
+                                <span class="price-label" data-i18n="tours.startingFrom">Starting From</span>
+                                <span class="price-value" data-i18n="tours.onRequest">On request</span>
                             </div>
                         </div>
                     </a>
@@ -852,7 +870,7 @@
 
                 <!-- Wildlife & Nature -->
                 <article class="tour-card" data-category="wildlife">
-                    <button type="button" class="tour-add-btn add-btn" title="Add to trip"
+                    <button type="button" class="tour-add-btn add-btn" title="Add to trip" data-i18n-title="tours.addToTrip"
                             data-title="Wildlife & Nature (Yala • Udawalawe • Wilpattu • Horton Plains)"
                             onclick="event.preventDefault(); event.stopPropagation(); addToBookList(this, this.dataset.title);">+</button>
                     <a class="tour-card-link" href="destination-wildlife-nature.html">
@@ -862,12 +880,12 @@
                         <div class="tour-card-body">
                             <div class="tour-card-meta">
                                 <span class="tour-location"><i class="fas fa-map-marker-alt"></i> Wildlife</span>
-                                <span class="tour-badge">Tailor Made</span>
+                                <span class="tour-badge" data-i18n="tours.tailorMade">Tailor Made</span>
                             </div>
                             <h3 class="tour-card-title">5 Days Wildlife Safari Adventure</h3>
                             <div class="tour-card-price">
-                                <span class="price-label">Starting From</span>
-                                <span class="price-value">On request</span>
+                                <span class="price-label" data-i18n="tours.startingFrom">Starting From</span>
+                                <span class="price-value" data-i18n="tours.onRequest">On request</span>
                             </div>
                         </div>
                     </a>
@@ -894,7 +912,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div>
-                    <h5 class="modal-title" id="bookListModalLabel">Your Book List</h5>
+                    <h5 class="modal-title" id="bookListModalLabel" data-i18n="tours.bookList">Your Book List</h5>
                     <small class="text-muted">Choose your favourite routes. Remove if you change your mind.</small>
                 </div>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -930,8 +948,8 @@
                         <img src="src/assets/images/siyenga_round_logo.png" alt="" class="footer-logo" width="52" height="52">
                         <img src="src/assets/images/siyenga_name_logo.png" alt="Visit Siyenga" class="footer-name">
                     </div>
-                    <p class="footer-tagline">Your trusted local partner for tailor-made Sri Lankan adventures — beaches, wildlife, tea country, and culture since 1997.</p>
-                    <span class="footer-badge"><i class="fas fa-award"></i> Local experts since 1997</span>
+                    <p class="footer-tagline"><span data-i18n="footer.tagline">Your trusted local partner for tailor-made Sri Lankan adventures — beaches, wildlife, tea country, and culture since 1997.</span></p>
+                    <span class="footer-badge"><i class="fas fa-award"></i> <span data-i18n="footer.badge">Local experts since 1997</span></span>
                     <div class="footer-social">
                         <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://wa.me/94779961170" target="_blank" rel="noopener noreferrer" class="social-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -940,27 +958,27 @@
                 </div>
             </div>
             <div class="col-6 col-lg-2">
-                <h6 class="footer-heading">Explore</h6>
+                <h6 class="footer-heading"><span data-i18n="footer.explore">Explore</span></h6>
                 <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="destinations.html">Tour Packages</a></li>
-                    <li><a href="contact.html">Get a Quote</a></li>
+                    <li><a href="index.html"><span data-i18n="nav.home">Home</span></a></li>
+                    <li><a href="about.html"><span data-i18n="nav.about">About</span></a></li>
+                    <li><a href="services.html"><span data-i18n="nav.services">Services</span></a></li>
+                    <li><a href="destinations.html"><span data-i18n="footer.tourPackages">Tour Packages</span></a></li>
+                    <li><a href="contact.html"><span data-i18n="footer.getQuote">Get a Quote</span></a></li>
                 </ul>
             </div>
             <div class="col-6 col-lg-2">
-                <h6 class="footer-heading">Destinations</h6>
+                <h6 class="footer-heading"><span data-i18n="footer.destinations">Destinations</span></h6>
                 <ul class="footer-links">
-                    <li><a href="destination-down-south.html">Down South</a></li>
-                    <li><a href="destination-up-country.html">Hill Country</a></li>
-                    <li><a href="destination-wildlife-nature.html">Wildlife</a></li>
-                    <li><a href="destination-colombo.html">Colombo</a></li>
-                    <li><a href="destination-cultural-triangle.html">Culture</a></li>
+                    <li><a href="destination-down-south.html"><span data-i18n="footer.downSouth">Down South</span></a></li>
+                    <li><a href="destination-up-country.html"><span data-i18n="footer.hillCountry">Hill Country</span></a></li>
+                    <li><a href="destination-wildlife-nature.html"><span data-i18n="footer.wildlife">Wildlife</span></a></li>
+                    <li><a href="destination-colombo.html"><span data-i18n="footer.colombo">Colombo</span></a></li>
+                    <li><a href="destination-cultural-triangle.html"><span data-i18n="footer.culture">Culture</span></a></li>
                 </ul>
             </div>
             <div class="col-lg-4">
-                <h6 class="footer-heading">Contact</h6>
+                <h6 class="footer-heading"><span data-i18n="footer.contact">Contact</span></h6>
                 <ul class="footer-contact">
                     <li>
                         <span class="footer-contact-icon"><i class="fas fa-globe"></i></span>
@@ -980,7 +998,7 @@
                     </li>
                 </ul>
                 <div class="footer-cta">
-                    <a href="contact.html" class="footer-cta-btn"><i class="fas fa-paper-plane"></i> Get a Quote</a>
+                    <a href="contact.html" class="footer-cta-btn" data-i18n-keep-icon="footer.getQuote"><i class="fas fa-paper-plane"></i> Get a Quote</a>
                 </div>
             </div>
         </div>
@@ -988,21 +1006,21 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="footer-bottom-inner">
-                <p>&copy; <span id="year"></span> Visit Siyenga. All rights reserved.</p>
+                <p>&copy; <span id="year"></span> <span data-i18n="footer.rights">Visit Siyenga. All rights reserved.</span></p>
                 <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="#"><span data-i18n="footer.privacy">Privacy Policy</span></a>
+                    <a href="#"><span data-i18n="footer.terms">Terms of Service</span></a>
                 </div>
             </div>
         </div>
     </div>
 </footer>
 
-<a href="https://wa.me/94779961170?text=Hi%2C%20I%20would%20like%20to%20plan%20a%20trip" target="_blank" rel="noopener noreferrer" class="whatsapp-float whatsapp-float--stacked" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/94779961170?text=Hi%2C%20I%20would%20like%20to%20plan%20a%20trip" target="_blank" rel="noopener noreferrer" class="whatsapp-float whatsapp-float--stacked" aria-label="Chat on WhatsApp" data-i18n-aria="wa.chat">
     <svg class="whatsapp-float__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
         <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
-    <span class="whatsapp-float__tooltip">Chat on WhatsApp</span>
+    <span class="whatsapp-float__tooltip"><span data-i18n="wa.chat">Chat on WhatsApp</span></span>
 </a>
 
 <button type="button" id="scrollTopBtn" class="scroll-top" aria-label="Back to top">
@@ -1227,5 +1245,6 @@
 </script>
 
 <script src="js/theme.js"></script>
+<script src="js/i18n.js"></script>
 </body>
 </html>

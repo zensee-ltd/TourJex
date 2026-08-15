@@ -14,6 +14,15 @@
             }
         })();
     </script>
+    <script>
+        (function () {
+            try {
+                var l = localStorage.getItem('vs-lang');
+                if (l === 'de' || l === 'en') document.documentElement.setAttribute('lang', l);
+            } catch (e) {}
+        })();
+    </script>
+
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description"
@@ -780,6 +789,7 @@
 
     </style>
     <link href="css/theme.css" rel="stylesheet">
+    <link href="css/i18n.css" rel="stylesheet">
 </head>
 <body>
 <div class="page-wrap">
@@ -800,12 +810,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html"><span data-i18n="nav.home">Home</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><span data-i18n="nav.about">About</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html"><span data-i18n="nav.services">Services</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="destinations.html"><span data-i18n="nav.destinations">Destinations</span></a></li>
                     <!--<li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>-->
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html"><span data-i18n="nav.contact">Contact</span></a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0 d-flex align-items-center">
+                        <label class="lang-switch">
+                            <span class="visually-hidden" data-i18n="nav.lang">Language</span>
+                            <select data-lang-select aria-label="Language">
+                                <option value="en">EN</option>
+                                <option value="de">DE</option>
+                            </select>
+                        </label>
+                    </li>
                     <li class="nav-item ms-lg-2 mt-2 mt-lg-0 d-flex align-items-center">
                         <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch theme" title="Dark mode">
                             <i class="fas fa-moon icon-moon" aria-hidden="true"></i>
@@ -813,7 +832,7 @@
                         </button>
                     </li>
                     <li class="ms-lg-3 mt-2 mt-lg-0">
-                        <a href="destinations.html" class="btn btn-primary btn-sm">Plan Your Tour</a>
+                        <a href="destinations.html" class="btn btn-primary btn-sm"><span data-i18n="nav.planTour">Plan Your Tour</span></a>
                     </li>
                 </ul>
             </div>
@@ -833,15 +852,14 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-9 col-xl-8">
-                            <h1 class="hero-title">One Island. Three Worlds. Endless Experiences.</h1>
-                            <p class="hero-subtitle mb-0">Travel from golden beaches to misty mountains and lush wildlife
-                                parks all within a few hours in Sri Lanka.</p>
+                            <h1 class="hero-title" data-i18n="home.heroTitle">One Island. Three Worlds. Endless Experiences.</h1>
+                            <p class="hero-subtitle mb-0" data-i18n="home.heroSubtitle">Travel from golden beaches to misty mountains and lush wildlife parks all within a few hours in Sri Lanka.</p>
                             <div class="hero-ctas">
                                 <a href="destinations.html" class="btn btn-primary btn-lg hero-btn">
-                                    Plan Your Tour
+                                    <span data-i18n="home.planTour">Plan Your Tour</span>
                                 </a>
                                 <a href="https://wa.me/94779961170" target="_blank" rel="noopener noreferrer"
-                                   class="btn btn-lg btn-whatsapp-hero">
+                                   class="btn btn-lg btn-whatsapp-hero" data-i18n-keep-icon="wa.chat">
                                     <i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp
                                 </a>
                             </div>
@@ -856,41 +874,40 @@
     <section class="py-5">
         <div class="container">
             <div class="text-center mb-4 mb-lg-5">
-                <h2 class="section-title" data-aos="fade-up">Why Visit Sri Lanka?</h2>
-                <p class="section-subtitle mb-0" data-aos="fade-up" data-aos-delay="120">One island — beaches, wilderness,
-                    and highlands, woven together on one unforgettable route.</p>
+                <h2 class="section-title" data-aos="fade-up" data-i18n="home.whyTitle">Why Visit Sri Lanka?</h2>
+                <p class="section-subtitle mb-0" data-aos="fade-up" data-aos-delay="120" data-i18n="home.whySubtitle">One island — beaches, wilderness, and highlands, woven together on one unforgettable route.</p>
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
                     <div class="sl-card h-100">
                         <div class="sl-icon text-primary"><i class="fas fa-water"></i></div>
-                        <h4 class="mb-2">Beaches &amp; Coastlines</h4>
-                        <p class="mb-0 text-muted">Relax on golden beaches with warm tropical weather all year round.</p>
+                        <h4 class="mb-2" data-i18n="home.beachTitle">Beaches &amp; Coastlines</h4>
+                        <p class="mb-0 text-muted" data-i18n="home.beachText">Relax on golden beaches with warm tropical weather all year round.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="120">
                     <div class="sl-card h-100">
                         <div class="sl-icon text-primary"><i class="fas fa-leaf"></i></div>
-                        <h4 class="mb-2">Wildlife &amp; Nature</h4>
-                        <p class="mb-0 text-muted">Experience safaris, elephants, and rich biodiversity in national parks.</p>
+                        <h4 class="mb-2" data-i18n="home.wildlifeTitle">Wildlife &amp; Nature</h4>
+                        <p class="mb-0 text-muted" data-i18n="home.wildlifeText">Experience safaris, elephants, and rich biodiversity in national parks.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
                     <div class="sl-card h-100">
                         <div class="sl-icon text-primary"><i class="fas fa-mountain"></i></div>
-                        <h4 class="mb-2">Mountains &amp; Tea Hills</h4>
-                        <p class="mb-0 text-muted">Enjoy cool climate, scenic train rides, and breathtaking landscapes.</p>
+                        <h4 class="mb-2" data-i18n="home.mountainsTitle">Mountains &amp; Tea Hills</h4>
+                        <p class="mb-0 text-muted" data-i18n="home.mountainsText">Enjoy cool climate, scenic train rides, and breathtaking landscapes.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
                     <div class="sl-card h-100">
                         <div class="sl-icon text-primary"><i class="fas fa-city"></i></div>
-                        <h4 class="mb-2">City &amp; Heritage</h4>
-                        <p class="mb-0 text-muted">Explore Colombo, colonial forts, temples, and vibrant local markets — ideal for arrival or departure days.</p>
+                        <h4 class="mb-2" data-i18n="home.cityTitle">City &amp; Heritage</h4>
+                        <p class="mb-0 text-muted" data-i18n="home.cityText">Explore Colombo, colonial forts, temples, and vibrant local markets — ideal for arrival or departure days.</p>
                     </div>
                 </div>
             </div>
-            <p class="why-srilanka-highlight mb-0" data-aos="fade-up" data-aos-delay="240">
+            <p class="why-srilanka-highlight mb-0" data-aos="fade-up" data-aos-delay="240" data-i18n="home.highlight">
                 Experience beaches, wildlife, tea country, and city heritage in just one journey — something unique only to Sri Lanka.
             </p>
         </div>
@@ -901,44 +918,43 @@
         <div class="container">
             <div class="why-wrap why-wrap-compact trust-grid">
                 <div class="why-text">
-                    <h2 class="why-title mb-2">Why Travel With Us?</h2>
-                    <p class="why-desc mx-auto mb-0">Local experts, private itineraries, and care from first message to
-                        farewell — so you see Sri Lanka with confidence.</p>
+                    <h2 class="why-title mb-2" data-i18n="home.whyUsTitle">Why Travel With Us?</h2>
+                    <p class="why-desc mx-auto mb-0" data-i18n="home.whyUsDesc">Local experts, private itineraries, and care from first message to farewell — so you see Sri Lanka with confidence.</p>
                 </div>
                 <div class="why-features">
                     <div class="feature-chip">
                         <div class="chip-icon"><i class="fa-solid fa-award"></i></div>
                         <div>
-                            <p class="chip-title mb-1">Local Experts Since 1997</p>
-                            <p class="chip-text mb-0">We know Sri Lanka inside out — hidden gems, best routes, best timing.</p>
+                            <p class="chip-title mb-1" data-i18n="home.expertTitle">Local Experts Since 1997</p>
+                            <p class="chip-text mb-0" data-i18n="home.expertText">We know Sri Lanka inside out — hidden gems, best routes, best timing.</p>
                         </div>
                     </div>
                     <div class="feature-chip">
                         <div class="chip-icon"><i class="fa-solid fa-route"></i></div>
                         <div>
-                            <p class="chip-title mb-1">Private &amp; Tailor-Made Tours</p>
-                            <p class="chip-text mb-0">Every trip is customized to your needs — no fixed packages.</p>
+                            <p class="chip-title mb-1" data-i18n="home.privateTitle">Private &amp; Tailor-Made Tours</p>
+                            <p class="chip-text mb-0" data-i18n="home.privateText">Every trip is customized to your needs — no fixed packages.</p>
                         </div>
                     </div>
                     <div class="feature-chip">
                         <div class="chip-icon"><i class="fa-solid fa-heart"></i></div>
                         <div>
-                            <p class="chip-title mb-1">Personal Care &amp; Support</p>
-                            <p class="chip-text mb-0">From planning to travel, we are with you every step.</p>
+                            <p class="chip-title mb-1" data-i18n="home.careTitle">Personal Care &amp; Support</p>
+                            <p class="chip-text mb-0" data-i18n="home.careText">From planning to travel, we are with you every step.</p>
                         </div>
                     </div>
                     <div class="feature-chip">
                         <div class="chip-icon"><i class="fa-solid fa-earth-europe"></i></div>
                         <div>
-                            <p class="chip-title mb-1">Trusted by International Travelers</p>
-                            <p class="chip-text mb-0">Happy clients from Europe and around the world.</p>
+                            <p class="chip-title mb-1" data-i18n="home.trustedTitle">Trusted by International Travelers</p>
+                            <p class="chip-text mb-0" data-i18n="home.trustedText">Happy clients from Europe and around the world.</p>
                         </div>
                     </div>
                     <div class="feature-chip">
                         <div class="chip-icon"><i class="fa-solid fa-comments"></i></div>
                         <div>
-                            <p class="chip-title mb-1">Flexible &amp; Easy Communication</p>
-                            <p class="chip-text mb-0">Quick replies via WhatsApp, email, or call.</p>
+                            <p class="chip-title mb-1" data-i18n="home.flexTitle">Flexible &amp; Easy Communication</p>
+                            <p class="chip-text mb-0" data-i18n="home.flexText">Quick replies via WhatsApp, email, or call.</p>
                         </div>
                     </div>
                 </div>
@@ -950,9 +966,8 @@
     <section class="py-5 bg-light destination-container featured-tours">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title" data-aos="fade-up">Featured Tours</h2>
-                <p class="section-subtitle mb-0" data-aos="fade-up" data-aos-delay="120">Popular routes — every itinerary can
-                    be adjusted to your pace and interests.</p>
+                <h2 class="section-title" data-aos="fade-up" data-i18n="home.featuredTitle">Featured Tours</h2>
+                <p class="section-subtitle mb-0" data-aos="fade-up" data-aos-delay="120" data-i18n="home.featuredSubtitle">Popular routes — every itinerary can be adjusted to your pace and interests.</p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4">
@@ -962,8 +977,7 @@
                             <h4 class="mb-2">10-Day Sri Lanka Tour</h4>
                             <p class="text-muted flex-grow-1">Culture, nature, and coast in one balanced loop across the
                                 island.</p>
-                            <a href="contact.html" class="btn btn-outline-primary btn-sm mt-2 align-self-start">Request this
-                                tour</a>
+                            <a href="contact.html" class="btn btn-outline-primary btn-sm mt-2 align-self-start"><span data-i18n="home.requestTour">Request this tour</span></a>
                         </div>
                     </article>
                 </div>
@@ -973,8 +987,7 @@
                         <div class="tour-card-body">
                             <h4 class="mb-2">8-Day Classic Tour</h4>
                             <p class="text-muted flex-grow-1">Heritage highlights and hill country in a focused classic route.</p>
-                            <a href="contact.html" class="btn btn-outline-primary btn-sm mt-2 align-self-start">Request this
-                                tour</a>
+                            <a href="contact.html" class="btn btn-outline-primary btn-sm mt-2 align-self-start"><span data-i18n="home.requestTour">Request this tour</span></a>
                         </div>
                     </article>
                 </div>
@@ -1019,7 +1032,7 @@
     <section class="py-5">
         <div class="container">
             <div class="text-center mb-4">
-                <h2 class="section-title" data-aos="fade-up">Experience Sri Lanka</h2>
+                <h2 class="section-title" data-aos="fade-up" data-i18n="home.experienceTitle">Experience Sri Lanka</h2>
                 <p class="section-subtitle mb-0" data-aos="fade-up" data-aos-delay="120">Every day, a new experience.</p>
             </div>
             <div class="experience-grid">
@@ -1039,7 +1052,7 @@
     <section class="py-5 bg-light destination-container">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title" data-aos="fade-up">What Our Travelers Say</h2>
+                <h2 class="section-title" data-aos="fade-up" data-i18n="home.reviewsTitle">What Our Travelers Say</h2>
                 <p class="section-subtitle mb-0" data-aos="fade-up" data-aos-delay="120">Real feedback from guests who explored
                     Sri Lanka with us.</p>
             </div>
@@ -1081,7 +1094,7 @@
                 <div class="d-flex flex-wrap gap-2 justify-content-center">
                     <a href="https://wa.me/94779961170" target="_blank" rel="noopener noreferrer"
                        class="btn btn-whatsapp-hero btn-lg"><i class="fab fa-whatsapp me-2"></i>WhatsApp</a>
-                    <a href="contact.html" class="btn btn-light btn-lg text-primary fw-bold">Send Inquiry</a>
+                    <a href="contact.html" class="btn btn-light btn-lg text-primary fw-bold"><span data-i18n="home.sendInquiry">Send Inquiry</span></a>
                 </div>
             </div>
         </div>
@@ -1099,8 +1112,8 @@
                         <img src="src/assets/images/siyenga_round_logo.png" alt="" class="footer-logo" width="52" height="52">
                         <img src="src/assets/images/siyenga_name_logo.png" alt="Visit Siyenga" class="footer-name">
                     </div>
-                    <p class="footer-tagline">Your trusted local partner for tailor-made Sri Lankan adventures — beaches, wildlife, tea country, and culture since 1997.</p>
-                    <span class="footer-badge"><i class="fas fa-award"></i> Local experts since 1997</span>
+                    <p class="footer-tagline"><span data-i18n="footer.tagline">Your trusted local partner for tailor-made Sri Lankan adventures — beaches, wildlife, tea country, and culture since 1997.</span></p>
+                    <span class="footer-badge"><i class="fas fa-award"></i> <span data-i18n="footer.badge">Local experts since 1997</span></span>
                     <div class="footer-social">
                         <a href="https://www.facebook.com/share/1BSUnfXii9/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://wa.me/94779961170" target="_blank" rel="noopener noreferrer" class="social-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -1109,27 +1122,27 @@
                 </div>
             </div>
             <div class="col-6 col-lg-2">
-                <h6 class="footer-heading">Explore</h6>
+                <h6 class="footer-heading"><span data-i18n="footer.explore">Explore</span></h6>
                 <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="destinations.html">Tour Packages</a></li>
-                    <li><a href="contact.html">Get a Quote</a></li>
+                    <li><a href="index.html"><span data-i18n="nav.home">Home</span></a></li>
+                    <li><a href="about.html"><span data-i18n="nav.about">About</span></a></li>
+                    <li><a href="services.html"><span data-i18n="nav.services">Services</span></a></li>
+                    <li><a href="destinations.html"><span data-i18n="footer.tourPackages">Tour Packages</span></a></li>
+                    <li><a href="contact.html"><span data-i18n="footer.getQuote">Get a Quote</span></a></li>
                 </ul>
             </div>
             <div class="col-6 col-lg-2">
-                <h6 class="footer-heading">Destinations</h6>
+                <h6 class="footer-heading"><span data-i18n="footer.destinations">Destinations</span></h6>
                 <ul class="footer-links">
-                    <li><a href="destination-down-south.html">Down South</a></li>
-                    <li><a href="destination-up-country.html">Hill Country</a></li>
-                    <li><a href="destination-wildlife-nature.html">Wildlife</a></li>
-                    <li><a href="destination-colombo.html">Colombo</a></li>
-                    <li><a href="destination-cultural-triangle.html">Culture</a></li>
+                    <li><a href="destination-down-south.html"><span data-i18n="footer.downSouth">Down South</span></a></li>
+                    <li><a href="destination-up-country.html"><span data-i18n="footer.hillCountry">Hill Country</span></a></li>
+                    <li><a href="destination-wildlife-nature.html"><span data-i18n="footer.wildlife">Wildlife</span></a></li>
+                    <li><a href="destination-colombo.html"><span data-i18n="footer.colombo">Colombo</span></a></li>
+                    <li><a href="destination-cultural-triangle.html"><span data-i18n="footer.culture">Culture</span></a></li>
                 </ul>
             </div>
             <div class="col-lg-4">
-                <h6 class="footer-heading">Contact</h6>
+                <h6 class="footer-heading"><span data-i18n="footer.contact">Contact</span></h6>
                 <ul class="footer-contact">
                     <li>
                         <span class="footer-contact-icon"><i class="fas fa-globe"></i></span>
@@ -1149,7 +1162,7 @@
                     </li>
                 </ul>
                 <div class="footer-cta">
-                    <a href="contact.html" class="footer-cta-btn"><i class="fas fa-paper-plane"></i> Get a Quote</a>
+                    <a href="contact.html" class="footer-cta-btn" data-i18n-keep-icon="footer.getQuote"><i class="fas fa-paper-plane"></i> Get a Quote</a>
                 </div>
             </div>
         </div>
@@ -1157,10 +1170,10 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="footer-bottom-inner">
-                <p>&copy; <span id="year"></span> Visit Siyenga. All rights reserved.</p>
+                <p>&copy; <span id="year"></span> <span data-i18n="footer.rights">Visit Siyenga. All rights reserved.</span></p>
                 <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="#"><span data-i18n="footer.privacy">Privacy Policy</span></a>
+                    <a href="#"><span data-i18n="footer.terms">Terms of Service</span></a>
                 </div>
             </div>
         </div>
@@ -1168,11 +1181,11 @@
 </footer>
 
 
-<a href="https://wa.me/94779961170?text=Hi%2C%20I%20would%20like%20to%20plan%20a%20trip" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/94779961170?text=Hi%2C%20I%20would%20like%20to%20plan%20a%20trip" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp" data-i18n-aria="wa.chat">
     <svg class="whatsapp-float__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
         <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
-    <span class="whatsapp-float__tooltip">Chat on WhatsApp</span>
+    <span class="whatsapp-float__tooltip"><span data-i18n="wa.chat">Chat on WhatsApp</span></span>
 </a>
 
 <!-- SCRIPTS -->
@@ -1350,6 +1363,7 @@
     });
 </script>
 <script src="js/theme.js"></script>
+<script src="js/i18n.js"></script>
 </body>
 </html>
 
